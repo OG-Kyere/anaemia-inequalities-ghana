@@ -4,7 +4,7 @@
 
 Among 7,557 women with valid anaemia measurements, the survey-weighted prevalence of any anaemia was **41.12%** (95% CI **39.60% to 42.64%**).
 
-The confidence interval accounts for the Ghana DHS sampling weights, strata, and primary sampling units using Taylor-linearized variance estimation for a weighted proportion.
+The confidence interval accounts for Ghana DHS sampling weights, strata, and primary sampling units using Taylor-linearized variance estimation for a weighted proportion.
 
 ## Selected subgroup estimates
 
@@ -41,6 +41,15 @@ The confidence interval accounts for the Ghana DHS sampling weights, strata, and
 | Not pregnant / unsure | 40.4% |
 | Currently pregnant | 51.4% |
 
+### BMI category
+
+| BMI category | Weighted prevalence | 95% CI |
+|---|---:|---:|
+| Underweight | 49.3% | 44.1%–54.6% |
+| Normal weight | 44.6% | 42.7%–46.5% |
+| Overweight | 37.6% | 34.4%–40.9% |
+| Obesity | 33.9% | 30.5%–37.3% |
+
 ## Wealth-related inequality
 
 Women were ranked using the continuous DHS household wealth score (`v191`) and survey weights.
@@ -70,4 +79,4 @@ Because the concentration curve lies mostly above the equality line, anaemia is 
 
 ## Interpretation
 
-The prevalence gradient and corrected concentration index both support the central hypothesis of socioeconomic inequality in anaemia among Ghanaian women of reproductive age. These results justify proceeding to decomposition analysis and multilevel modelling.
+The prevalence gradient and corrected concentration index both support the central hypothesis of socioeconomic inequality in anaemia among Ghanaian women of reproductive age. These results justify proceeding to decomposition analysis and adjusted regression modelling.
