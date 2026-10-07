@@ -1,0 +1,23 @@
+# Restricted DHS microdata and local data files
+data/raw/
+data/processed/
+*.dta
+*.sav
+*.sas7bdat
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+.env
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
