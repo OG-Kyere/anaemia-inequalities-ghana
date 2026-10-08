@@ -171,7 +171,7 @@ The author declares no conflict of interest.
 ## References
 
 1. World Health Organization. Anaemia. Geneva: World Health Organization; 2025.
-2. Ghana Statistical Service, Ghana Health Service, ICF. *Ghana Demographic and Health Survey 2022*. Accra, Ghana and Rockville, MD, USA: GSS, GHS and ICF; 2023.
+2. Ghana Statistical Service (GSS), ICF. *Ghana Demographic and Health Survey 2022*. Accra, Ghana and Rockville, Maryland, USA: GSS and ICF; 2024.
 3. Agulu GG, Ahissou NCA, Kamiya Y, Baiden F, Matsui M. Anaemia prevalence and risk factors among nonpregnant and pregnant women of reproductive age in Ghana: an analysis of the Ghana demographic and health survey data. *Trop Med Health*. 2025;53:118. doi:10.1186/s41182-025-00792-8.
 4. Erreygers G. Correcting the concentration index. *J Health Econ*. 2009;28:504–515. doi:10.1016/j.jhealeco.2008.02.003.
 5. Wagstaff A, van Doorslaer E, Watanabe N. On decomposing the causes of health sector inequalities with an application to malnutrition inequalities in Vietnam. *J Econometrics*. 2003;112:207–223. doi:10.1016/S0304-4076(02)00161-6.
