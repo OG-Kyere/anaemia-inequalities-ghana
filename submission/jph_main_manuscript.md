@@ -92,7 +92,7 @@ The standard concentration index was **-0.0358**, while the Erreygers-corrected 
 
 ### Decomposition of inequality
 
-BMI/nutritional status made the largest measured contribution to wealth-related inequality, accounting for approximately **77.7%** of the observed Erreygers index. Education contributed **15.6%**, residence **6.5%**, parity **5.5%** and pregnancy status **3.7%**. Some components acted in the opposite direction, so contributions exceeded 100% before accounting for the residual.
+BMI/nutritional status made the largest measured contribution to wealth-related inequality, accounting for approximately **77.7%** of the observed Erreygers index. Education contributed **15.6%**, residence **6.8%**, parity **4.9%** and pregnancy status **3.8%**. Age, employment and marital/union status made small offsetting contributions, and the residual also offset part of the pro-poor inequality.
 
 The BMI-domain contribution remained consistently negative in the 200-replicate bootstrap (**-0.0457**, 95% bootstrap interval **-0.0617 to -0.0300**). Bootstrap intervals for the smaller domains included zero, so their individual contributions should be interpreted cautiously.
 
