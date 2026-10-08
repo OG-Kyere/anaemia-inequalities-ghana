@@ -47,8 +47,8 @@ Academic supervisor: **Dr. Wilhemina** (acknowledged separately; not listed as a
 ## Remaining before submission
 
 1. Insert the corresponding-author email in the title page and cover letter.
-2. Confirm Clement Acheampong's affiliation.
-3. Confirm Dr. Wilhemina's full professional name and affiliation.
+2. Clement Acheampong's affiliation confirmed: KNUST, Department of Statistics and Actuarial Science.
+3. Dr. Wilhemina's affiliation confirmed: KNUST, Department of Statistics and Actuarial Science; full professional name still to confirm.
 4. Decide whether to show ORCID on the title page.
 5. Run `python src/05_prepare_submission_assets.py` locally and inspect the generated CSV/PNG/TIFF files.
 6. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
