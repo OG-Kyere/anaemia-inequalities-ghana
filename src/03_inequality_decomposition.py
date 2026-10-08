@@ -1,14 +1,15 @@
 """Decompose the Erreygers concentration index and bootstrap domain contributions.
 
-Primary specification:
-- age and age^2
+Primary executable specification selected by diagnostic comparison with the
+original locked decomposition:
+- DHS five-year age-group indicators
 - years of education
 - rural residence
 - current pregnancy
-- parity
+- continuous parity
 - BMI and BMI^2
 - current employment
-- marital/union-status indicators
+- currently in union vs not
 
 Wealth is used only to rank women and is not entered as a determinant.
 """
@@ -28,16 +29,14 @@ OUT = Path("results/reproduced")
 OUT.mkdir(parents=True, exist_ok=True)
 
 DOMAIN_TERMS = {
-    "Age": ["age", "age_sq"],
+    "Age": ["age_2", "age_3", "age_4", "age_5", "age_6", "age_7"],
     "Education": ["education_years"],
     "Residence": ["rural"],
     "Pregnancy status": ["pregnant"],
     "Parity": ["parity"],
     "BMI / nutritional status": ["bmi", "bmi_sq"],
     "Employment": ["employed"],
-    "Marital/union status": [
-        "marital_1", "marital_2", "marital_3", "marital_4", "marital_5"
-    ],
+    "Marital/union status": ["in_union"],
 }
 
 
@@ -49,8 +48,8 @@ def analysis_frame(df: pd.DataFrame) -> pd.DataFrame:
     x["strata"] = df["strata"]
     x["psu"] = df["psu"]
 
-    x["age"] = df["v012"].astype(float)
-    x["age_sq"] = x["age"] ** 2
+    for code in range(2, 8):
+        x[f"age_{code}"] = (df["v013"] == code).astype(float)
     x["education_years"] = df["v133"].astype(float)
     x["rural"] = (df["v025"] == 2).astype(float)
     x["pregnant"] = (df["v213"] == 1).astype(float)
@@ -59,9 +58,8 @@ def analysis_frame(df: pd.DataFrame) -> pd.DataFrame:
     x["bmi_sq"] = x["bmi"] ** 2
     x["employed"] = (df["v714"] == 1).astype(float)
 
-    # v501 reference category 0: never in union.
-    for code in range(1, 6):
-        x[f"marital_{code}"] = (df["v501"] == code).astype(float)
+    # DHS v501 codes 1 (married) and 2 (living together) as currently in union.
+    x["in_union"] = df["v501"].isin([1, 2]).astype(float)
 
     required = [
         "anaemia", "weight", "wealth", "strata", "psu",
