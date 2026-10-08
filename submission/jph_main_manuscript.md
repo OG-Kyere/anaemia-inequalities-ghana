@@ -38,7 +38,7 @@ The primary analytic population comprised women with a valid haemoglobin-based a
 
 ### Outcome
 
-The primary outcome was **any anaemia**, derived from the DHS anaemia classification variable. Women classified as having mild, moderate or severe anaemia were coded as anaemic, and women classified as not anaemic were coded as non-anaemic. The classification was based on the haemoglobin definition embedded in the 2022 GDHS. WHO published updated haemoglobin guidance after the survey was conducted; the survey definition was retained to preserve comparability with the official national estimates.[7]
+The primary outcome was **any anaemia**, derived from the DHS anaemia classification variable. Women classified as having mild, moderate or severe anaemia were coded as anaemic, and women classified as not anaemic were coded as non-anaemic. The classification was based on the haemoglobin definition embedded in the 2022 GDHS. WHO published updated haemoglobin guidance after the survey was conducted; the survey definition was retained to preserve comparability with the official national estimates.[13]
 
 ### Socioeconomic and explanatory variables
 
@@ -52,13 +52,13 @@ Population-level analyses incorporated the DHS individual sampling weight, prima
 
 ### Socioeconomic inequality
 
-Women were ranked from poorest to richest using the continuous wealth score. We first calculated the standard concentration index and plotted the concentration curve. Because anaemia is a bounded binary outcome, the Erreygers-corrected concentration index was used as the primary inequality measure.[4] A negative value indicates that anaemia is concentrated disproportionately among poorer women.
+Women were ranked from poorest to richest using the continuous wealth score. We first calculated the standard concentration index and plotted the concentration curve. Because anaemia is a bounded binary outcome, the Erreygers-corrected concentration index was used as the primary inequality measure.[10] A negative value indicates that anaemia is concentrated disproportionately among poorer women.
 
 Uncertainty for the corrected index was assessed using stratified primary-sampling-unit bootstrap resampling within DHS strata.
 
 ### Decomposition analysis
 
-The Erreygers index was decomposed using a survey-weighted linear probability model based on established concentration-index decomposition methods.[5] The decomposition model included age, years of education, residence, pregnancy status, parity, BMI, employment and marital status. Wealth itself was not entered as a determinant because it defined the socioeconomic ranking. The reproducible specification used DHS five-year age-group indicators and modelled BMI with linear and quadratic terms.
+The Erreygers index was decomposed using a survey-weighted linear probability model based on established concentration-index decomposition methods.[11] The decomposition model included age, years of education, residence, pregnancy status, parity, BMI, employment and marital status. Wealth itself was not entered as a determinant because it defined the socioeconomic ranking. The reproducible specification used DHS five-year age-group indicators and modelled BMI with linear and quadratic terms.
 
 For each domain, the contribution reflected the combination of its association with anaemia and its socioeconomic distribution. Bootstrap resampling was used to assess uncertainty. Because decomposition is model dependent, all contributions were interpreted as statistical rather than causal.
 
@@ -68,7 +68,7 @@ Survey-weighted logistic regression was used to estimate adjusted associations w
 
 ### Community-level heterogeneity
 
-Two-level random-intercept logistic models were fitted with women nested within DHS clusters. A null model quantified baseline clustering, and an adjusted model included the same covariates as the primary regression model. Cluster heterogeneity was summarized using the latent-variable intraclass correlation coefficient (ICC) and median odds ratio (MOR), as recommended for multilevel logistic analyses.[6] The proportional change in variance quantified the reduction in between-cluster variance after adjustment.
+Two-level random-intercept logistic models were fitted with women nested within DHS clusters. A null model quantified baseline clustering, and an adjusted model included the same covariates as the primary regression model. Cluster heterogeneity was summarized using the latent-variable intraclass correlation coefficient (ICC) and median odds ratio (MOR), as recommended for multilevel logistic analyses.[12] The proportional change in variance quantified the reduction in between-cluster variance after adjustment.
 
 The multilevel analysis was used as a complementary contextual analysis; national prevalence and inequality estimates remained based on the complex survey design.
 
@@ -152,9 +152,13 @@ Reducing anaemia will therefore require population-wide prevention alongside equ
 
 ## Acknowledgements
 
-The authors acknowledge The DHS Program, the Ghana Statistical Service and the Ghana Health Service for making the survey data available for research. The authors also gratefully acknowledge Dr. Wilhemina for academic supervision and guidance throughout the study.
+The authors acknowledge The DHS Program, the Ghana Statistical Service and ICF for making the 2022 Ghana Demographic and Health Survey data available for research.
 
 OpenAI ChatGPT was used to assist with code development, statistical workflow documentation and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.
+
+## Author contributions
+
+Gideon Ofosu Kyere, Wilhemina Adoma Pels, Prince Apaah and Clement Acheampong reviewed and approved the final manuscript. Specific CRediT contributor roles should be confirmed by all authors before journal submission.
 
 ## Data availability
 
@@ -171,12 +175,20 @@ The authors declare no conflict of interest.
 ## References
 
 1. World Health Organization. Anaemia. Geneva: World Health Organization; 2025.
-2. Ghana Statistical Service (GSS), ICF. *Ghana Demographic and Health Survey 2022*. Accra, Ghana and Rockville, Maryland, USA: GSS and ICF; 2024.
-3. Agulu GG, Ahissou NCA, Kamiya Y, Baiden F, Matsui M. Anaemia prevalence and risk factors among nonpregnant and pregnant women of reproductive age in Ghana: an analysis of the Ghana demographic and health survey data. *Trop Med Health*. 2025;53:118. doi:10.1186/s41182-025-00792-8.
-4. Erreygers G. Correcting the concentration index. *J Health Econ*. 2009;28:504–515. doi:10.1016/j.jhealeco.2008.02.003.
-5. Wagstaff A, van Doorslaer E, Watanabe N. On decomposing the causes of health sector inequalities with an application to malnutrition inequalities in Vietnam. *J Econometrics*. 2003;112:207–223. doi:10.1016/S0304-4076(02)00161-6.
-6. Merlo J, Chaix B, Ohlsson H, et al. A brief conceptual tutorial of multilevel analysis in social epidemiology: using measures of clustering in multilevel logistic regression to investigate contextual phenomena. *J Epidemiol Community Health*. 2006;60:290–297. doi:10.1136/jech.2004.029454.
-7. World Health Organization. *Guideline on haemoglobin cutoffs to define anaemia in individuals and populations*. Geneva: World Health Organization; 2024.
+2. World Health Organization. *WHO global anaemia estimates: key findings, 2025*. Geneva: World Health Organization; 2025. ISBN 978-92-4-011393-0.
+3. Ghana Statistical Service (GSS), ICF. *Ghana Demographic and Health Survey 2022*. Accra, Ghana and Rockville, Maryland, USA: GSS and ICF; 2024.
+4. Agulu GG, Ahissou NCA, Kamiya Y, Baiden F, Matsui M. Anaemia prevalence and risk factors among nonpregnant and pregnant women of reproductive age in Ghana: an analysis of the Ghana demographic and health survey data. *Trop Med Health*. 2025;53:118. doi:10.1186/s41182-025-00792-8.
+5. Mare KU, Aychiluhm SB, Sabo KG, et al. Determinants of anemia level among reproductive-age women in 29 Sub-Saharan African countries: a multilevel mixed-effects modelling with ordered logistic regression analysis. *PLoS One*. 2023;18(11):e0294992. doi:10.1371/journal.pone.0294992.
+6. Correa-Agudelo E, Kim HY, Musuka GN, et al. The epidemiological landscape of anemia in women of reproductive age in sub-Saharan Africa. *Sci Rep*. 2021;11:11955. doi:10.1038/s41598-021-91198-z.
+7. Baye K, Hailu BA, Nanama S, Ntambi J, Laillou A. Subnational mapping of anaemia and aetiologic factors in the West and Central African region. *Public Health Nutr*. 2025;28:e6. doi:10.1017/S1368980024002222.
+8. Tirore LL, Areba AS, Habte A, Desalegn M, Kebede AS. Prevalence and associated factors of severity levels of anemia among women of reproductive age in sub-Saharan Africa: a multilevel ordinal logistic regression analysis. *Front Public Health*. 2024;11:1349174. doi:10.3389/fpubh.2023.1349174.
+9. Salifu MG, Da-Costa Vroom FB, Guure C. Anaemia among women of reproductive age in selected sub-Saharan African countries: multivariate decomposition analyses of the demographic and health surveys data 2008–2018. *Front Public Health*. 2024;11:1128214. doi:10.3389/fpubh.2023.1128214.
+10. Erreygers G. Correcting the concentration index. *J Health Econ*. 2009;28:504–515. doi:10.1016/j.jhealeco.2008.02.003.
+11. Wagstaff A, van Doorslaer E, Watanabe N. On decomposing the causes of health sector inequalities with an application to malnutrition inequalities in Vietnam. *J Econometrics*. 2003;112:207–223. doi:10.1016/S0304-4076(02)00161-6.
+12. Merlo J, Chaix B, Ohlsson H, et al. A brief conceptual tutorial of multilevel analysis in social epidemiology: using measures of clustering in multilevel logistic regression to investigate contextual phenomena. *J Epidemiol Community Health*. 2006;60:290–297. doi:10.1136/jech.2004.029454.
+13. World Health Organization. *Guideline on haemoglobin cutoffs to define anaemia in individuals and populations*. Geneva: World Health Organization; 2024.
+14. Gosdin L, Sharma AJ, Tripp K, et al. A school-based weekly iron and folic acid supplementation program effectively reduces anemia in a prospective cohort of Ghanaian adolescent girls. *J Nutr*. 2021;151:1646–1655. doi:10.1093/jn/nxab024.
+15. Kibret KT, Chojenta C, D'Arcy E, Loxton D. Spatial distribution and determinant factors of anaemia among women of reproductive age in Ethiopia: a multilevel and spatial analysis. *BMJ Open*. 2019;9:e027276. doi:10.1136/bmjopen-2018-027276.
 
 ## Main displays
 
