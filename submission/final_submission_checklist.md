@@ -85,7 +85,7 @@ Additional results remain in supplementary material.
 - [ ] Convert Tables I–II to the journal's preferred editable Word/table format
 - [ ] Export Figures 1–2 as journal-compatible high-resolution files (preferably TIFF/EPS/JPG as requested)
 - [ ] Add page/line numbering only if requested by the submission system
-- [ ] Verify all seven bibliography entries against their final source records
+- [x] Verify all seven bibliography entries against their final source records
 - [ ] Upload an official STROBE checklist if the submission system requests it
 - [ ] Perform final grammar/typesetting proofread
 
