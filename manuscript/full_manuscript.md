@@ -73,7 +73,7 @@ where (y) is anaemia status, (mu) is its weighted mean, and (r) is fractional we
 Because anaemia is a bounded binary outcome, the Erreygers-corrected concentration index was used as the primary inequality measure. Negative values indicate concentration of anaemia among poorer women. Uncertainty was estimated using stratified primary-sampling-unit bootstrap resampling within DHS strata.
 
 ### Decomposition analysis
-The Erreygers index was decomposed using a survey-weighted linear probability model. The model included age, education, residence, pregnancy status, parity, BMI, employment, and marital status. Wealth itself was not included as a determinant because it defined the socioeconomic ranking. Age and BMI were modelled with linear and quadratic terms in the primary specification. Domain-specific contributions and bootstrap intervals were calculated.
+The Erreygers index was decomposed using a survey-weighted linear probability model. The model included age, education, residence, pregnancy status, parity, BMI, employment, and marital status. Wealth itself was not included as a determinant because it defined the socioeconomic ranking. The reproducible decomposition used DHS five-year age-group indicators, years of schooling, residence, pregnancy status, continuous parity, BMI, employment, and current union status. BMI was modelled with linear and quadratic terms. Domain-specific contributions and bootstrap intervals were calculated.
 
 ### Survey-weighted regression
 Adjusted associations with anaemia were estimated using survey-weighted logistic regression. The fully adjusted model included age group, education, wealth quintile, residence, pregnancy status, parity, BMI category, employment, marital status, and region. Results are reported as adjusted odds ratios (aORs) with 95% confidence intervals. Overall Wald tests were used for categorical factors.
@@ -106,7 +106,7 @@ Anaemia prevalence decreased across wealth groups, from **46.6% (95% CI 43.5%–
 The standard concentration index was **-0.0358**, and the Erreygers-corrected concentration index was **-0.0589** (bootstrap 95% CI **-0.0914 to -0.0212**). The concentration curve lay predominantly above the equality line, indicating disproportionate concentration of anaemia among poorer women.
 
 ### Decomposition
-BMI/nutritional status made the largest measured contribution to wealth-related inequality, accounting for approximately **77.8%** of the observed Erreygers index. Education contributed **17.3%**, residence **6.5%**, parity **5.5%**, and pregnancy status **3.7%**. The BMI-domain contribution remained negative in bootstrap analysis (**-0.0458**, 95% bootstrap interval **-0.0592 to -0.0318**) and was similar when BMI was parameterised categorically (**73.1%** contribution).
+BMI/nutritional status made the largest measured contribution to wealth-related inequality, accounting for approximately **77.7%** of the observed Erreygers index. Education contributed **15.6%**, residence **6.8%**, parity **4.9%**, and pregnancy status **3.8%**. The BMI-domain contribution remained negative in the 200-replicate bootstrap (**-0.0457**, 95% bootstrap interval **-0.0617 to -0.0300**). Bootstrap intervals for the smaller domains included zero.
 
 ### Adjusted associations
 In the fully adjusted survey-weighted logistic model, pregnancy status, BMI category, and region showed the strongest overall evidence of association with anaemia.
