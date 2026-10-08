@@ -15,13 +15,17 @@ Kwame Nkrumah University of Science and Technology
 Kumasi, Ghana
 
 **Clement Acheampong**  
-Affiliation: **[to be confirmed before submission]**
+Department of Statistics and Actuarial Science  
+Kwame Nkrumah University of Science and Technology  
+Kumasi, Ghana
 
 ## Academic supervisor
 
 **Dr. Wilhemina**  
-Role: Academic Supervisor  
-Professional details: **[to be confirmed before submission]**
+Academic Supervisor  
+Department of Statistics and Actuarial Science  
+Kwame Nkrumah University of Science and Technology  
+Kumasi, Ghana
 
 ## Corresponding author
 
