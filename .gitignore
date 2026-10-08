@@ -4,6 +4,10 @@ data/processed/
 *.dta
 *.sav
 *.sas7bdat
+GHIR*.zip
+GHIR*.ZIP
+GH_2022_DHS*.zip
+GH_2022_DHS*.ZIP
 
 # Python
 __pycache__/
