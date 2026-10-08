@@ -1,8 +1,10 @@
 """Community-level random-intercept logistic models.
 
 This script uses statsmodels BinomialBayesMixedGLM with one random intercept per
-DHS cluster. The default estimator is Laplace/MAP. A variational-Bayes option is
-also provided for sensitivity/computational comparison.
+DHS cluster. Variational Bayes (VB) is the reproducibility estimator because it
+matches the locked manuscript heterogeneity estimates. Laplace/MAP is retained
+only as a diagnostic option; in this dataset it fails to converge and collapses
+the cluster variance toward zero.
 
 These models are contextual complements to the design-based survey analyses;
 they do not replace survey-weighted prevalence or inequality estimates.
@@ -42,7 +44,6 @@ def icc_from_variance(var: float) -> float:
 
 
 def mor_from_sd(sd: float) -> float:
-    # MOR = exp(sqrt(2*variance) * Phi^{-1}(0.75))
     return float(np.exp(np.sqrt(2.0) * sd * 0.6744897501960817))
 
 
@@ -68,7 +69,6 @@ def fit_model(df: pd.DataFrame, formula: str, method: str):
             scale_fe=True,
         )
 
-    # statsmodels parameterizes variance-component parameters on log(SD).
     log_sd = float(np.asarray(result.vcp_mean).reshape(-1)[0])
     sd = float(np.exp(log_sd))
     var = sd**2
@@ -83,7 +83,12 @@ def fit_model(df: pd.DataFrame, formula: str, method: str):
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--method", choices=["map", "vb"], default="map")
+    parser.add_argument(
+        "--method",
+        choices=["vb", "map"],
+        default="vb",
+        help="VB reproduces the locked results; MAP is diagnostic only.",
+    )
     args = parser.parse_args()
 
     df = load_analysis_data().copy()
@@ -103,7 +108,9 @@ def main() -> None:
         adjusted_df, ADJUSTED_FORMULA, args.method
     )
 
-    pcv = (null["cluster_variance"] - adjusted["cluster_variance"]) / null["cluster_variance"]
+    pcv = (
+        null["cluster_variance"] - adjusted["cluster_variance"]
+    ) / null["cluster_variance"]
 
     summary = pd.DataFrame([
         {"model": "Null", "n": len(null_df), **null, "pcv": np.nan},
@@ -114,7 +121,6 @@ def main() -> None:
         index=False,
     )
 
-    # Save adjusted fixed effects for diagnostic comparison.
     fe_names = adjusted_result.model.exog_names
     fe_mean = np.asarray(adjusted_result.fe_mean)
     pd.DataFrame({
@@ -132,6 +138,18 @@ def main() -> None:
     print("Null:     SD 0.387 | variance 0.150 | ICC 0.0435 | MOR 1.45")
     print("Adjusted: SD 0.327 | variance 0.107 | ICC 0.0314 | MOR 1.37")
     print("PCV:      0.288")
+
+    if args.method == "map":
+        print(
+            "\nNote: MAP/Laplace failed to reproduce the locked variance "
+            "components in validation and is retained for diagnostics only."
+        )
+    else:
+        print(
+            "\nNote: statsmodels may emit a VB convergence warning even when "
+            "the reproduced variance components match the locked results. "
+            "That warning should be retained in the reproducibility record."
+        )
 
 
 if __name__ == "__main__":
