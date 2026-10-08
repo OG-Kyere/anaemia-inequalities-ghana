@@ -61,15 +61,17 @@ def load_analysis_data() -> pd.DataFrame:
         right=False,
     )
 
-    # Parity categories
-    df["parity_cat"] = pd.cut(
-        df["v201"],
-        bins=[-np.inf, 0, 2, 5, np.inf],
-        labels=["0", "1–2", "3–5", "6+"],
-        right=True,
+    # Parity categories: 0, 1-2, 3-5, 6+
+    parity = pd.Series(pd.NA, index=df.index, dtype="object")
+    parity.loc[df["v201"] == 0] = "0"
+    parity.loc[df["v201"].between(1, 2)] = "1–2"
+    parity.loc[df["v201"].between(3, 5)] = "3–5"
+    parity.loc[df["v201"] >= 6] = "6+"
+    df["parity_cat"] = pd.Categorical(
+        parity,
+        categories=["0", "1–2", "3–5", "6+"],
+        ordered=True,
     )
-    # pd.cut above puts zero in the first interval only if corrected explicitly.
-    df.loc[df["v201"] == 0, "parity_cat"] = "0"
 
     return df
 
@@ -81,34 +83,16 @@ def weighted_mean(x: pd.Series, w: pd.Series) -> float:
     return float(np.sum(w * x) / np.sum(w))
 
 
-def survey_ratio_se(
-    y: pd.Series,
-    w: pd.Series,
+def _linearized_variance(
+    linearized: pd.Series,
     strata: pd.Series,
     psu: pd.Series,
-) -> tuple[float, float]:
-    """Taylor-linearized SE for a weighted proportion/ratio.
-
-    For a binary y this returns the weighted prevalence and its design-based SE.
-    PSU scores are centered within strata and multiplied by m_h/(m_h-1).
-    """
-    mask = (
-        y.notna() & w.notna() & strata.notna() & psu.notna()
-        & np.isfinite(y) & np.isfinite(w)
-    )
-    y = y.loc[mask].astype(float)
-    w = w.loc[mask].astype(float)
-    strata = strata.loc[mask]
-    psu = psu.loc[mask]
-
-    total_w = float(w.sum())
-    estimate = float(np.sum(w * y) / total_w)
-    lin = w * (y - estimate) / total_w
-
+) -> float:
+    """Variance of a Taylor-linearized estimator under stratified PSU sampling."""
     tmp = pd.DataFrame({
         "strata": strata.to_numpy(),
         "psu": psu.to_numpy(),
-        "lin": lin.to_numpy(),
+        "lin": linearized.to_numpy(dtype=float),
     })
     cluster_scores = (
         tmp.groupby(["strata", "psu"], observed=True)["lin"]
@@ -123,6 +107,63 @@ def survey_ratio_se(
             continue
         u = g["lin"].to_numpy(dtype=float)
         variance += (m / (m - 1.0)) * np.sum((u - u.mean()) ** 2)
+    return float(variance)
+
+
+def survey_ratio_se(
+    y: pd.Series,
+    w: pd.Series,
+    strata: pd.Series,
+    psu: pd.Series,
+) -> tuple[float, float]:
+    """Taylor-linearized SE for a weighted mean/proportion in the full sample."""
+    mask = (
+        y.notna() & w.notna() & strata.notna() & psu.notna()
+        & np.isfinite(y) & np.isfinite(w)
+    )
+    y = y.loc[mask].astype(float)
+    w = w.loc[mask].astype(float)
+    strata = strata.loc[mask]
+    psu = psu.loc[mask]
+
+    total_w = float(w.sum())
+    estimate = float(np.sum(w * y) / total_w)
+    lin = w * (y - estimate) / total_w
+    variance = _linearized_variance(lin, strata, psu)
+
+    return estimate, float(np.sqrt(variance))
+
+
+def survey_domain_proportion(
+    y: pd.Series,
+    domain: pd.Series,
+    w: pd.Series,
+    strata: pd.Series,
+    psu: pd.Series,
+) -> tuple[float, float]:
+    """Survey-domain prevalence with Taylor-linearized SE.
+
+    The entire survey sample is retained when estimating the variance. Units outside
+    the requested domain contribute zero to the linearized variable, which preserves
+    the original PSU and stratum structure.
+    """
+    mask = (
+        y.notna() & domain.notna() & w.notna() & strata.notna() & psu.notna()
+        & np.isfinite(y) & np.isfinite(w)
+    )
+    y = y.loc[mask].astype(float)
+    d = domain.loc[mask].astype(bool)
+    w = w.loc[mask].astype(float)
+    strata = strata.loc[mask]
+    psu = psu.loc[mask]
+
+    denominator = float(np.sum(w * d.astype(float)))
+    if denominator <= 0:
+        raise ValueError("Domain has zero weighted observations.")
+
+    estimate = float(np.sum(w * d.astype(float) * y) / denominator)
+    lin = w * d.astype(float) * (y - estimate) / denominator
+    variance = _linearized_variance(lin, strata, psu)
 
     return estimate, float(np.sqrt(variance))
 
