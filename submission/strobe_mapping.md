@@ -1,22 +1,22 @@
 # STROBE Checklist — Project Mapping
 
-This checklist maps the observational-study reporting items to the current manuscript. Final page numbers should be added after journal typesetting.
+This mapping reflects the current submission manuscript. Final page numbers can be added after Word/PDF typesetting.
 
 | STROBE item | Reporting location | Status |
 |---|---|---|
 | Study design stated in title/abstract | Abstract; Methods | Complete |
 | Background/rationale | Introduction | Complete |
 | Objectives | End of Introduction | Complete |
-| Study design | Methods: Study design and population | Complete |
+| Study design | Methods | Complete |
 | Setting and data source | Methods | Complete |
 | Participants and eligibility | Methods; Results | Complete |
 | Variables | Methods | Complete |
 | Data sources/measurement | Methods | Complete |
-| Bias | Discussion: limitations | Partial — expand before submission |
+| Bias | Limitations | Complete |
 | Study size | Methods/Results | Complete |
 | Quantitative variables | Methods | Complete |
 | Statistical methods | Methods | Complete |
-| Missing data | Full manuscript / supplementary methods | Complete |
+| Missing data | Methods/supplement | Complete |
 | Sampling strategy | Methods | Complete |
 | Participant numbers | Results | Complete |
 | Descriptive data | Table I | Complete |
@@ -26,11 +26,9 @@ This checklist maps the observational-study reporting items to the current manus
 | Key results | Discussion | Complete |
 | Limitations | Discussion | Complete |
 | Interpretation | Discussion | Complete |
-| Generalisability | Discussion | Partial — expand before submission |
+| Generalisability | Limitations | Complete |
 | Funding | Declarations | Complete |
 
-## Remaining STROBE actions
+## Remaining STROBE action
 
-1. Add one explicit paragraph on potential selection/measurement bias.
-2. Add one explicit sentence on generalisability to women aged 15–49 years nationally, while noting that the results do not generalise to men or older women.
-3. Add the official STROBE checklist file required by the target journal, if requested.
+- Add page/section references to the official STROBE checklist if the journal submission system requests the completed checklist as a separate upload.
