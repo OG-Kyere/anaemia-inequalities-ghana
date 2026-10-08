@@ -57,4 +57,4 @@ Kwame Nkrumah University of Science and Technology, Ghana
 **Clement Acheampong**  
 Affiliation to be confirmed before submission.
 
-Academic supervision: **Dr. Wilhemina**.
+Academic supervision: **Dr. Wilhemina Adoma Pels**.
