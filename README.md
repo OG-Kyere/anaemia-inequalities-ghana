@@ -54,10 +54,11 @@ Raw DHS files, extracted row-level datasets, and derived row-level data must sta
 **Gideon Ofosu Kyere**  
 Kwame Nkrumah University of Science and Technology, Ghana
 
+**Wilhemina Adoma Pels**  
+Kwame Nkrumah University of Science and Technology, Ghana
+
 **Prince Apaah**  
 Kwame Nkrumah University of Science and Technology, Ghana
 
 **Clement Acheampong**  
 Kwame Nkrumah University of Science and Technology, Ghana
-
-Academic supervision: **Dr. Wilhemina Adoma Pels**.
