@@ -25,4 +25,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .vscode/
-\n# Locally generated journal upload assets\nsubmission/generated/\n
+
+# Locally generated journal upload assets
+submission/generated/
