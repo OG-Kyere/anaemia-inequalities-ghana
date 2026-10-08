@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="620" viewBox="0 0 760 620">
+  <rect width="100%" height="100%" fill="white"/>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#111}
+    .axis{stroke:#333;stroke-width:1}
+    .grid{stroke:#ddd;stroke-width:1}
+    .line{fill:none;stroke:#111;stroke-width:3}
+    .eq{fill:none;stroke:#777;stroke-width:2;stroke-dasharray:7 6}
+    .pt{fill:#111}
+    .err{stroke:#555;stroke-width:2}
+  </style>
+  <text x="380" y="32" text-anchor="middle" font-size="20" font-weight="700">Concentration curve for anaemia</text>
+  <line class="axis" x1="90" y1="540" x2="730" y2="540"/>
+<line class="axis" x1="90" y1="60" x2="90" y2="540"/><line class="grid" x1="90" y1="60" x2="90" y2="540"/>
+  <line class="grid" x1="90" y1="540" x2="730" y2="540"/>
+  <text x="90" y="564" text-anchor="middle" font-size="12">0%</text>
+  <text x="78" y="544" text-anchor="end" font-size="12">0%</text><line class="grid" x1="218" y1="60" x2="218" y2="540"/>
+  <line class="grid" x1="90" y1="444" x2="730" y2="444"/>
+  <text x="218" y="564" text-anchor="middle" font-size="12">20%</text>
+  <text x="78" y="448" text-anchor="end" font-size="12">20%</text><line class="grid" x1="346" y1="60" x2="346" y2="540"/>
+  <line class="grid" x1="90" y1="348" x2="730" y2="348"/>
+  <text x="346" y="564" text-anchor="middle" font-size="12">40%</text>
+  <text x="78" y="352" text-anchor="end" font-size="12">40%</text><line class="grid" x1="474" y1="60" x2="474" y2="540"/>
+  <line class="grid" x1="90" y1="252" x2="730" y2="252"/>
+  <text x="474" y="564" text-anchor="middle" font-size="12">60%</text>
+  <text x="78" y="256" text-anchor="end" font-size="12">60%</text><line class="grid" x1="602" y1="60" x2="602" y2="540"/>
+  <line class="grid" x1="90" y1="155.99999999999997" x2="730" y2="155.99999999999997"/>
+  <text x="602" y="564" text-anchor="middle" font-size="12">80%</text>
+  <text x="78" y="159.99999999999997" text-anchor="end" font-size="12">80%</text><line class="grid" x1="730" y1="60" x2="730" y2="540"/>
+  <line class="grid" x1="90" y1="60" x2="730" y2="60"/>
+  <text x="730" y="564" text-anchor="middle" font-size="12">100%</text>
+  <text x="78" y="64" text-anchor="end" font-size="12">100%</text><polyline class="eq" points="90,540 154,492 218,444 282,396 346,348 410,300 474,252 538,204.00000000000003 602,155.99999999999997 666,107.99999999999999 730,60" opacity="0"/><line class="eq" x1="90" y1="540" x2="730" y2="60"/><polyline class="line" points="90,540 154,484.32 218,432.48 282,383.04 346,331.2 410,288 474,244.8 538,197.28000000000003 602,150.71999999999997 666,102.23999999999998 730,60"/><circle class="pt" cx="90" cy="540" r="3"/><circle class="pt" cx="154" cy="484.32" r="3"/><circle class="pt" cx="218" cy="432.48" r="3"/><circle class="pt" cx="282" cy="383.04" r="3"/><circle class="pt" cx="346" cy="331.2" r="3"/><circle class="pt" cx="410" cy="288" r="3"/><circle class="pt" cx="474" cy="244.8" r="3"/><circle class="pt" cx="538" cy="197.28000000000003" r="3"/><circle class="pt" cx="602" cy="150.71999999999997" r="3"/><circle class="pt" cx="666" cy="102.23999999999998" r="3"/><circle class="pt" cx="730" cy="60" r="3"/><text x="410" y="596" text-anchor="middle" font-size="14">Cumulative population share, poorest to richest</text>
+<text transform="translate(22 300) rotate(-90)" text-anchor="middle" font-size="14">Cumulative share of anaemia</text>
+<text x="108" y="82" font-size="13">Erreygers index = -0.0589</text>
+<text x="108" y="102" font-size="13">95% CI: -0.0914 to -0.0212</text>
+  </svg>
