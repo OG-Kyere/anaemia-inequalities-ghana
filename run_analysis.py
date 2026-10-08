@@ -26,7 +26,7 @@ def main():
     parser.add_argument("--extended", action="store_true")
     parser.add_argument("--multilevel", action="store_true")
     parser.add_argument("--bootstrap-reps", type=int, default=200)
-    parser.add_argument("--multilevel-method", choices=["map", "vb"], default="map")
+    parser.add_argument("--multilevel-method", choices=["vb", "map"], default="vb")
     args = parser.parse_args()
 
     for script in CORE:
