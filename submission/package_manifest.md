@@ -44,7 +44,7 @@ Do not reintroduce the earlier decomposition percentages (77.8%, 17.3%, etc.). T
 
 ## Authorship
 
-- Authors: **Gideon Ofosu Kyere; Clement Acheampong**
+- Authors: **Gideon Ofosu Kyere; Prince Apaah; Clement Acheampong**
 - Corresponding author: **Gideon Ofosu Kyere**
 - Academic supervisor acknowledged separately: **Dr. Wilhemina**
 - Still to confirm: Clement's affiliation and Dr. Wilhemina's full professional details.
