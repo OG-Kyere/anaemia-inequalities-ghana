@@ -14,6 +14,11 @@ Department of Statistics and Actuarial Science
 Kwame Nkrumah University of Science and Technology  
 Kumasi, Ghana
 
+**Prince Apaah**  
+Department of Statistics and Actuarial Science  
+Kwame Nkrumah University of Science and Technology  
+Kumasi, Ghana
+
 **Clement Acheampong**  
 Department of Statistics and Actuarial Science  
 Kwame Nkrumah University of Science and Technology  
