@@ -85,7 +85,7 @@ JPH states that all listed authors should have made significant contributions an
 
 Before submission, lock:
 
-- final author list: Gideon Ofosu Kyere and Clement Acheampong;
+- final author list: Gideon Ofosu Kyere, Prince Apaah, and Clement Acheampong;
 - author order;
 - corresponding author;
 - corresponding-author email.
@@ -96,7 +96,7 @@ Dr. Wilhemina Adoma Pels is acknowledged as academic supervisor and is not liste
 
 - corresponding-author email: kyereofosu2003@gmail.com;
 - postal code for the KNUST affiliation if requested by the form;
-- final author/co-author list: Gideon Ofosu Kyere and Clement Acheampong;
+- final author/co-author list: Gideon Ofosu Kyere, Prince Apaah, and Clement Acheampong;
 - ORCID placement decision.
 
 ## Final upload order
