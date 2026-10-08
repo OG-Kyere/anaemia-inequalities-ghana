@@ -22,7 +22,7 @@
 - [x] Funding statement
 - [x] Conflict-of-interest statement
 - [x] AI-use disclosure
-- [x] Core references
+- [x] Expanded and verified core references
 - [x] Main tables selected
 - [x] Main figures selected
 - [x] Figure legends included
@@ -81,13 +81,14 @@ Additional results remain in supplementary material.
 - [x] Insert corresponding author's email: kyereofosu2003@gmail.com
 - [ ] Add postal code to affiliation if required by the submission form
 - [ ] Confirm ORCID placement if desired
+- [ ] Confirm CRediT roles with all four authors
 - [x] Confirm Clement Acheampong's affiliation: KNUST, Department of Statistics and Actuarial Science
-- [x] Confirm academic supervisor: Dr. Wilhemina Adoma Pels, KNUST, Department of Statistics and Actuarial Science
-- [x] Confirm co-author: Clement Acheampong; academic supervisor: Dr. Wilhemina
+- [x] Confirm second author: Wilhemina Adoma Pels, KNUST, Department of Statistics and Actuarial Science
+- [x] Confirm final author order: Gideon Ofosu Kyere; Wilhemina Adoma Pels; Prince Apaah; Clement Acheampong
 - [ ] Convert Tables I–II to the journal's preferred editable Word/table format
 - [ ] Export Figures 1–2 as journal-compatible high-resolution files (preferably TIFF/EPS/JPG as requested)
 - [ ] Add page/line numbering only if requested by the submission system
-- [x] Verify all seven bibliography entries against their final source records
+- [x] Verify expanded bibliography against final source records
 - [ ] Upload an official STROBE checklist if the submission system requests it
 - [ ] Perform final grammar/typesetting proofread
 
