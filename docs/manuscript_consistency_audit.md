@@ -2,79 +2,80 @@
 
 ## Status
 
-**Core numerical consistency: PASS**
+**Reproducibility and numerical consistency: PASS, with one documented estimator warning**
 
-The manuscript, result tables, and figures were checked against the locked analysis outputs.
+The manuscript, result tables, figures, and executable scripts were checked against fresh reruns using the authorized 2022 Ghana DHS IR file.
 
-## Locked study numbers
+## Validated core numbers
 
-| Quantity | Locked value |
+| Quantity | Validated value |
 |---|---:|
 | Full IR sample | 15,014 |
 | Valid anaemia sample | 7,557 |
-| Complete BMI model sample | 7,550 |
+| Complete adjusted-model sample | 7,550 |
 | Overall weighted prevalence | 41.12% |
 | Overall 95% CI | 39.60%–42.64% |
-| Erreygers concentration index | -0.0589 |
-| Bootstrap 95% CI | -0.0914 to -0.0212 |
-| BMI decomposition contribution | 77.8% |
-| Education contribution | 17.3% |
+| Standard concentration index | -0.035831 |
+| Erreygers concentration index | -0.058938 |
 | Pregnancy aOR | 1.77 |
-| Pregnancy 95% CI | 1.43–2.21 |
 | Overweight aOR | 0.73 |
 | Obesity aOR | 0.60 |
 | Oti aOR | 1.48 |
 | Bono aOR | 0.61 |
-| Null ICC | 4.35% |
-| Adjusted ICC | 3.14% |
-| Adjusted MOR | 1.37 |
-| Proportional change in cluster variance | 28.8% |
+
+## Validated decomposition
+
+The final executable decomposition uses DHS age-group indicators, years of schooling, residence, pregnancy status, continuous parity, BMI plus BMI squared, employment, and current union status.
+
+| Domain | Point contribution | 95% bootstrap interval |
+|---|---:|---:|
+| BMI / nutritional status | -0.045731 | -0.061716 to -0.030045 |
+| Education | -0.009184 | -0.025104 to 0.006950 |
+| Residence | -0.004023 | -0.023362 to 0.013460 |
+| Parity | -0.002892 | -0.014688 to 0.009773 |
+| Pregnancy status | -0.002221 | -0.005493 to 0.000020 |
+| Age | +0.000570 | -0.003250 to 0.004169 |
+| Employment | +0.000021 | -0.000592 to 0.000687 |
+| Marital/union status | +0.001203 | -0.002581 to 0.005772 |
+| Residual | +0.003405 | -0.017297 to 0.025089 |
+
+The BMI contribution is 77.7% of the observed Erreygers index in the complete-case decomposition sample.
+
+## Validated multilevel heterogeneity
+
+The variational-Bayes implementation reproduced the stored cluster-level heterogeneity estimates:
+
+| Measure | Null model | Adjusted model |
+|---|---:|---:|
+| Cluster SD | 0.386982 | 0.326441 |
+| Cluster variance | 0.149755 | 0.106564 |
+| ICC | 4.3538% | 3.1375% |
+| MOR | 1.4465 | 1.3653 |
+| PCV | — | 28.8411% |
+
+The MAP/Laplace implementation failed to converge and is diagnostic only. `statsmodels` emitted a VB convergence warning, but the reproduced heterogeneity quantities matched the stored results to the reported precision. That warning is retained in the reproducibility record.
 
 ## Cross-file checks
 
-### Abstract vs Results
-PASS. Primary prevalence, concentration index, BMI contribution, pregnancy estimate, BMI estimates, and adjusted ICC agree.
+- Abstract and Results use the validated prevalence, inequality, and decomposition summary.
+- Table 1 and Table 2 remain consistent with the validated survey-weighted results.
+- Supplementary Table S1 uses the validated 200-replicate decomposition.
+- Supplementary Table S2 uses the validated VB heterogeneity estimates.
+- Figure 4 has been regenerated to use the validated decomposition values.
+- Interpretation remains non-causal throughout.
 
-### Table 1 vs Results
-PASS. Wealth, education, residence, pregnancy, BMI, and overall prevalence values agree.
+## Remaining submission items
 
-### Table 2 vs Results
-PASS. Pregnancy, overweight, obesity, Oti, and Bono estimates agree.
-
-### Decomposition vs Discussion
-PASS. BMI and education contributions agree. Discussion language correctly treats contributions as statistical rather than causal.
-
-### Community heterogeneity
-PASS. Null and adjusted variances, ICCs, MORs, and proportional change in variance agree.
-
-### Figures
-PASS for values represented in the SVG figures:
-- concentration curve: Erreygers index and CI;
-- regional plot: prevalence range and national reference;
-- wealth gradient: quintile prevalence estimates;
-- decomposition plot: locked absolute contributions.
-
-## Issues fixed during manuscript assembly
-
-1. Mathematical expressions were normalized to valid LaTeX syntax.
-2. The complete-case regression sample is distinguished from the primary anaemia sample.
-3. The BMI finding is consistently described as an association, not a causal protective effect.
-4. Socioeconomic inequality is distinguished from adjusted wealth coefficients.
-5. Multilevel estimates are described as complementary contextual analyses rather than design-based national estimates.
-
-## Remaining items before journal submission
-
-1. Add full methodological references.
-2. Confirm journal-specific ethics wording against the Ghana DHS final report and DHS data-access statement.
-3. Choose the target journal and reformat title page, abstract headings, references, tables, and figures.
-4. Add author affiliation, correspondence email, ORCID, and any co-authors.
-5. Run a final reproducibility check from a fresh environment using only repository code plus locally supplied DHS data.
-6. Add page/figure/table numbering according to the target journal.
+1. Insert the final corresponding-author email.
+2. Confirm final author list and ORCID placement.
+3. Export editable journal tables and publication-resolution figures.
+4. Run final journal formatting and reference verification.
+5. Include the AI-use disclosure exactly as required by the target journal.
 
 ## Interpretation guardrails
 
 - Do not call the anaemia outcome iron-deficiency anaemia.
-- Do not state that obesity protects against anaemia.
+- Do not state that overweight or obesity protects against anaemia.
 - Do not describe decomposition percentages as causal mediation.
 - Do not infer individual-level effects from the concentration index.
 - Do not claim geographic causation from regional associations.
