@@ -16,9 +16,9 @@ The concentration curve lay predominantly above the line of equality. For exampl
 
 ## Decomposition of wealth-related inequality
 
-Decomposition of the Erreygers concentration index indicated that BMI and nutritional status made the largest measured contribution to wealth-related anaemia inequality, accounting for approximately **77.8%** of the observed index in the primary specification. Education contributed approximately **17.3%**, followed by residence (**6.5%**), parity (**5.5%**), and pregnancy status (**3.7%**). Some domains acted in the opposite direction, and the residual component offset part of the explained inequality.
+Decomposition of the Erreygers concentration index indicated that BMI and nutritional status made the largest measured contribution to wealth-related anaemia inequality, accounting for approximately **77.7%** of the observed index in the reproducible specification. Education contributed approximately **15.6%**, followed by residence (**6.8%**), parity (**4.9%**), and pregnancy status (**3.8%**). Age, employment, and marital/union status made small offsetting contributions, and the residual component offset part of the explained inequality.
 
-In a stratified PSU bootstrap, the BMI/nutritional-status contribution remained consistently negative, with an approximate 95% interval of **-0.0592 to -0.0318**. Reparameterising BMI using clinical categories produced a similar contribution of approximately **73.1%**, supporting the robustness of this finding to alternative BMI specification.
+In a 200-replicate stratified PSU bootstrap, the BMI/nutritional-status contribution remained consistently negative, with an approximate 95% interval of **-0.0617 to -0.0300**. Bootstrap intervals for the smaller domains included zero, so their individual magnitudes should be interpreted cautiously.
 
 ## Adjusted associations with anaemia
 
