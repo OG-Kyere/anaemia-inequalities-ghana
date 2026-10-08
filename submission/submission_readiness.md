@@ -41,7 +41,7 @@ Prepared and internally aligned:
 
 ## Authorship status
 
-Confirmed authors: **Gideon Ofosu Kyere and Clement Acheampong**.  
+Confirmed authors: **Gideon Ofosu Kyere, Prince Apaah and Clement Acheampong**.  
 Academic supervisor: **Dr. Wilhemina** (acknowledged separately; not listed as an author at this stage).
 
 ## Remaining before submission
