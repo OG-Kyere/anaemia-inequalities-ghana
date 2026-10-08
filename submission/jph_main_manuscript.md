@@ -58,7 +58,7 @@ Uncertainty for the corrected index was assessed using stratified primary-sampli
 
 ### Decomposition analysis
 
-The Erreygers index was decomposed using a survey-weighted linear probability model based on established concentration-index decomposition methods.[5] The decomposition model included age, years of education, residence, pregnancy status, parity, BMI, employment and marital status. Wealth itself was not entered as a determinant because it defined the socioeconomic ranking. Age and BMI were represented using linear and quadratic terms in the primary specification.
+The Erreygers index was decomposed using a survey-weighted linear probability model based on established concentration-index decomposition methods.[5] The decomposition model included age, years of education, residence, pregnancy status, parity, BMI, employment and marital status. Wealth itself was not entered as a determinant because it defined the socioeconomic ranking. The reproducible specification used DHS five-year age-group indicators and modelled BMI with linear and quadratic terms.
 
 For each domain, the contribution reflected the combination of its association with anaemia and its socioeconomic distribution. Bootstrap resampling was used to assess uncertainty. Because decomposition is model dependent, all contributions were interpreted as statistical rather than causal.
 
@@ -94,7 +94,7 @@ The standard concentration index was **-0.0358**, while the Erreygers-corrected 
 
 BMI/nutritional status made the largest measured contribution to wealth-related inequality, accounting for approximately **77.8%** of the observed Erreygers index. Education contributed **17.3%**, residence **6.5%**, parity **5.5%** and pregnancy status **3.7%**. Some components acted in the opposite direction, so contributions exceeded 100% before accounting for the residual.
 
-The BMI-domain contribution remained consistently negative in the bootstrap analysis (**-0.0458**, 95% bootstrap interval **-0.0592 to -0.0318**). Replacing the nonlinear continuous BMI specification with clinical BMI categories produced a similar contribution of **73.1%**, suggesting that the result was not solely an artefact of functional form.
+The BMI-domain contribution remained consistently negative in the 200-replicate bootstrap (**-0.0457**, 95% bootstrap interval **-0.0617 to -0.0300**). Bootstrap intervals for the smaller domains included zero, so their individual contributions should be interpreted cautiously.
 
 ### Adjusted associations with anaemia
 
@@ -108,7 +108,7 @@ The overall Wald tests for wealth quintile and education were not statistically 
 
 ### Community-level heterogeneity
 
-The null multilevel model had cluster-level variance **0.150**, corresponding to ICC **4.35%** and MOR **1.45**. After adjustment, cluster variance declined to **0.107**, with ICC **3.14%** and MOR **1.37**. Measured covariates therefore accounted for approximately **28.8%** of the between-cluster variance, while residual contextual heterogeneity remained.
+The null multilevel model had cluster-level variance **0.150**, corresponding to ICC **4.35%** and MOR **1.45**. After adjustment, cluster variance declined to **0.107**, with ICC **3.14%** and MOR **1.37**. These estimates were reproduced with the variational-Bayes implementation. Measured covariates therefore accounted for approximately **28.8%** of the between-cluster variance, while residual contextual heterogeneity remained.
 
 ## Discussion
 
