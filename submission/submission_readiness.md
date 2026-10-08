@@ -50,7 +50,7 @@ Academic supervisor: **Dr. Wilhemina** (acknowledged separately; not listed as a
 2. Confirm Clement Acheampong's affiliation.
 3. Confirm Dr. Wilhemina's full professional name and affiliation.
 4. Decide whether to show ORCID on the title page.
-4. Run `python src/05_prepare_submission_assets.py` locally and inspect the generated CSV/PNG/TIFF files.
-5. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
+5. Run `python src/05_prepare_submission_assets.py` locally and inspect the generated CSV/PNG/TIFF files.
+6. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
 
 No further statistical analysis is required unless the journal requests revisions.
