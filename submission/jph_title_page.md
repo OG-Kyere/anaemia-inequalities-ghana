@@ -21,7 +21,7 @@ Kumasi, Ghana
 
 ## Academic supervisor
 
-**Dr. Wilhemina**  
+**Dr. Wilhemina Adoma Pels**  
 Academic Supervisor  
 Department of Statistics and Actuarial Science  
 Kwame Nkrumah University of Science and Technology  
@@ -33,7 +33,7 @@ Gideon Ofosu Kyere
 Department of Statistics and Actuarial Science  
 Kwame Nkrumah University of Science and Technology  
 Kumasi, Ghana  
-Email: **[insert email before submission]**
+Email: **kyereofosu2003@gmail.com**
 
 ## Running title
 
