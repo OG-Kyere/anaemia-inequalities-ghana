@@ -133,16 +133,31 @@ def check_submission_consistency() -> int:
                 fail(f"{path.relative_to(ROOT)} contains {meaning}: {token}")
 
     title = (ROOT / "submission" / "jph_title_page.md").read_text(encoding="utf-8")
-    if "Gideon Ofosu Kyere" in title and "Clement Acheampong" in title:
-        ok("confirmed authors appear on title page")
+    final_authors = [
+        "Gideon Ofosu Kyere",
+        "Wilhemina Adoma Pels",
+        "Prince Apaah",
+        "Clement Acheampong",
+    ]
+    missing_authors = [name for name in final_authors if name not in title]
+    if not missing_authors:
+        ok("all four confirmed authors appear on title page in the submission package")
     else:
         failures += 1
-        fail("title page does not contain both confirmed authors")
+        fail("title page is missing confirmed author(s): " + ", ".join(missing_authors))
 
-    if "Dr. Wilhemina" in title:
-        ok("academic supervisor appears on title page")
+    positions = [title.find(name) for name in final_authors]
+    if all(pos >= 0 for pos in positions) and positions == sorted(positions):
+        ok("author order is Gideon, Wilhemina, Prince, Clement")
     else:
-        warn("academic supervisor not found on title page")
+        failures += 1
+        fail("title-page author order does not match the confirmed final order")
+
+    if "Academic supervisor" in title or "## Academic supervisor" in title:
+        failures += 1
+        fail("title page still treats Wilhemina Adoma Pels as a non-author supervisor")
+    else:
+        ok("no obsolete supervisor-only title-page section remains")
 
     unresolved = []
     for path in SUBMISSION_FILES:
