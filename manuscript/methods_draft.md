@@ -96,9 +96,9 @@ The Erreygers concentration index was decomposed to quantify the statistical con
 
 A survey-weighted linear probability model was used because additive decomposition requires an additive outcome model.
 
-The decomposition model included age, education, residence, pregnancy status, parity, BMI, employment, and marital status. Wealth itself was not included as a determinant because it defined the socioeconomic ranking.
+The reproducible decomposition model included DHS five-year age-group indicators, years of schooling, residence, pregnancy status, continuous parity, BMI, employment, and current union status. Wealth itself was not included as a determinant because it defined the socioeconomic ranking.
 
-Age and BMI were modelled flexibly using linear and quadratic terms in the primary decomposition.
+BMI was modelled using linear and quadratic terms.
 
 Domain-specific contributions were calculated from the elasticity of anaemia with respect to each determinant and the determinant-specific concentration index.
 
@@ -116,7 +116,7 @@ Overall Wald tests were used to assess categorical factors.
 
 ## Multilevel analysis
 
-To quantify community-level heterogeneity, two-level logistic mixed models were fitted with women nested within DHS sampling clusters.
+To quantify community-level heterogeneity, two-level logistic mixed models were fitted with women nested within DHS sampling clusters using a variational-Bayes estimator.
 
 The null model contained only a random intercept for cluster.
 
