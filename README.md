@@ -1,37 +1,37 @@
 # Socioeconomic and Geographic Inequalities in Anaemia Among Women of Reproductive Age in Ghana
 
-This repository contains the reproducible workflow, aggregate results, figures, and manuscript materials for a biostatistics study of socioeconomic and geographic inequalities in anaemia among women aged 15–49 years in Ghana.
+This repository holds the analysis, aggregate results, figures, and manuscript files for a study of anaemia inequalities among women aged 15–49 years in Ghana.
 
-## Study aim
-
-The project quantifies wealth-related inequality in anaemia, identifies measured contributors to observed disparities, estimates adjusted associations, and assesses geographic and community-level heterogeneity.
+The main question is not only how common anaemia is, but **who carries more of the burden and where the differences persist**. The analysis therefore combines national prevalence estimation with socioeconomic inequality measures, adjusted regression, and community-level modelling.
 
 ## Data source
 
-The analysis uses the **2022 Ghana Demographic and Health Survey (GDHS)**.
+The study uses the **2022 Ghana Demographic and Health Survey (GDHS)**.
 
-> **Important:** DHS microdata are restricted-use data and are **not** included in this repository. Reproduction requires independent authorization from The DHS Program.
+> **Important:** DHS microdata are restricted-use data and are **not** included here. Anyone reproducing the analysis must obtain independent access from The DHS Program.
 
 ## Analytic sample
 
 - Full Ghana 2022 Individual Recode file: 15,014 women
-- Women with valid anaemia classification: 7,557
+- Women with a valid anaemia classification: 7,557
 - Survey-weighted anaemia prevalence: 41.12%
 
-## Analyses
+## What the analysis covers
 
 - complex-survey prevalence estimation
 - concentration curve and Erreygers-corrected concentration index
 - decomposition of wealth-related inequality
 - survey-weighted logistic regression
-- multilevel cluster-heterogeneity analysis
+- multilevel analysis of cluster-level heterogeneity
 - geographic and sensitivity analyses
+
+The concentration-index work asks whether anaemia is disproportionately concentrated among poorer women. The multilevel component asks a different question: how much variation remains between communities after measured individual and household characteristics are taken into account.
 
 ## Repository structure
 
-```
+```text
 data/           Access instructions only; no restricted microdata
-docs/           Protocol, statistical analysis plan, audits
+docs/           Protocol, statistical analysis plan, and audit notes
 figures/        Aggregate publication figures
 results/        Aggregate tables and model summaries
 manuscript/     Manuscript development files
@@ -41,13 +41,15 @@ submission/     Journal-targeted submission materials
 
 ## Current status
 
-Core analyses are complete. A journal-targeted manuscript and supplementary package have been prepared for *Journal of Public Health* (Oxford University Press). Final submission tasks include inserting the corresponding author's email, final journal formatting, and a clean-environment reproducibility run.
+The core analyses are complete. A journal-targeted manuscript and supplementary package have been prepared for *Journal of Public Health* (Oxford University Press).
+
+The main tasks still outstanding before submission are a clean-environment reproducibility run, final journal formatting, and completion of the corresponding-author details.
 
 ## Data governance
 
-Raw DHS files, extracted row-level datasets, and derived row-level data must remain outside Git. The repository's `.gitignore` explicitly excludes the Ghana IR dataset and downloaded DHS ZIP archives.
+Raw DHS files, extracted row-level datasets, and derived row-level data must stay outside Git. The repository's `.gitignore` excludes the Ghana IR dataset, common statistical data formats, and downloaded Ghana DHS ZIP archives.
 
 ## Author
 
-Gideon Ofosu Kyere  
+**Gideon Ofosu Kyere**  
 Kwame Nkrumah University of Science and Technology, Ghana
