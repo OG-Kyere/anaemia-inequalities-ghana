@@ -46,9 +46,9 @@ Academic supervisor: **Dr. Wilhemina** (acknowledged separately; not listed as a
 
 ## Remaining before submission
 
-1. Insert the corresponding-author email in the title page and cover letter.
+1. Corresponding-author email confirmed: **kyereofosu2003@gmail.com**.
 2. Clement Acheampong's affiliation confirmed: KNUST, Department of Statistics and Actuarial Science.
-3. Dr. Wilhemina's affiliation confirmed: KNUST, Department of Statistics and Actuarial Science; full professional name still to confirm.
+3. Academic supervisor confirmed: **Dr. Wilhemina Adoma Pels**, KNUST, Department of Statistics and Actuarial Science.
 4. Decide whether to show ORCID on the title page.
 5. Run `python src/05_prepare_submission_assets.py` locally and inspect the generated CSV/PNG/TIFF files.
 6. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
