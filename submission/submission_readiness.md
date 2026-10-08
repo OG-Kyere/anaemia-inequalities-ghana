@@ -41,16 +41,16 @@ Prepared and internally aligned:
 
 ## Authorship status
 
-Confirmed authors: **Gideon Ofosu Kyere, Prince Apaah and Clement Acheampong**.  
-Academic supervisor: **Dr. Wilhemina** (acknowledged separately; not listed as an author at this stage).
+Confirmed authors: **Gideon Ofosu Kyere, Wilhemina Adoma Pels, Prince Apaah and Clement Acheampong**.
 
 ## Remaining before submission
 
 1. Corresponding-author email confirmed: **kyereofosu2003@gmail.com**.
 2. Clement Acheampong's affiliation confirmed: KNUST, Department of Statistics and Actuarial Science.
-3. Academic supervisor confirmed: **Dr. Wilhemina Adoma Pels**, KNUST, Department of Statistics and Actuarial Science.
+3. Wilhemina Adoma Pels confirmed as second author; all authors are affiliated with KNUST, Department of Statistics and Actuarial Science.
 4. Decide whether to show ORCID on the title page.
-5. Run `python src/05_prepare_submission_assets.py` locally and inspect the generated CSV/PNG/TIFF files.
-6. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
+5. Confirm specific CRediT roles with all four authors.
+6. Run `python src/05_prepare_submission_assets.py` locally and inspect the generated CSV/PNG/TIFF files.
+7. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
 
 No further statistical analysis is required unless the journal requests revisions.
