@@ -8,6 +8,7 @@ from common import (
     ci95,
     concentration_indices,
     load_analysis_data,
+    survey_domain_proportion,
     survey_ratio_se,
 )
 
@@ -17,17 +18,21 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 def subgroup_table(df: pd.DataFrame, variable: str) -> pd.DataFrame:
     rows = []
-    for level, g in df.groupby(variable, dropna=False, observed=True):
-        if pd.isna(level):
-            continue
-        est, se = survey_ratio_se(
-            g["anaemia"], g["weight"], g["strata"], g["psu"]
+    levels = [x for x in df[variable].dropna().unique()]
+    for level in levels:
+        domain = df[variable].eq(level)
+        est, se = survey_domain_proportion(
+            df["anaemia"],
+            domain,
+            df["weight"],
+            df["strata"],
+            df["psu"],
         )
         lo, hi = ci95(est, se)
         rows.append({
             "variable": variable,
             "category": str(level),
-            "n_unweighted": int(len(g)),
+            "n_unweighted": int(domain.sum()),
             "weighted_prevalence": est,
             "ci_low": lo,
             "ci_high": hi,
