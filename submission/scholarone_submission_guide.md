@@ -65,13 +65,13 @@ Use the manuscript's Data Availability statement. The DHS microdata are third-pa
 
 ### Conflict of interest
 
-**The author declares no conflict of interest.**
+**The authors declare no conflict of interest.**
 
 ### AI disclosure
 
 Use the existing disclosure in both the manuscript and cover letter:
 
-OpenAI ChatGPT was used to assist with code development, statistical workflow documentation and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the author, who takes full responsibility for the work.
+OpenAI ChatGPT was used to assist with code development, statistical workflow documentation and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.
 
 JPH explicitly requires disclosure of AI use when AI has been used for content generation, code, data processing, translation, or similar assistance.
 
@@ -85,16 +85,18 @@ JPH states that all listed authors should have made significant contributions an
 
 Before submission, lock:
 
-- final author list;
+- final author list: Gideon Ofosu Kyere and Clement Acheampong;
 - author order;
 - corresponding author;
 - corresponding-author email.
+
+Dr. Wilhemina is acknowledged as academic supervisor and is not listed as an author at this stage.
 
 ## Final fields still requiring author input
 
 - corresponding-author email;
 - postal code for the KNUST affiliation if requested by the form;
-- final author/co-author list;
+- final author/co-author list: Gideon Ofosu Kyere and Clement Acheampong;
 - ORCID placement decision.
 
 ## Final upload order
