@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="800" viewBox="0 0 860 800">
+  <rect width="100%" height="100%" fill="white"/>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#111}
+    .axis{stroke:#333;stroke-width:1}
+    .grid{stroke:#ddd;stroke-width:1}
+    .line{fill:none;stroke:#111;stroke-width:3}
+    .eq{fill:none;stroke:#777;stroke-width:2;stroke-dasharray:7 6}
+    .pt{fill:#111}
+    .err{stroke:#555;stroke-width:2}
+  </style>
+  <text x="430" y="32" text-anchor="middle" font-size="20" font-weight="700">Survey-weighted anaemia prevalence by region</text>
+  <line class="axis" x1="180" y1="740" x2="810" y2="740"/><line class="grid" x1="180" y1="65" x2="180" y2="740"/>
+  <text x="180" y="764" text-anchor="middle" font-size="12">20%</text><line class="grid" x1="337.5" y1="65" x2="337.5" y2="740"/>
+  <text x="337.5" y="764" text-anchor="middle" font-size="12">30%</text><line class="grid" x1="495" y1="65" x2="495" y2="740"/>
+  <text x="495" y="764" text-anchor="middle" font-size="12">40%</text><line class="grid" x1="652.5" y1="65" x2="652.5" y2="740"/>
+  <text x="652.5" y="764" text-anchor="middle" font-size="12">50%</text><line class="grid" x1="810" y1="65" x2="810" y2="740"/>
+  <text x="810" y="764" text-anchor="middle" font-size="12">60%</text><line class="eq" x1="512.6399999999999" y1="65" x2="512.6399999999999" y2="740"/><text x="168" y="89" text-anchor="end" font-size="12">Bono</text>
+  <line class="err" x1="231.97500000000002" y1="85" x2="447.75" y2="85"/>
+  <line class="err" x1="231.97500000000002" y1="80" x2="231.97500000000002" y2="90"/>
+  <line class="err" x1="447.75" y1="80" x2="447.75" y2="90"/>
+  <circle class="pt" cx="339.07500000000005" cy="85" r="4"/><text x="168" y="131.66666666666666" text-anchor="end" font-size="12">Ahafo</text>
+  <line class="err" x1="357.975" y1="127.66666666666666" x2="493.42499999999995" y2="127.66666666666666"/>
+  <line class="err" x1="357.975" y1="122.66666666666666" x2="357.975" y2="132.66666666666666"/>
+  <line class="err" x1="493.42499999999995" y1="122.66666666666666" x2="493.42499999999995" y2="132.66666666666666"/>
+  <circle class="pt" cx="425.70000000000005" cy="127.66666666666666" r="4"/><text x="168" y="174.33333333333331" text-anchor="end" font-size="12">Western North</text>
+  <line class="err" x1="340.65" y1="170.33333333333331" x2="532.8" y2="170.33333333333331"/>
+  <line class="err" x1="340.65" y1="165.33333333333331" x2="340.65" y2="175.33333333333331"/>
+  <line class="err" x1="532.8" y1="165.33333333333331" x2="532.8" y2="175.33333333333331"/>
+  <circle class="pt" cx="436.72499999999997" cy="170.33333333333331" r="4"/><text x="168" y="217" text-anchor="end" font-size="12">Ashanti</text>
+  <line class="err" x1="391.04999999999995" y1="213" x2="518.625" y2="213"/>
+  <line class="err" x1="391.04999999999995" y1="208" x2="391.04999999999995" y2="218"/>
+  <line class="err" x1="518.625" y1="208" x2="518.625" y2="218"/>
+  <circle class="pt" cx="455.625" cy="213" r="4"/><text x="168" y="259.66666666666663" text-anchor="end" font-size="12">Eastern</text>
+  <line class="err" x1="367.42499999999995" y1="255.66666666666666" x2="543.825" y2="255.66666666666666"/>
+  <line class="err" x1="367.42499999999995" y1="250.66666666666666" x2="367.42499999999995" y2="260.66666666666663"/>
+  <line class="err" x1="543.825" y1="250.66666666666666" x2="543.825" y2="260.66666666666663"/>
+  <circle class="pt" cx="455.625" cy="255.66666666666666" r="4"/><text x="168" y="302.33333333333337" text-anchor="end" font-size="12">Greater Accra</text>
+  <line class="err" x1="408.375" y1="298.33333333333337" x2="543.825" y2="298.33333333333337"/>
+  <line class="err" x1="408.375" y1="293.33333333333337" x2="408.375" y2="303.33333333333337"/>
+  <line class="err" x1="543.825" y1="293.33333333333337" x2="543.825" y2="303.33333333333337"/>
+  <circle class="pt" cx="476.09999999999997" cy="298.33333333333337" r="4"/><text x="168" y="345" text-anchor="end" font-size="12">Bono East</text>
+  <line class="err" x1="416.25" y1="341" x2="584.7750000000001" y2="341"/>
+  <line class="err" x1="416.25" y1="336" x2="416.25" y2="346"/>
+  <line class="err" x1="584.7750000000001" y1="336" x2="584.7750000000001" y2="346"/>
+  <circle class="pt" cx="499.72499999999997" cy="341" r="4"/><text x="168" y="387.6666666666667" text-anchor="end" font-size="12">Volta</text>
+  <line class="err" x1="455.625" y1="383.6666666666667" x2="628.875" y2="383.6666666666667"/>
+  <line class="err" x1="455.625" y1="378.6666666666667" x2="455.625" y2="388.6666666666667"/>
+  <line class="err" x1="628.875" y1="378.6666666666667" x2="628.875" y2="388.6666666666667"/>
+  <circle class="pt" cx="542.25" cy="383.6666666666667" r="4"/><text x="168" y="430.3333333333333" text-anchor="end" font-size="12">Savannah</text>
+  <line class="err" x1="469.79999999999995" y1="426.3333333333333" x2="621" y2="426.3333333333333"/>
+  <line class="err" x1="469.79999999999995" y1="421.3333333333333" x2="469.79999999999995" y2="431.3333333333333"/>
+  <line class="err" x1="621" y1="421.3333333333333" x2="621" y2="431.3333333333333"/>
+  <circle class="pt" cx="545.4000000000001" cy="426.3333333333333" r="4"/><text x="168" y="473" text-anchor="end" font-size="12">Central</text>
+  <line class="err" x1="482.40000000000003" y1="469" x2="646.2" y2="469"/>
+  <line class="err" x1="482.40000000000003" y1="464" x2="482.40000000000003" y2="474"/>
+  <line class="err" x1="646.2" y1="464" x2="646.2" y2="474"/>
+  <circle class="pt" cx="564.3" cy="469" r="4"/><text x="168" y="515.6666666666667" text-anchor="end" font-size="12">North East</text>
+  <line class="err" x1="499.72499999999997" y1="511.6666666666667" x2="647.7750000000001" y2="511.6666666666667"/>
+  <line class="err" x1="499.72499999999997" y1="506.6666666666667" x2="499.72499999999997" y2="516.6666666666667"/>
+  <line class="err" x1="647.7750000000001" y1="506.6666666666667" x2="647.7750000000001" y2="516.6666666666667"/>
+  <circle class="pt" cx="573.75" cy="511.6666666666667" r="4"/><text x="168" y="558.3333333333333" text-anchor="end" font-size="12">Western</text>
+  <line class="err" x1="499.72499999999997" y1="554.3333333333333" x2="674.55" y2="554.3333333333333"/>
+  <line class="err" x1="499.72499999999997" y1="549.3333333333333" x2="499.72499999999997" y2="559.3333333333333"/>
+  <line class="err" x1="674.55" y1="549.3333333333333" x2="674.55" y2="559.3333333333333"/>
+  <circle class="pt" cx="587.925" cy="554.3333333333333" r="4"/><text x="168" y="601" text-anchor="end" font-size="12">Upper West</text>
+  <line class="err" x1="510.75" y1="597" x2="677.7" y2="597"/>
+  <line class="err" x1="510.75" y1="592" x2="510.75" y2="602"/>
+  <line class="err" x1="677.7" y1="592" x2="677.7" y2="602"/>
+  <circle class="pt" cx="594.2249999999999" cy="597" r="4"/><text x="168" y="643.6666666666666" text-anchor="end" font-size="12">Upper East</text>
+  <line class="err" x1="510.75" y1="639.6666666666666" x2="699.75" y2="639.6666666666666"/>
+  <line class="err" x1="510.75" y1="634.6666666666666" x2="510.75" y2="644.6666666666666"/>
+  <line class="err" x1="699.75" y1="634.6666666666666" x2="699.75" y2="644.6666666666666"/>
+  <circle class="pt" cx="605.25" cy="639.6666666666666" r="4"/><text x="168" y="686.3333333333334" text-anchor="end" font-size="12">Northern</text>
+  <line class="err" x1="564.3" y1="682.3333333333334" x2="688.7249999999999" y2="682.3333333333334"/>
+  <line class="err" x1="564.3" y1="677.3333333333334" x2="564.3" y2="687.3333333333334"/>
+  <line class="err" x1="688.7249999999999" y1="677.3333333333334" x2="688.7249999999999" y2="687.3333333333334"/>
+  <circle class="pt" cx="627.3" cy="682.3333333333334" r="4"/><text x="168" y="729" text-anchor="end" font-size="12">Oti</text>
+  <line class="err" x1="602.0999999999999" y1="725" x2="759.5999999999999" y2="725"/>
+  <line class="err" x1="602.0999999999999" y1="720" x2="602.0999999999999" y2="730"/>
+  <line class="err" x1="759.5999999999999" y1="720" x2="759.5999999999999" y2="730"/>
+  <circle class="pt" cx="680.8499999999999" cy="725" r="4"/><text x="495" y="782" text-anchor="middle" font-size="14">Anaemia prevalence (%)</text>
+<text x="520.6399999999999" y="81" font-size="12">National: 41.1%</text>
+  </svg>
