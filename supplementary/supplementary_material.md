@@ -16,17 +16,17 @@ Uncertainty in the corrected concentration index and decomposition estimates was
 
 The decomposition used an additive survey-weighted linear probability model. Wealth was used to construct the socioeconomic ranking and was not entered as an explanatory determinant.
 
-The primary decomposition included:
-- age;
-- education;
+The reproducible decomposition included:
+- DHS five-year age-group indicators;
+- years of schooling;
 - residence;
 - pregnancy status;
-- parity;
+- continuous parity;
 - BMI;
 - employment;
-- marital/union status.
+- current union status.
 
-BMI and age were entered using linear and quadratic terms in the primary specification.
+BMI was entered using linear and quadratic terms. Wealth was used only to rank women.
 
 ### Multilevel analysis
 
@@ -46,17 +46,17 @@ The median odds ratio was used to express cluster heterogeneity on the odds-rati
 
 | Domain | Absolute contribution | % of observed Erreygers index | 95% bootstrap interval |
 |---|---:|---:|---:|
-| BMI / nutritional status | -0.0458 | 77.8% | -0.0592 to -0.0318 |
-| Education | -0.0102 | 17.3% | -0.0316 to 0.0080 |
-| Residence | -0.0038 | 6.5% | -0.0246 to 0.0164 |
-| Parity | -0.0032 | 5.5% | -0.0136 to 0.0097 |
-| Pregnancy status | -0.0022 | 3.7% | -0.0047 to 0.0003 |
-| Age | -0.0002 | 0.3% | -0.0043 to 0.0034 |
-| Employment | +0.00003 | -0.04% | -0.0007 to 0.0008 |
-| Marital/union status | +0.0013 | -2.3% | -0.0024 to 0.0051 |
-| Residual | +0.0051 | -8.7% | -0.0206 to 0.0303 |
+| BMI / nutritional status | -0.045731 | 77.7% | -0.061716 to -0.030045 |
+| Education | -0.009184 | 15.6% | -0.025104 to 0.006950 |
+| Residence | -0.004023 | 6.8% | -0.023362 to 0.013460 |
+| Parity | -0.002892 | 4.9% | -0.014688 to 0.009773 |
+| Pregnancy status | -0.002221 | 3.8% | -0.005493 to 0.000020 |
+| Age | +0.000570 | -1.0% | -0.003250 to 0.004169 |
+| Employment | +0.000021 | -0.04% | -0.000592 to 0.000687 |
+| Marital/union status | +0.001203 | -2.0% | -0.002581 to 0.005772 |
+| Residual | +0.003405 | -5.8% | -0.017297 to 0.025089 |
 
-The measured components sum to more than 100% because some terms act in the opposite direction and the residual offsets part of the explained inequality.
+The percentages are relative to the negative Erreygers index, so positive contributions appear as negative percentages and offset part of the measured pro-poor inequality.
 
 ---
 
@@ -82,11 +82,7 @@ Approximate uncertainty:
 
 The primary decomposition model treated BMI using linear and quadratic terms.
 
-When BMI was represented using clinical categories instead:
-- BMI-domain contribution to the Erreygers index: **-0.0430**;
-- proportion of observed inequality attributed to BMI domain: **73.1%**.
-
-The result was similar to the primary specification (77.8%), suggesting that the large BMI contribution was not solely due to the chosen functional form.
+The principal executable decomposition uses continuous BMI with a quadratic term. Earlier exploratory work with clinical BMI categories gave a similar substantive conclusion, but the fully reproducible specification reported above should be used for the final manuscript and supplementary tables.
 
 ---
 
