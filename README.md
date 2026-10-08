@@ -29,7 +29,7 @@ The concentration-index work asks whether anaemia is disproportionately concentr
 
 ## Repository structure
 
-```text
+\`\`\`text
 data/           Access instructions only; no restricted microdata
 docs/           Protocol, statistical analysis plan, and audit notes
 figures/        Aggregate publication figures
@@ -37,17 +37,19 @@ results/        Aggregate tables and model summaries
 manuscript/     Manuscript development files
 supplementary/  Supplementary methods and results
 submission/     Journal-targeted submission materials
-```
+\`\`\`
 
 ## Current status
 
-The core analyses are complete. A journal-targeted manuscript and supplementary package have been prepared for *Journal of Public Health* (Oxford University Press).
+The core descriptive, inequality, and adjusted-regression pipeline has been **validated by a fresh local rerun against the authorized 2022 Ghana DHS IR file**. The regenerated sample sizes, prevalence estimate, concentration indices, and main adjusted odds ratios matched the locked manuscript values.
 
-The main tasks still outstanding before submission are a clean-environment reproducibility run, final journal formatting, and completion of the corresponding-author details.
+A journal-targeted manuscript and supplementary package have been prepared for *Journal of Public Health* (Oxford University Press).
+
+The remaining technical work is to make the decomposition bootstrap and multilevel models fully executable from the same pipeline, then automate regeneration of the final publication tables and figures.
 
 ## Data governance
 
-Raw DHS files, extracted row-level datasets, and derived row-level data must stay outside Git. The repository's `.gitignore` excludes the Ghana IR dataset, common statistical data formats, and downloaded Ghana DHS ZIP archives.
+Raw DHS files, extracted row-level datasets, and derived row-level data must stay outside Git. The repository's \`.gitignore\` excludes the Ghana IR dataset, common statistical data formats, and downloaded Ghana DHS ZIP archives.
 
 ## Author
 
