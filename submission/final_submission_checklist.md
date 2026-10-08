@@ -81,8 +81,8 @@ Additional results remain in supplementary material.
 - [ ] Insert corresponding author's email
 - [ ] Add postal code to affiliation if required by the submission form
 - [ ] Confirm ORCID placement if desired
-- [ ] Confirm Clement Acheampong's affiliation
-- [ ] Confirm Dr. Wilhemina's full professional name and affiliation
+- [x] Confirm Clement Acheampong's affiliation: KNUST, Department of Statistics and Actuarial Science
+- [ ] Confirm Dr. Wilhemina's full professional name (affiliation confirmed: KNUST, Department of Statistics and Actuarial Science)
 - [x] Confirm co-author: Clement Acheampong; academic supervisor: Dr. Wilhemina
 - [ ] Convert Tables I–II to the journal's preferred editable Word/table format
 - [ ] Export Figures 1–2 as journal-compatible high-resolution files (preferably TIFF/EPS/JPG as requested)
