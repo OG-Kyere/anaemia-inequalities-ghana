@@ -39,11 +39,17 @@ Prepared and internally aligned:
 - Adjusted MOR: **1.37**
 - PCV: **28.8%**
 
+## Authorship status
+
+Confirmed authors: **Gideon Ofosu Kyere and Clement Acheampong**.  
+Academic supervisor: **Dr. Wilhemina** (acknowledged separately; not listed as an author at this stage).
+
 ## Remaining before submission
 
 1. Insert the corresponding-author email in the title page and cover letter.
-2. Confirm the final author list.
-3. Decide whether to show ORCID on the title page.
+2. Confirm Clement Acheampong's affiliation.
+3. Confirm Dr. Wilhemina's full professional name and affiliation.
+4. Decide whether to show ORCID on the title page.
 4. Run `python src/05_prepare_submission_assets.py` locally and inspect the generated CSV/PNG/TIFF files.
 5. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
 
