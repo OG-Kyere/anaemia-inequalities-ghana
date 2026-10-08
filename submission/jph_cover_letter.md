@@ -10,7 +10,7 @@ The study found that approximately two in five women were anaemic and that anaem
 
 We believe the manuscript is well suited to the *Journal of Public Health* because it goes beyond identifying individual-level correlates and directly addresses the distribution of disease burden, health inequality, and implications for public-health action.
 
-Academic supervision for the study was provided by Dr. Wilhemina.
+Academic supervision for the study was provided by Dr. Wilhemina, Department of Statistics and Actuarial Science, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana. Co-author Clement Acheampong is also affiliated with the Department of Statistics and Actuarial Science, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana.
 
 The manuscript is original, is not under consideration elsewhere, and uses de-identified secondary survey data obtained under The DHS Program's data-use conditions. The authors declare no competing interests and report no external funding.
 
