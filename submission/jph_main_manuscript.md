@@ -152,9 +152,9 @@ Reducing anaemia will therefore require population-wide prevention alongside equ
 
 ## Acknowledgements
 
-The author acknowledges The DHS Program, the Ghana Statistical Service and the Ghana Health Service for making the survey data available for research.
+The authors acknowledge The DHS Program, the Ghana Statistical Service and the Ghana Health Service for making the survey data available for research. The authors also gratefully acknowledge Dr. Wilhemina for academic supervision and guidance throughout the study.
 
-OpenAI ChatGPT was used to assist with code development, statistical workflow documentation and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the author, who takes full responsibility for the work.
+OpenAI ChatGPT was used to assist with code development, statistical workflow documentation and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.
 
 ## Data availability
 
@@ -166,7 +166,7 @@ No external funding was received.
 
 ## Conflict of interest
 
-The author declares no conflict of interest.
+The authors declare no conflict of interest.
 
 ## References
 
