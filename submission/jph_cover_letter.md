@@ -4,15 +4,13 @@ Dear Editors,
 
 Please consider our manuscript, **“Socioeconomic and Geographic Inequalities in Anaemia Among Women of Reproductive Age in Ghana,”** for publication as an Original Paper in the *Journal of Public Health*.
 
-Anaemia remains a persistent public-health problem among women in Ghana, yet national prevalence estimates do not show how the burden is distributed across socioeconomic groups and communities. Using nationally representative data, this study combines complex-survey analysis with an Erreygers-corrected concentration index, inequality decomposition, survey-weighted regression, and multilevel modelling.
+Anaemia remains a major public-health problem among Ghanaian women, but prevalence and conventional determinant models do not show how the burden is distributed across the socioeconomic hierarchy or how much contextual variation remains between communities. Using nationally representative 2022 Ghana Demographic and Health Survey data, our study integrates complex-survey prevalence estimation, the Erreygers-corrected concentration index, inequality decomposition, survey-weighted logistic regression and multilevel heterogeneity measures.
 
-The study found that approximately two in five women were anaemic and that anaemia was disproportionately concentrated among poorer women. Nutritional status accounted for the largest measured contribution to wealth-related inequality, while substantial regional and residual community-level heterogeneity remained after adjustment. These findings suggest that national averages alone may be insufficient for guiding anaemia-control strategies and support more equity-focused and geographically targeted intervention planning.
+The manuscript is differentiated from recent Ghanaian analyses of anaemia prevalence and individual risk factors by its explicit focus on **distributional inequality**. We quantify wealth-related inequality across the full socioeconomic ranking, estimate the measured domains contributing to that inequality, and examine residual geographic and community-level heterogeneity. Anaemia prevalence was approximately 41%, the Erreygers index indicated a disproportionate burden among poorer women, and important regional and community variation persisted after adjustment.
 
-We believe the manuscript is well suited to the *Journal of Public Health* because it goes beyond identifying individual-level correlates and directly addresses the distribution of disease burden, health inequality, and implications for public-health action.
+We believe this combination of equity measurement and geographic heterogeneity is directly relevant to the *Journal of Public Health*. The findings support monitoring anaemia not only through national averages but also through socioeconomic and geographic distributions that can inform more targeted public-health action.
 
-Academic supervision for the study was provided by Dr. Wilhemina Adoma Pels, Department of Statistics and Actuarial Science, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana. Co-authors Prince Apaah and Clement Acheampong are also affiliated with the Department of Statistics and Actuarial Science, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana.
-
-The manuscript is original, is not under consideration elsewhere, and uses de-identified secondary survey data obtained under The DHS Program's data-use conditions. The authors declare no competing interests and report no external funding.
+The manuscript is original, is not under consideration elsewhere, and uses de-identified secondary survey data obtained under The DHS Program's data-use conditions. All four authors—**Gideon Ofosu Kyere, Wilhemina Adoma Pels, Prince Apaah and Clement Acheampong**—are affiliated with the Department of Statistics and Actuarial Science, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana. The authors declare no competing interests and report no external funding.
 
 **AI disclosure:** OpenAI ChatGPT was used to assist with code development, statistical workflow documentation, and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations, and final text were reviewed and verified by the authors, who take full responsibility for the work.
 
@@ -22,8 +20,6 @@ Sincerely,
 
 **Gideon Ofosu Kyere**  
 Corresponding author  
-Co-authors: Prince Apaah; Clement Acheampong  
-Graduate Research and Teaching Assistant  
 Department of Statistics and Actuarial Science  
 Kwame Nkrumah University of Science and Technology  
 Kumasi, Ghana  
