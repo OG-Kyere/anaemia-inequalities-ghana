@@ -84,3 +84,20 @@ The strongest editorial pitch is not simply that anaemia is common in Ghana. The
 - community-level random-effects analysis.
 
 The paper should emphasize that conventional determinant models can obscure population-level inequality and that inequality metrics add actionable information for targeting public-health interventions.
+
+
+## Requirements verification
+
+Current Journal of Public Health author instructions were rechecked on **2026-10-08**. They confirm:
+
+- Original Papers: 2,000–3,000 words;
+- no more than 4 tables/figures;
+- structured abstract under Background, Methods, Results, Conclusions, maximum 200 words;
+- Discussion headings: Main finding of this study; What is already known on this topic; What this study adds; Limitations of this study;
+- STROBE reporting for observational studies;
+- figure alt text included directly beneath each figure legend in the manuscript;
+- title page includes author designation, affiliation, and corresponding-author email;
+- tables should be editable and numbered with Roman numerals;
+- figures should be submitted as separate journal-compatible image files.
+
+The current manuscript package has been aligned to these requirements, apart from final author-contact details and export of the editable tables/high-resolution figure files.
