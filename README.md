@@ -41,17 +41,20 @@ submission/     Journal-targeted submission materials
 
 ## Current status
 
-The core descriptive, inequality, and adjusted-regression pipeline has been **validated by a fresh local rerun against the authorized 2022 Ghana DHS IR file**. The regenerated sample sizes, prevalence estimate, concentration indices, and main adjusted odds ratios matched the locked manuscript values.
+The descriptive, inequality, adjusted-regression, decomposition, and multilevel pipelines have been **validated by fresh local reruns against the authorized 2022 Ghana DHS IR file**. The regenerated sample sizes, prevalence estimate, concentration indices, adjusted odds ratios, 200-replicate decomposition bootstrap, and variational-Bayes community heterogeneity estimates reproduce the validated analysis.
 
-A journal-targeted manuscript and supplementary package have been prepared for *Journal of Public Health* (Oxford University Press).
-
-The remaining technical work is to make the decomposition bootstrap and multilevel models fully executable from the same pipeline, then automate regeneration of the final publication tables and figures.
+A journal-targeted manuscript, supplementary package, and submission-asset exporter have been prepared for *Journal of Public Health* (Oxford University Press).
 
 ## Data governance
 
 Raw DHS files, extracted row-level datasets, and derived row-level data must stay outside Git. The repository's \`.gitignore\` excludes the Ghana IR dataset, common statistical data formats, and downloaded Ghana DHS ZIP archives.
 
-## Author
+## Authors
 
 **Gideon Ofosu Kyere**  
 Kwame Nkrumah University of Science and Technology, Ghana
+
+**Clement Acheampong**  
+Affiliation to be confirmed before submission.
+
+Academic supervision: **Dr. Wilhemina**.
