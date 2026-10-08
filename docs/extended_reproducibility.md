@@ -14,64 +14,49 @@ Run:
 python run_analysis.py --extended
 ```
 
-This adds the primary decomposition and a 200-replicate stratified PSU bootstrap.
+This adds the reproducible decomposition and a 200-replicate stratified PSU bootstrap.
 
-For a quicker test:
+The executable decomposition specification uses DHS age-group indicators, years of
+schooling, rural residence, pregnancy status, continuous parity, BMI plus BMI squared,
+employment, and current union status.
 
-```bash
-python run_analysis.py --extended --bootstrap-reps 20
-```
+The validated 200-replicate BMI contribution was **-0.045731** with bootstrap interval
+**-0.061716 to -0.030045**.
 
-Expected locked point contributions:
-
-| Domain | Locked contribution |
-|---|---:|
-| BMI / nutritional status | -0.0458 |
-| Education | -0.0102 |
-| Residence | -0.0038 |
-| Parity | -0.0032 |
-| Pregnancy status | -0.0022 |
-| Age | -0.0002 |
-| Employment | +0.00003 |
-| Marital/union status | +0.0013 |
-| Residual | +0.0051 |
-
-Expected 200-replicate bootstrap interval for BMI contribution:
-**-0.0592 to -0.0318**.
-
-Expected bootstrap interval for the Erreygers index:
-**-0.0914 to -0.0212**.
+See `docs/decomposition_reproducibility_validation.md` for the full comparison with
+the earlier locked decomposition table.
 
 ## Multilevel community model
 
-Run the MAP/Laplace implementation:
+The reproducibility estimator is **variational Bayes (VB)**:
 
 ```bash
 python run_analysis.py --multilevel
 ```
 
-Or variational Bayes:
-
-```bash
-python run_analysis.py --multilevel --multilevel-method vb
-```
-
-Locked heterogeneity values used in the manuscript:
+The validated VB run reproduced the locked heterogeneity values almost exactly:
 
 | Model | SD | Variance | ICC | MOR |
 |---|---:|---:|---:|---:|
-| Null | 0.387 | 0.150 | 4.35% | 1.45 |
-| Adjusted | 0.327 | 0.107 | 3.14% | 1.37 |
+| Null | 0.386982 | 0.149755 | 4.3538% | 1.4465 |
+| Adjusted | 0.326441 | 0.106564 | 3.1375% | 1.3653 |
 
-Locked proportional change in variance: **28.8%**.
+Proportional change in variance: **28.8411%**.
 
-### Important validation rule
+These agree with the rounded manuscript values of SD 0.387/0.327, variance 0.150/0.107,
+ICC 4.35%/3.14%, MOR 1.45/1.37, and PCV 28.8%.
 
-Do not replace the locked multilevel manuscript values merely because another
-estimator produces different numbers. First establish whether the new executable
-implementation uses the same estimator, likelihood approximation, priors, and
-covariate coding as the original analysis.
+### Numerical warning
 
-If MAP and VB do not reproduce the locked estimates closely, record the discrepancy
-and align the executable implementation with the original estimator before changing
-the manuscript.
+`statsmodels` emitted a VB convergence warning during the validation run, even though
+the reproduced variance components matched the locked results almost exactly. This
+warning is part of the reproducibility record and should not be hidden.
+
+The MAP/Laplace implementation is available only as a diagnostic:
+
+```bash
+python src/04_multilevel_heterogeneity.py --method map
+```
+
+In validation, MAP failed to converge and collapsed the random-effect variance toward
+zero, so it should not be used to reproduce the manuscript heterogeneity estimates.
