@@ -90,11 +90,11 @@ Before submission, lock:
 - corresponding author;
 - corresponding-author email.
 
-Dr. Wilhemina is acknowledged as academic supervisor and is not listed as an author at this stage.
+Dr. Wilhemina Adoma Pels is acknowledged as academic supervisor and is not listed as an author at this stage.
 
 ## Final fields still requiring author input
 
-- corresponding-author email;
+- corresponding-author email: kyereofosu2003@gmail.com;
 - postal code for the KNUST affiliation if requested by the form;
 - final author/co-author list: Gideon Ofosu Kyere and Clement Acheampong;
 - ORCID placement decision.
