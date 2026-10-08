@@ -12,6 +12,8 @@ We believe the manuscript is well suited to the *Journal of Public Health* becau
 
 The manuscript is original, is not under consideration elsewhere, and uses de-identified secondary survey data obtained under The DHS Program's data-use conditions. The author declares no competing interests and reports no external funding.
 
+**AI disclosure:** OpenAI ChatGPT was used to assist with code development, statistical workflow documentation, and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations, and final text were reviewed and verified by the author, who takes full responsibility for the work.
+
 Thank you for your consideration.
 
 Sincerely,
