@@ -4,10 +4,10 @@
 
 | Item | Repository source | Status |
 |---|---|---|
-| Title page | `submission/jph_title_page.md` | Ready except corresponding email and unresolved affiliation details |
+| Title page | `submission/jph_title_page.md` | Ready |
 | Main manuscript | `submission/jph_main_manuscript.md` | Ready |
 | Structured abstract | `submission/jph_abstract_200_words.md` | Ready |
-| Cover letter | `submission/jph_cover_letter.md` | Ready except corresponding email / final author details |
+| Cover letter | `submission/jph_cover_letter.md` | Ready |
 | Supplementary material | `supplementary/supplementary_material.md` | Ready |
 | STROBE mapping | `submission/strobe_mapping.md` | Ready; convert to official checklist format if portal requests |
 | Reference verification | `submission/reference_verification.md` | Complete |
@@ -44,7 +44,8 @@ Do not reintroduce the earlier decomposition percentages (77.8%, 17.3%, etc.). T
 
 ## Authorship
 
-- Authors: **Gideon Ofosu Kyere; Prince Apaah; Clement Acheampong**
+- Authors: **Gideon Ofosu Kyere; Wilhemina Adoma Pels; Prince Apaah; Clement Acheampong**
 - Corresponding author: **Gideon Ofosu Kyere**
-- Academic supervisor acknowledged separately: **Dr. Wilhemina**
-- Still to confirm: Clement's affiliation and Dr. Wilhemina's full professional details.
+- All authors are affiliated with the Department of Statistics and Actuarial Science, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana.
+- Corresponding email: **kyereofosu2003@gmail.com**
+- Specific CRediT roles remain to be confirmed by all authors before journal submission.
