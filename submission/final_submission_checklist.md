@@ -2,7 +2,7 @@
 
 ## Manuscript length
 
-- JPH main manuscript: approximately **2,741 words** including references and display labels
+- JPH main manuscript: approximately **2,582 words before references** after literature strengthening
 - Structured abstract: approximately **160 words**
 - Original Paper limit verified against the current journal instructions: **2,000–3,000 words**
 - Main display limit verified: **no more than 4 tables/figures combined**
