@@ -10,15 +10,19 @@ The study found that approximately two in five women were anaemic and that anaem
 
 We believe the manuscript is well suited to the *Journal of Public Health* because it goes beyond identifying individual-level correlates and directly addresses the distribution of disease burden, health inequality, and implications for public-health action.
 
-The manuscript is original, is not under consideration elsewhere, and uses de-identified secondary survey data obtained under The DHS Program's data-use conditions. The author declares no competing interests and reports no external funding.
+Academic supervision for the study was provided by Dr. Wilhemina.
 
-**AI disclosure:** OpenAI ChatGPT was used to assist with code development, statistical workflow documentation, and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations, and final text were reviewed and verified by the author, who takes full responsibility for the work.
+The manuscript is original, is not under consideration elsewhere, and uses de-identified secondary survey data obtained under The DHS Program's data-use conditions. The authors declare no competing interests and report no external funding.
+
+**AI disclosure:** OpenAI ChatGPT was used to assist with code development, statistical workflow documentation, and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations, and final text were reviewed and verified by the authors, who take full responsibility for the work.
 
 Thank you for your consideration.
 
 Sincerely,
 
 **Gideon Ofosu Kyere**  
+Corresponding author  
+Co-author: Clement Acheampong  
 Graduate Research and Teaching Assistant  
 Department of Statistics and Actuarial Science  
 Kwame Nkrumah University of Science and Technology  
