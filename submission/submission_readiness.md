@@ -1,8 +1,10 @@
 # Submission Readiness — Journal of Public Health
 
+> **Working package — not submission-ready.** The 9 October review found citation and reporting defects and outstanding scientific/author confirmations. See `docs/repair_audit_2026-10-09.md` and `submission/author_confirmation.md`. Historical checked items below do not certify the updated pipeline or current authorship declarations.
+
 ## Status
 
-The scientific and reproducibility work is complete. The remaining steps are administrative and file-export tasks.
+The data-free code and manuscript repairs are complete. Authorized-data revalidation, convergence review and author confirmations remain before submission.
 
 ## Manuscript package
 
@@ -53,4 +55,4 @@ Confirmed authors: **Gideon Ofosu Kyere, Wilhemina Adoma Pels, Prince Apaah and 
 6. Run `python src/05_prepare_submission_assets.py` locally and inspect the generated CSV/PNG/TIFF files.
 7. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
 
-No further statistical analysis is required unless the journal requests revisions.
+Run the corrected pipeline with authorized data and resolve the scientific checks in the repair audit before submission.

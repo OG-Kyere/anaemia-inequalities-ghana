@@ -34,9 +34,9 @@ Women were nested within DHS clusters. Random-intercept logistic models were use
 
 The intraclass correlation coefficient was calculated using the latent-variable approximation:
 
-[
-ICC=rac{sigma_u^2}{sigma_u^2+pi^2/3}.
-]
+\[
+ICC=\frac{\sigma_u^2}{\sigma_u^2+\pi^2/3}.
+\]
 
 The median odds ratio was used to express cluster heterogeneity on the odds-ratio scale.
 
@@ -56,7 +56,7 @@ The median odds ratio was used to express cluster heterogeneity on the odds-rati
 | Marital/union status | +0.001203 | -2.0% | -0.002581 to 0.005772 |
 | Residual | +0.003405 | -5.8% | -0.017297 to 0.025089 |
 
-The percentages are relative to the negative Erreygers index, so positive contributions appear as negative percentages and offset part of the measured pro-poor inequality.
+The decomposition uses 7,550 BMI-complete women and a complete-case Erreygers index of -0.058853. The percentages are relative to that negative index, so positive contributions appear as negative percentages and offset part of the measured pro-poor inequality.
 
 ---
 
@@ -78,7 +78,7 @@ Approximate uncertainty:
 
 ---
 
-## Supplementary Table S3. BMI functional-form sensitivity
+## BMI functional-form sensitivity (narrative)
 
 The primary decomposition model treated BMI using linear and quadratic terms.
 
@@ -107,3 +107,22 @@ Repository file: `figures/figure4_decomposition.svg`.
 All decomposition percentages represent statistical contributions to observed socioeconomic inequality. They should not be interpreted as causal mediation effects.
 
 Likewise, the inverse adjusted association between higher BMI categories and anaemia should not be interpreted as evidence that excess adiposity prevents anaemia.
+
+## Supplementary Table S3. Overall Wald tests
+
+| Factor | Wald chi-square | df | p-value |
+|---|---:|---:|---:|
+| Age group | 9.96 | 6 | 0.126 |
+| Education | 0.44 | 3 | 0.933 |
+| Wealth quintile | 1.36 | 4 | 0.852 |
+| Residence | 0.19 | 1 | 0.663 |
+| Pregnancy status | 26.65 | 1 | **<0.001** |
+| Parity | 0.81 | 3 | 0.847 |
+| BMI category | 35.47 | 3 | **<0.001** |
+| Employment | 0.07 | 1 | 0.789 |
+| Marital status | 4.15 | 5 | 0.529 |
+| Region | 45.49 | 15 | **<0.001** |
+
+## Multilevel estimator diagnostics
+
+The multilevel models were not survey-weighted. Variational Bayes reproduced the stored estimates, but the optimizer emitted a convergence warning. Matching stored values does not establish convergence. The MAP/Laplace fit failed to converge and is diagnostic only. See `docs/multilevel_reproducibility_validation.md`.

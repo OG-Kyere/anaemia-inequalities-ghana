@@ -19,10 +19,9 @@ import numpy as np
 import pandas as pd
 from statsmodels.genmod.bayes_mixed_glm import BinomialBayesMixedGLM
 
-from common import load_analysis_data
+from common import load_analysis_data, OUTPUT_DIR
 
-OUT = Path("results/reproduced")
-OUT.mkdir(parents=True, exist_ok=True)
+OUT = OUTPUT_DIR
 
 ADJUSTED_FORMULA = """
 anaemia ~
@@ -78,6 +77,8 @@ def fit_model(df: pd.DataFrame, formula: str, method: str):
         "cluster_variance": var,
         "icc": icc_from_variance(var),
         "mor": mor_from_sd(sd),
+        "optimizer_success": bool(result.optim_retvals.get('success', False)),
+        "optimizer_message": str(result.optim_retvals.get('message', 'unavailable')),
     }
 
 
@@ -90,6 +91,7 @@ def main() -> None:
         help="VB reproduces the locked results; MAP is diagnostic only.",
     )
     args = parser.parse_args()
+    OUT.mkdir(parents=True, exist_ok=True)
 
     df = load_analysis_data().copy()
 
@@ -134,6 +136,9 @@ def main() -> None:
 
     print("\nCommunity heterogeneity")
     print(summary.to_string(index=False))
+    if not summary['optimizer_success'].all():
+        print('\nWARNING: at least one optimizer reported non-convergence; '
+              'matching locked estimates does not establish numerical convergence.')
     print("\nLocked comparison values:")
     print("Null:     SD 0.387 | variance 0.150 | ICC 0.0435 | MOR 1.45")
     print("Adjusted: SD 0.327 | variance 0.107 | ICC 0.0314 | MOR 1.37")

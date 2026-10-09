@@ -1,9 +1,11 @@
 # Final Submission Checklist — Journal of Public Health
 
+> **Working package — not submission-ready.** The 9 October review found citation and reporting defects and outstanding scientific/author confirmations. See `docs/repair_audit_2026-10-09.md` and `submission/author_confirmation.md`. Historical checked items below do not certify the updated pipeline or current authorship declarations.
+
 ## Manuscript length
 
-- JPH main manuscript: approximately **2,582 words before references** after literature strengthening
-- Structured abstract: approximately **160 words**
+- JPH main manuscript: approximately **2,883 words before references** in the repaired working manuscript
+- Structured abstract: approximately **172 words**
 - Original Paper limit verified against the current journal instructions: **2,000–3,000 words**
 - Main display limit verified: **no more than 4 tables/figures combined**
 

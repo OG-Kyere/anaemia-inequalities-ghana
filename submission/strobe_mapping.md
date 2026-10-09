@@ -22,7 +22,7 @@ This mapping reflects the current submission manuscript. Final page numbers can 
 | Descriptive data | Table I | Complete |
 | Outcome data | Results; Table I | Complete |
 | Main results | Table II; Results | Complete |
-| Other analyses | Supplementary material | Complete |
+| Other analyses | Supplementary material; repair audit | Partial: planned haemoglobin/severity analyses not presented as completed |
 | Key results | Discussion | Complete |
 | Limitations | Discussion | Complete |
 | Interpretation | Discussion | Complete |

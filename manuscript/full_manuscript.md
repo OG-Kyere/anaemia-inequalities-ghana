@@ -1,157 +1,170 @@
+> Synchronized working manuscript. Canonical submission source: `submission/jph_main_manuscript.md`. Author declarations remain provisional.
+
 # Socioeconomic and Geographic Inequalities in Anaemia Among Women of Reproductive Age in Ghana
 
 ## Abstract
 
 ### Background
-Anaemia remains highly prevalent among women of reproductive age in Ghana, but national averages may conceal important socioeconomic and geographic disparities. This study quantified wealth-related and geographic inequalities in anaemia and assessed the measured factors contributing to those inequalities.
+Anaemia remains common among Ghanaian women of reproductive age, but national estimates may conceal socioeconomic and geographic inequalities. We quantified wealth-related inequality in anaemia and examined its measured contributors and community-level variation.
 
 ### Methods
-We analysed nationally representative data from women aged 15–49 years in Ghana with valid haemoglobin-based anaemia measurements. Survey weights, strata, and primary sampling units were incorporated into descriptive and regression analyses. Wealth-related inequality was assessed using concentration curves and the Erreygers-corrected concentration index. The index was decomposed to estimate the statistical contribution of measured demographic, socioeconomic, reproductive, and nutritional factors. Survey-weighted logistic regression was used to estimate adjusted associations with anaemia, and multilevel logistic models quantified residual community-level heterogeneity.
+We conducted a cross-sectional analysis of nationally representative data for women aged 15–49 years with valid anaemia measurements. Survey-weighted prevalence, Erreygers-corrected concentration indices, decomposition analysis, survey-weighted logistic regression, and multilevel logistic models were used.
 
 ### Results
-Among 7,557 women with valid anaemia measurements, the survey-weighted prevalence of anaemia was **41.1% (95% CI 39.6%–42.6%)**. Prevalence declined from **46.6%** among women in the poorest wealth quintile to **38.8%** among those in the richest quintile. The Erreygers-corrected concentration index was **-0.0589** (bootstrap 95% CI **-0.0914 to -0.0212**), indicating a disproportionate concentration of anaemia among poorer women. BMI/nutritional status made the largest measured contribution to wealth-related inequality (**77.7%**), followed by education (**15.6%**). In adjusted analyses, current pregnancy was associated with higher odds of anaemia (aOR **1.77**, 95% CI **1.43–2.21**), while overweight (aOR **0.73**, 95% CI **0.62–0.87**) and obesity (aOR **0.60**, 95% CI **0.49–0.72**) were associated with lower odds compared with normal weight. Regional heterogeneity persisted, with higher adjusted odds in Oti and lower odds in Bono relative to Greater Accra. The adjusted cluster-level intraclass correlation coefficient was approximately **3.1%**, with a median odds ratio of **1.37**.
+Among 7,557 women, anaemia prevalence was **41.1% (95% CI 39.6–42.6%)**, declining from **46.6%** in the poorest wealth quintile to **38.8%** in the richest. The Erreygers index was **-0.0589** (95% bootstrap CI **-0.0914 to -0.0212**), indicating concentration among poorer women. BMI/nutritional status contributed **77.7%** of measured inequality. Pregnancy was associated with higher adjusted odds of anaemia (aOR **1.77**, 95% CI **1.43–2.21**). Regional and residual community-level heterogeneity persisted after adjustment.
 
-### Conclusion
-Anaemia among women of reproductive age in Ghana is both socioeconomically and geographically patterned. Poorer women bear a disproportionate burden, with nutritional status accounting for a large share of the measured wealth-related inequality. Persistent regional and community-level heterogeneity suggests that reducing anaemia will require equity-focused, nutritionally informed, and geographically targeted interventions.
+### Conclusions
+Anaemia in Ghana is socioeconomically and geographically patterned. Equity-focused, nutritionally informed, and geographically targeted interventions are warranted.
 
-**Keywords:** Anaemia; women of reproductive age; socioeconomic inequality; concentration index; decomposition analysis; multilevel modelling; Ghana
-
----
+**Keywords:** anaemia; women of reproductive age; socioeconomic inequality; concentration index; Ghana
 
 ## Introduction
 
-Anaemia remains a major public-health concern among women of reproductive age, particularly in low- and lower-middle-income settings. The World Health Organization estimates that approximately 30% of women aged 15–49 years and 37% of pregnant women are affected globally, with the African Region among the most heavily affected. Anaemia has multiple causes, including micronutrient deficiencies, infection and inflammation, gynaecological and obstetric conditions, and inherited blood disorders, and its distribution is therefore shaped by both biological and social determinants.
+Anaemia remains one of the most common haematological and nutritional public-health problems affecting women of reproductive age. The World Health Organization (WHO) estimates that roughly three in ten women aged 15–49 years worldwide are anaemic, with pregnant women and populations in low- and middle-income countries carrying a particularly large burden.[1,2] Anaemia is not a single disease entity. It can arise from iron and other micronutrient deficiencies, infection and inflammation, blood loss, gynaecological and obstetric conditions, and inherited disorders. Its distribution therefore reflects both biological vulnerability and wider social conditions.
 
-Ghana has made only modest progress in reducing anaemia among women of reproductive age. Nationally representative estimates indicate that prevalence declined from about 45% in 2003 to 41.1% in 2022, leaving the burden persistently high. Recent analysis of the 2022 Ghana Demographic and Health Survey also reported substantially higher prevalence among pregnant than non-pregnant women and identified BMI, wealth, parity, and geographic location among the factors associated with anaemia.
+Ghana continues to experience a substantial burden. The 2022 Ghana Demographic and Health Survey (GDHS) reported anaemia in about two in five women of reproductive age.[3] Recent Ghanaian work using the same national survey has also documented higher prevalence among pregnant women and associations with nutritional status, parity, wealth and geographic location.[4] These studies establish the continuing importance of anaemia, but conventional prevalence comparisons and determinant models do not directly quantify how unequally the burden is distributed across the socioeconomic hierarchy.
 
-Most existing Ghanaian analyses, however, have focused on prevalence and individual-level determinants. That approach can identify correlates of anaemia but does not directly quantify how unequally anaemia is distributed across the socioeconomic hierarchy, which characteristics statistically account for that inequality, or how much unexplained variation persists across communities and regions. These questions are important because a national average can mask concentration of disease among disadvantaged groups and substantial geographic heterogeneity.
+Multicountry analyses have examined anaemia severity using multilevel models,[5,6] while spatial studies have described geographic variation in anaemia among women across sub-Saharan Africa and within Ethiopia.[7,8] Subnational mapping in West and Central Africa provides a further geographic perspective.[9] Decomposition has also been used to examine changes in anaemia prevalence between survey periods in selected countries, including Ghana,[10] a different question from decomposing wealth-related inequality within one survey.
 
-Health-inequality methods provide a complementary framework. Concentration curves and concentration indices summarize whether a health outcome is disproportionately concentrated among poorer or richer groups, while decomposition methods quantify the contribution of measured characteristics to the observed socioeconomic gradient. For a binary outcome such as anaemia, the Erreygers-corrected concentration index is useful because it accounts for the bounded nature of the outcome. Multilevel models can further quantify residual variation between communities after measured individual and household characteristics have been considered.
+That distinction matters for public-health planning. A national prevalence may decline while disadvantaged groups remain behind, and a non-significant adjusted wealth coefficient does not necessarily mean that population-level socioeconomic inequality has disappeared. Socioeconomic position is related to nutritional, educational, reproductive and geographic characteristics that may also be associated with anaemia. Measures designed specifically for health inequality can therefore provide information that ordinary regression coefficients do not.
 
-This study therefore examined socioeconomic and geographic inequalities in anaemia among women aged 15–49 years in Ghana. Specifically, we aimed to estimate nationally representative anaemia prevalence across socioeconomic and geographic groups; quantify wealth-related inequality in anaemia; identify the measured characteristics contributing to that inequality; estimate adjusted associations with anaemia; and determine whether residual community-level heterogeneity remained after adjustment.
+Concentration curves and concentration indices summarize the distribution of a health outcome across the full socioeconomic ranking. For bounded outcomes such as binary anaemia status, the Erreygers correction provides an interpretable normalized measure of inequality.[11] Decomposition methods can then estimate the statistical contribution of measured characteristics to the observed concentration of disease.[12] Multilevel models add a further perspective by quantifying variation between communities that remains after individual characteristics are considered.[13]
 
----
+This study examined socioeconomic and geographic inequalities in anaemia among women aged 15–49 years in Ghana. We aimed to estimate nationally representative prevalence across population groups, quantify wealth-related inequality, identify measured contributors to that inequality, estimate adjusted associations with anaemia, and determine whether meaningful community-level heterogeneity persisted after adjustment.
 
 ## Methods
 
 ### Study design and data source
-This study is a secondary analysis of nationally representative cross-sectional data from the 2022 Ghana Demographic and Health Survey. The survey used a stratified multistage sampling design, with enumeration areas serving as primary sampling units and households sampled within clusters.
 
-### Study population
-The Ghana 2022 Individual Recode file contained 15,014 women aged 15–49 years. The primary analytic sample consisted of women with a valid DHS anaemia classification in `v457`. Women with missing or invalid anaemia measurements were excluded. Analyses involving BMI excluded records with unavailable or flagged anthropometric values.
+We conducted a secondary cross-sectional analysis of the 2022 GDHS, a nationally representative household survey implemented using a stratified multistage sampling design.[3] Enumeration areas served as primary sampling units, and households were selected within clusters. The Individual Recode file contained 15,014 women aged 15–49 years.
+
+The primary analytic population comprised women with a valid haemoglobin-based anaemia classification. Of the 15,014 women in the Individual Recode file, 7,557 met this criterion. Analyses requiring BMI excluded seven additional women with unavailable or flagged BMI information.
 
 ### Outcome
-The primary outcome was **any anaemia**, derived from `v457`. Women classified as having mild, moderate, or severe anaemia were coded as anaemic, and women classified as not anaemic were coded as non-anaemic. Altitude-adjusted haemoglobin (`v456`) was retained as a continuous secondary outcome.
 
-### Socioeconomic exposure
-Household socioeconomic position was assessed using the DHS wealth index. Wealth quintile (`v190`) was used for descriptive and regression analyses, while the continuous wealth score (`v191`) was used to rank women for concentration-index analysis.
+The primary outcome was **any anaemia**, derived from the DHS anaemia classification variable. Women classified as having mild, moderate or severe anaemia were coded as anaemic, and women classified as not anaemic were coded as non-anaemic. The classification was based on the haemoglobin definition embedded in the 2022 GDHS. WHO published updated haemoglobin guidance after the survey was conducted; the survey definition was retained to preserve comparability with the official national estimates.[14]
 
-### Covariates
-Prespecified covariates included age group, educational attainment, urban/rural residence, region, current pregnancy status, parity, BMI category, current employment, and marital status. BMI was classified as underweight (<18.5 kg/m²), normal weight (18.5–24.9 kg/m²), overweight (25.0–29.9 kg/m²), and obesity (≥30.0 kg/m²).
+### Socioeconomic and explanatory variables
 
-### Survey design
-Sampling weights were calculated as:
+Household socioeconomic position was measured using the DHS wealth index. Wealth quintiles were used for descriptive and regression analyses. The continuous wealth score was used to rank women from poorest to richest for concentration-index analysis.
 
-[
-w_i=rac{v005_i}{1{,}000{,}000}.
-]
+Prespecified covariates were age group, educational attainment, urban or rural residence, administrative region, current pregnancy status, parity, BMI category, current employment and marital status. BMI was categorized as underweight (<18.5 kg/m²), normal weight (18.5–24.9 kg/m²), overweight (25.0–29.9 kg/m²) and obesity (≥30.0 kg/m²). Covariates were selected on substantive grounds rather than through stepwise significance testing.
 
-Primary sampling units were defined by `v021`, and strata by `v022`. Population-level estimates incorporated weights, clustering, and stratification.
+### Complex-survey analysis
 
-### Descriptive analysis
-Participant characteristics were summarized with unweighted counts and survey-weighted percentages. Survey-weighted anaemia prevalence and 95% confidence intervals were estimated overall and by sociodemographic, reproductive, nutritional, and geographic characteristics.
+Population-level analyses incorporated the DHS individual sampling weight, primary sampling unit and sampling stratum. The individual weight was calculated as `v005/1,000,000`. Survey-weighted proportions and 95% confidence intervals were estimated overall and within demographic, socioeconomic, reproductive, nutritional and geographic subgroups.
 
-### Socioeconomic inequality analysis
-Women were ranked from poorest to richest using the continuous wealth score. The standard concentration index was defined as:
+### Socioeconomic inequality
 
-[
-CI=rac{2}{mu}operatorname{Cov}(y,r),
-]
+Women were ranked from poorest to richest using the continuous wealth score. We first calculated the standard concentration index and plotted the concentration curve. Because anaemia is a bounded binary outcome, the Erreygers-corrected concentration index was used as the primary inequality measure.[11] A negative value indicates that anaemia is concentrated disproportionately among poorer women.
 
-where (y) is anaemia status, (mu) is its weighted mean, and (r) is fractional wealth rank.
-
-Because anaemia is a bounded binary outcome, the Erreygers-corrected concentration index was used as the primary inequality measure. Negative values indicate concentration of anaemia among poorer women. Uncertainty was estimated using stratified primary-sampling-unit bootstrap resampling within DHS strata.
+Uncertainty for the corrected index was assessed using stratified primary-sampling-unit bootstrap resampling within DHS strata.
 
 ### Decomposition analysis
-The Erreygers index was decomposed using a survey-weighted linear probability model. The model included age, education, residence, pregnancy status, parity, BMI, employment, and marital status. Wealth itself was not included as a determinant because it defined the socioeconomic ranking. The reproducible decomposition used DHS five-year age-group indicators, years of schooling, residence, pregnancy status, continuous parity, BMI, employment, and current union status. BMI was modelled with linear and quadratic terms. Domain-specific contributions and bootstrap intervals were calculated.
 
-### Survey-weighted regression
-Adjusted associations with anaemia were estimated using survey-weighted logistic regression. The fully adjusted model included age group, education, wealth quintile, residence, pregnancy status, parity, BMI category, employment, marital status, and region. Results are reported as adjusted odds ratios (aORs) with 95% confidence intervals. Overall Wald tests were used for categorical factors.
+The Erreygers index was decomposed using a survey-weighted linear probability model based on established concentration-index decomposition methods.[12] The decomposition model included age, years of education, residence, pregnancy status, parity, BMI, employment and marital status. Wealth itself was not entered as a determinant because it defined the socioeconomic ranking. The reproducible specification used DHS five-year age-group indicators and modelled BMI with linear and quadratic terms.
 
-### Multilevel analysis
-Two-level logistic mixed models were fitted with women nested within DHS sampling clusters. The intraclass correlation coefficient was calculated using:
+For each domain, the contribution reflected the combination of its association with anaemia and its socioeconomic distribution. Bootstrap resampling was used to assess uncertainty. Because decomposition is model dependent, all contributions were interpreted as statistical rather than causal.
 
-[
-ICC=rac{sigma_u^2}{sigma_u^2+pi^2/3}.
-]
+### Adjusted regression
 
-The median odds ratio quantified between-cluster heterogeneity, and the proportional change in variance compared the null and adjusted models. The multilevel analysis was treated as complementary to the design-based survey analysis.
+Survey-weighted logistic regression was used to estimate adjusted associations with anaemia. The full model included age group, education, wealth quintile, residence, pregnancy status, parity, BMI category, employment, marital status and region. Adjusted odds ratios (aORs) and 95% confidence intervals were reported. Overall Wald tests were used for categorical variables.
 
-### Sensitivity analyses
-Sensitivity analyses included alternative BMI specifications, pregnancy-stratified analyses, continuous haemoglobin as a secondary outcome, alternative anaemia severity specifications where feasible, and inspection of regional influence.
+### Community-level heterogeneity
 
-### Missing data
-Most prespecified socioeconomic and reproductive covariates were complete among women with valid anaemia measurements. Seven women with unavailable or flagged BMI information were excluded from analyses requiring BMI.
+Two-level random-intercept logistic models were fitted with women nested within DHS clusters. A null model quantified baseline clustering, and an adjusted model included the same covariates as the primary regression model. Cluster heterogeneity was summarized using the latent-variable intraclass correlation coefficient (ICC) and median odds ratio (MOR), as recommended for multilevel logistic analyses.[13] The proportional change in variance quantified the reduction in between-cluster variance after adjustment.
 
----
+The multilevel models used variational Bayes with normally distributed fixed-effect priors (standard deviation 2) and a normal prior on log cluster standard deviation (standard deviation 1). These models were not survey-weighted and were complementary contextual analyses; national prevalence and inequality estimates remained based on the complex survey design. The optimizer emitted a convergence warning in the recorded validation, so the variance-component estimates require cautious interpretation; matching stored values does not establish numerical convergence.
+
+### Sensitivity and missing-data analyses
+
+Recorded exploratory checks examined alternative BMI specifications, pregnancy-stratified patterns and regional prevalence. Continuous haemoglobin and alternative severity analyses were planned, but corresponding executable results are not available in this repository and are not presented as completed sensitivity analyses. Most prespecified socioeconomic and reproductive covariates were complete in the analytic sample. Only seven women were excluded from BMI-dependent models because of unavailable or flagged BMI values.
 
 ## Results
 
 ### Study population and prevalence
-Of 15,014 women in the Individual Recode file, 7,557 had valid anaemia measurements. The survey-weighted prevalence of anaemia was **41.1% (95% CI 39.6%–42.6%)**.
 
-Anaemia prevalence decreased across wealth groups, from **46.6% (95% CI 43.5%–49.7%)** in the poorest quintile to **38.8% (95% CI 35.2%–42.5%)** in the richest. Prevalence also declined with education, from **45.4%** among women with no education to **36.8%** among those with higher education. Rural women had higher prevalence than urban women (**43.4% vs 39.4%**), and currently pregnant women had higher prevalence than women who were not pregnant or were unsure (**51.4% vs 40.4%**). Prevalence was highest among underweight women (**49.3%**) and lowest among women with obesity (**33.9%**).
+Among 7,557 women with valid anaemia measurements, the survey-weighted prevalence of anaemia was **41.1% (95% CI 39.6–42.6%)**.
 
-### Socioeconomic inequality
-The standard concentration index was **-0.0358**, and the Erreygers-corrected concentration index was **-0.0589** (bootstrap 95% CI **-0.0914 to -0.0212**). The concentration curve lay predominantly above the equality line, indicating disproportionate concentration of anaemia among poorer women.
+A socioeconomic gradient was evident. Anaemia prevalence was **46.6% (95% CI 43.5–49.7%)** among women in the poorest wealth quintile and **38.8% (95% CI 35.2–42.5%)** among those in the richest quintile. Prevalence also declined across educational categories, from **45.4%** among women with no formal education to **36.8%** among those with higher education.
 
-### Decomposition
-BMI/nutritional status made the largest measured contribution to wealth-related inequality, accounting for approximately **77.7%** of the observed Erreygers index. Education contributed **15.6%**, residence **6.8%**, parity **4.9%**, and pregnancy status **3.8%**. The BMI-domain contribution remained negative in the 200-replicate bootstrap (**-0.0457**, 95% bootstrap interval **-0.0617 to -0.0300**). Bootstrap intervals for the smaller domains included zero.
+Rural women had higher prevalence than urban women (**43.4% vs 39.4%**). Currently pregnant women had substantially higher prevalence than women who were not pregnant or were unsure (**51.4% vs 40.4%**). Nutritional differences were also marked: prevalence was **49.3%** among underweight women, **44.6%** among women of normal weight, **37.6%** among overweight women and **33.9%** among women with obesity (Table I).
 
-### Adjusted associations
-In the fully adjusted survey-weighted logistic model, pregnancy status, BMI category, and region showed the strongest overall evidence of association with anaemia.
+### Wealth-related inequality
 
-Currently pregnant women had higher adjusted odds of anaemia than women who were not pregnant or were unsure (aOR **1.77**, 95% CI **1.43–2.21**). Compared with normal-weight women, overweight women had lower adjusted odds (aOR **0.73**, 95% CI **0.62–0.87**) and women with obesity had lower adjusted odds (aOR **0.60**, 95% CI **0.49–0.72**). Underweight women had aOR **1.18** (95% CI **0.96–1.47**).
+The standard concentration index was **-0.0358**, while the Erreygers-corrected concentration index was **-0.0589**. The stratified PSU bootstrap 95% confidence interval for the Erreygers index was **-0.0914 to -0.0212**, excluding zero. The concentration curve lay predominantly above the line of equality, indicating that poorer women accounted for a disproportionate share of anaemia (Figure 1).
 
-Relative to Greater Accra, women in Oti had higher adjusted odds of anaemia (aOR **1.48**, 95% CI **1.11–1.98**), whereas women in Bono had lower adjusted odds (aOR **0.61**, 95% CI **0.41–0.90**).
+### Decomposition of inequality
 
-Overall Wald tests were significant for pregnancy status, BMI category, and region (all (p<0.001) for pregnancy/BMI and (p<0.001) for region), while wealth quintile ((p=0.852)) and education ((p=0.933)) were not significant after adjustment.
+BMI/nutritional status made the largest measured contribution to wealth-related inequality, accounting for approximately **77.7%** of the observed Erreygers index. Education contributed **15.6%**, residence **6.8%**, parity **4.9%** and pregnancy status **3.8%**. Age, employment and marital/union status made small offsetting contributions, and the residual also offset part of the pro-poor inequality.
+
+The BMI-domain contribution remained consistently negative in the 200-replicate bootstrap (**-0.0457**, 95% bootstrap interval **-0.0617 to -0.0300**). Bootstrap intervals for the smaller domains included zero, so their individual contributions should be interpreted cautiously.
+
+### Adjusted associations with anaemia
+
+Pregnancy status, BMI category and region showed the strongest overall evidence of association with anaemia in the fully adjusted survey-weighted model (Table II).
+
+Currently pregnant women had higher adjusted odds of anaemia than women who were not pregnant or were unsure (aOR **1.77**, 95% CI **1.43–2.21**). Compared with normal-weight women, overweight women had lower adjusted odds (aOR **0.73**, 95% CI **0.62–0.87**) and women with obesity had lower adjusted odds (aOR **0.60**, 95% CI **0.49–0.72**). Underweight women had higher estimated odds, but the confidence interval included the null (aOR **1.18**, 95% CI **0.96–1.47**).
+
+Regional differences also persisted. Relative to Greater Accra, women in Oti had higher adjusted odds of anaemia (aOR **1.48**, 95% CI **1.11–1.98**), whereas women in Bono had lower adjusted odds (aOR **0.61**, 95% CI **0.41–0.90**). Weighted regional prevalence ranged from approximately **30.1% in Bono** to **51.8% in Oti** (Figure 2).
+
+The overall Wald tests for wealth quintile and education were not statistically significant after adjustment, despite the clear crude socioeconomic gradients. This pattern is compatible with the inequality analysis: socioeconomic position may operate partly through characteristics such as nutrition, reproductive status and geography that are also included in the adjusted model.
 
 ### Community-level heterogeneity
-Regional prevalence ranged from approximately **30.1% in Bono** to **51.8% in Oti**.
 
-The null two-level model yielded cluster variance **0.150**, ICC **4.35%**, and MOR **1.45**. After adjustment, cluster variance declined to **0.107**, ICC to **3.14%**, and MOR to **1.37**. The proportional reduction in cluster variance was approximately **28.8%**.
-
----
+The null multilevel model had cluster-level variance **0.150**, corresponding to ICC **4.35%** and MOR **1.45**. After adjustment, cluster variance declined to **0.107**, with ICC **3.14%** and MOR **1.37**. These estimates were reproduced with the variational-Bayes implementation. Measured covariates therefore accounted for approximately **28.8%** of the between-cluster variance, while residual contextual heterogeneity remained.
 
 ## Discussion
 
-This nationally representative analysis found that approximately two in five Ghanaian women of reproductive age were anaemic and that the burden was unequally distributed across socioeconomic and geographic groups. Anaemia was concentrated among poorer women, and the concentration-index decomposition suggested that nutritional status accounted for the largest measured share of the wealth-related inequality.
+### Main finding of this study
 
-The adjusted regression results help distinguish population-level inequality from conditional associations. The crude gradients by wealth and education attenuated after simultaneous adjustment, while pregnancy, BMI, and region remained more prominent. This does not imply that socioeconomic circumstances are irrelevant. Instead, it suggests that wealth-related inequality may be expressed through the unequal distribution of nutritional, reproductive, and geographic characteristics.
+Anaemia affected about two in five Ghanaian women of reproductive age and was unequally distributed across both socioeconomic and geographic groups. The wealth-related concentration index showed a disproportionate burden among poorer women. Nutritional status accounted for the largest measured component of that inequality, while pregnancy and region remained prominent correlates after multivariable adjustment. Community-level heterogeneity also persisted beyond measured individual characteristics.
 
-The higher odds among pregnant women are biologically plausible because pregnancy increases iron requirements and expands plasma volume. However, the cross-sectional design precludes causal inference and does not capture all potential determinants, including iron stores, infection, supplementation adherence, or inherited blood disorders.
+### What is already known on this topic
 
-The strong inverse pattern between BMI and anaemia must also be interpreted cautiously. Higher BMI should not be considered causally protective. BMI is a crude marker of nutritional status and does not measure micronutrient sufficiency. The decomposition result is better understood as evidence that nutritional status is strongly socially patterned and linked statistically to the observed inequality.
+The high national burden is consistent with the 2022 GDHS and recent analysis of anaemia among Ghanaian women.[3,4] Pregnancy is a well-recognized period of increased anaemia vulnerability because iron requirements increase and plasma volume expands. Nutritional status, reproductive history and socioeconomic conditions have also been repeatedly implicated in anaemia risk.[1,4]
 
-Geographic heterogeneity was also substantial. Anaemia prevalence varied by more than 20 percentage points between the lowest- and highest-prevalence regions, and cluster-level heterogeneity persisted after adjustment. The remaining contextual variance may reflect unmeasured differences in food environments, malaria transmission, access to care, sanitation, environmental exposures, or other community-level factors.
+The inverse association between higher BMI categories and anaemia has been reported in other cross-sectional work, including Ghanaian analyses.[4] It should not be interpreted as evidence that overweight or obesity prevents anaemia. BMI does not directly measure iron stores, diet quality or micronutrient sufficiency, and excess adiposity carries substantial health risks of its own.
 
-These findings support equity-focused anaemia control. Ghanaian programmes should continue to prioritize pregnant and nutritionally vulnerable women while also directing attention to socioeconomically disadvantaged and high-burden geographic populations. National prevalence alone may be insufficient for monitoring progress; inequality measures can show whether improvements are reaching women at the lower end of the socioeconomic distribution.
+### What this study adds
 
-### Strengths and limitations
-Strengths include use of recent nationally representative data, explicit accounting for the DHS survey design, complementary inequality and multilevel methods, bootstrap uncertainty for inequality estimates, and sensitivity analysis of the dominant BMI contribution.
+The principal contribution is to move beyond prevalence and individual determinant models by quantifying how the burden is distributed across the socioeconomic hierarchy. The negative Erreygers index demonstrates that anaemia is not simply common; it is disproportionately concentrated among poorer women.
 
-Limitations include the cross-sectional design, inability of haemoglobin alone to establish anaemia aetiology, lack of iron-status and other biological biomarkers for the full sample, the imperfect nature of BMI as a nutritional marker, and model dependence of decomposition estimates. The primary analysis also uses the anaemia classification embedded in the 2022 DHS; WHO updated haemoglobin cut-offs in 2024, so future analyses may examine how newer thresholds affect prevalence and inequality estimates.
+The decomposition further suggests that this inequality is strongly connected to the unequal socioeconomic distribution of nutritional status. This helps explain why the crude wealth gradient can coexist with weak conditional wealth coefficients after multivariable adjustment. Adjustment for these correlated characteristics can attenuate the conditional wealth coefficient without erasing population-level socioeconomic inequality. This analysis cannot distinguish mediation from confounding or establish temporal ordering.
 
----
+The geographic findings add a second layer. More than 20 percentage points separated the lowest- and highest-prevalence regions, and residual between-cluster heterogeneity remained after adjustment. Contextual conditions not captured in the individual record—such as food environments, malaria transmission, sanitation, local health-service access, environmental exposures or community-level deprivation—may contribute to this variation.
+
+Ghanaian intervention research includes a prospective cohort evaluation of school-based iron and folic acid supplementation among adolescent girls.[15] That evidence concerns a specific programme and population; our cross-sectional analysis does not estimate intervention effects.
+
+From a public-health perspective, these results argue against relying on national averages alone. Equity-sensitive monitoring can indicate whether reductions in anaemia are reaching poorer women, and geographic surveillance can identify areas where universal strategies may need additional targeted support.
+
+### Limitations of this study
+
+The cross-sectional design prevents causal inference and does not establish temporal ordering. Haemoglobin identifies anaemia but cannot determine its aetiology; the data therefore cannot distinguish iron-deficiency anaemia from anaemia associated with infection, inflammation, inherited haemoglobin disorders, blood loss or other micronutrient deficiencies.
+
+BMI is an imperfect proxy for nutritional status, and the large decomposition contribution should be interpreted as a statistical pattern rather than a recommendation to increase body weight. Decomposition estimates are also sensitive to model specification, although the BMI result was similar under alternative parameterisation.
+
+Selection into the haemoglobin-tested analytic sample could introduce bias if women without valid measurements differed systematically in ways not fully addressed by survey weighting. Measurement error is also possible for self-reported reproductive and socioeconomic variables. Nevertheless, the close reproduction of the official national anaemia estimate provides an important validation of the analytic setup.
+
+The findings are nationally relevant to Ghanaian women aged 15–49 years represented by the survey, but they should not be generalized to men, children, women older than 49 years or populations outside Ghana without additional evidence.
+
+Finally, the analysis used the anaemia classification embedded in the 2022 GDHS. WHO subsequently updated haemoglobin cut-offs and measurement guidance,[14] and future research should evaluate whether newer definitions materially alter prevalence or inequality estimates.
 
 ## Conclusion
 
-Anaemia remains a substantial public-health problem among women of reproductive age in Ghana and is unequally distributed across socioeconomic and geographic groups. Poorer women bear a disproportionate share of the burden, with nutritional status accounting for a large portion of the measured wealth-related inequality. Pregnancy and regional location remain important correlates, and meaningful community-level heterogeneity persists after adjustment.
+Anaemia among women of reproductive age in Ghana is both socioeconomically and geographically patterned. Poorer women bear a disproportionate burden, with nutritional status accounting for a large share of the measured inequality. Pregnancy and regional location remain important correlates, and residual community-level heterogeneity persists after adjustment.
 
-Reducing anaemia in Ghana will therefore require not only population-wide interventions but also equity-focused, nutritionally informed, and geographically targeted strategies.
+Reducing anaemia will therefore require population-wide prevention alongside equity-focused, nutritionally informed and geographically targeted strategies. Monitoring socioeconomic inequality together with national prevalence could help ensure that progress reaches women carrying the greatest burden.
 
----
+## Acknowledgements
+
+We thank The DHS Program, the Ghana Statistical Service and ICF for making the 2022 Ghana Demographic and Health Survey data available for research.
+
+OpenAI ChatGPT was used to assist with code development, statistical workflow documentation and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.
+
+## Author contributions
+
+Contributor roles and final manuscript approval are pending author confirmation. This working version is not ready for submission; see `submission/author_confirmation.md`.
 
 ## Ethics statement
 
@@ -159,39 +172,52 @@ The study used de-identified secondary data from the 2022 Ghana Demographic and 
 
 ## Data availability
 
-The data analysed in this study are available from The DHS Program upon reasonable request and approval. Restricted DHS microdata are not redistributed through this repository.
+The microdata analysed in this study are available from The DHS Program following application and approval. Restricted DHS microdata are not redistributed through the project repository.
 
 ## Funding
 
-No external funding was received for this study.
+No external funding was received.
 
-## Competing interests
+## Conflict of interest
 
-The author declares no competing interests.
+The authors declare no conflict of interest.
 
-## Author contributions
+## References
 
-**Conceptualization:** Gideon Ofosu Kyere  
-**Methodology:** Gideon Ofosu Kyere  
-**Formal analysis:** Gideon Ofosu Kyere  
-**Data curation:** Gideon Ofosu Kyere  
-**Writing – original draft:** Gideon Ofosu Kyere  
-**Writing – review and editing:** Gideon Ofosu Kyere
+1. World Health Organization. Anaemia. Geneva: World Health Organization; 2025.
+2. World Health Organization. *WHO global anaemia estimates: key findings, 2025*. Geneva: World Health Organization; 2025. ISBN 978-92-4-011393-0.
+3. Ghana Statistical Service (GSS), ICF. *Ghana Demographic and Health Survey 2022*. Accra, Ghana and Rockville, Maryland, USA: GSS and ICF; 2024.
+4. Agulu GG, Ahissou NCA, Kamiya Y, Baiden F, Matsui M. Anaemia prevalence and risk factors among nonpregnant and pregnant women of reproductive age in Ghana: an analysis of the Ghana demographic and health survey data. *Trop Med Health*. 2025;53:118. doi:10.1186/s41182-025-00792-8.
+5. Mare KU, Aychiluhm SB, Sabo KG, et al. Determinants of anemia level among reproductive-age women in 29 Sub-Saharan African countries: a multilevel mixed-effects modelling with ordered logistic regression analysis. *PLoS One*. 2023;18(11):e0294992. doi:10.1371/journal.pone.0294992.
+6. Tirore LL, Areba AS, Habte A, Desalegn M, Kebede AS. Prevalence and associated factors of severity levels of anemia among women of reproductive age in sub-Saharan Africa: a multilevel ordinal logistic regression analysis. *Front Public Health*. 2024;11:1349174. doi:10.3389/fpubh.2023.1349174.
+7. Correa-Agudelo E, Kim HY, Musuka GN, et al. The epidemiological landscape of anemia in women of reproductive age in sub-Saharan Africa. *Sci Rep*. 2021;11:11955. doi:10.1038/s41598-021-91198-z.
+8. Kibret KT, Chojenta C, D'Arcy E, Loxton D. Spatial distribution and determinant factors of anaemia among women of reproductive age in Ethiopia: a multilevel and spatial analysis. *BMJ Open*. 2019;9:e027276. doi:10.1136/bmjopen-2018-027276.
+9. Baye K, Hailu BA, Nanama S, Ntambi J, Laillou A. Subnational mapping of anaemia and aetiologic factors in the West and Central African region. *Public Health Nutr*. 2025;28:e6. doi:10.1017/S1368980024002222.
+10. Salifu MG, Da-Costa Vroom FB, Guure C. Anaemia among women of reproductive age in selected sub-Saharan African countries: multivariate decomposition analyses of the demographic and health surveys data 2008–2018. *Front Public Health*. 2024;11:1128214. doi:10.3389/fpubh.2023.1128214.
+11. Erreygers G. Correcting the concentration index. *J Health Econ*. 2009;28:504–515. doi:10.1016/j.jhealeco.2008.02.003.
+12. Wagstaff A, van Doorslaer E, Watanabe N. On decomposing the causes of health sector inequalities with an application to malnutrition inequalities in Vietnam. *J Econometrics*. 2003;112:207–223. doi:10.1016/S0304-4076(02)00161-6.
+13. Merlo J, Chaix B, Ohlsson H, et al. A brief conceptual tutorial of multilevel analysis in social epidemiology: using measures of clustering in multilevel logistic regression to investigate contextual phenomena. *J Epidemiol Community Health*. 2006;60:290–297. doi:10.1136/jech.2004.029454.
+14. World Health Organization. *Guideline on haemoglobin cutoffs to define anaemia in individuals and populations*. Geneva: World Health Organization; 2024.
+15. Gosdin L, Sharma AJ, Tripp K, et al. A school-based weekly iron and folic acid supplementation program effectively reduces anemia in a prospective cohort of Ghanaian adolescent girls. *J Nutr*. 2021;151:1646–1655. doi:10.1093/jn/nxab024.
 
-## Figures
+## Main displays
 
-- Figure 1: `../figures/figure1_concentration_curve.svg`
-- Figure 2: `../figures/figure2_regional_prevalence.svg`
-- Figure 3: `../figures/figure3_wealth_gradient.svg`
-- Figure 4: `../figures/figure4_decomposition.svg`
+**Table I.** Weighted participant characteristics and anaemia prevalence.
+Source: `results/table1_weighted_characteristics.md`
 
-## Core references
+**Table II.** Survey-weighted adjusted associations with anaemia.
+Source: `results/table2_full_adjusted_model.md`
 
-1. World Health Organization. Anaemia. Fact sheet. Updated 10 February 2025.
-2. World Health Organization. Guideline on haemoglobin cutoffs to define anaemia in individuals and populations. Geneva: WHO; 2024.
-3. World Health Organization. Accelerating anaemia reduction: a comprehensive framework for action. Geneva: WHO; 2023.
-4. Agulu GG, Ahissou NCA, Kamiya Y, Baiden F, Matsui M. Anaemia prevalence and risk factors among nonpregnant and pregnant women of reproductive age in Ghana: an analysis of the Ghana demographic and health survey data. *Tropical Medicine and Health*. 2025;53(1):118. doi:10.1186/s41182-025-00792-8.
-5. Ghana Statistical Service, Ghana Health Service, and ICF. Ghana Demographic and Health Survey 2022.
-6. World Health Organization. Best practices for haemoglobin measurement in population-level anaemia surveys. Geneva: WHO; 2024.
+**Figure 1. Concentration curve for anaemia by household wealth rank.**
+The concentration curve plots the cumulative share of anaemia against the cumulative weighted population ranked from poorest to richest. The 45-degree line represents socioeconomic equality. The observed curve lies predominantly above the equality line, consistent with a disproportionate concentration of anaemia among poorer women. The Erreygers-corrected concentration index was -0.0589 (95% bootstrap CI -0.0914 to -0.0212).
 
-> The final submission version should add the methodological references for concentration indices, the Erreygers correction, decomposition methods, multilevel ICC/MOR, and DHS survey analysis before journal submission.
+**Alt text:** Line graph comparing the anaemia concentration curve with a diagonal equality line. The anaemia curve lies mostly above the equality line, showing that poorer women account for a larger share of anaemia than their population share.
+
+Source: `figures/figure1_concentration_curve.svg`
+
+**Figure 2. Survey-weighted anaemia prevalence by region.**
+Survey-weighted anaemia prevalence and 95% confidence intervals are shown for Ghana's 16 regions. The dashed reference line marks the national prevalence of 41.1%. Regional prevalence ranged from approximately 30.1% in Bono to 51.8% in Oti.
+
+**Alt text:** Horizontal point-and-whisker plot of anaemia prevalence across 16 Ghanaian regions. Bono has the lowest estimate at about 30%, Oti the highest at about 52%, and several northern regions are above the national prevalence of 41%.
+
+Source: `figures/figure2_regional_prevalence.svg`

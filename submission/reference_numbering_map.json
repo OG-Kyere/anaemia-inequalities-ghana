@@ -1,0 +1,77 @@
+[
+  {
+    "original_number": 1,
+    "current_number": 1,
+    "reference": "World Health Organization. Anaemia. Geneva: World Health Organization; 2025."
+  },
+  {
+    "original_number": 2,
+    "current_number": 2,
+    "reference": "World Health Organization. *WHO global anaemia estimates: key findings, 2025*. Geneva: World Health Organization; 2025. ISBN 978-92-4-011393-0."
+  },
+  {
+    "original_number": 3,
+    "current_number": 3,
+    "reference": "Ghana Statistical Service (GSS), ICF. *Ghana Demographic and Health Survey 2022*. Accra, Ghana and Rockville, Maryland, USA: GSS and ICF; 2024."
+  },
+  {
+    "original_number": 4,
+    "current_number": 4,
+    "reference": "Agulu GG, Ahissou NCA, Kamiya Y, Baiden F, Matsui M. Anaemia prevalence and risk factors among nonpregnant and pregnant women of reproductive age in Ghana: an analysis of the Ghana demographic and health survey data. *Trop Med Health*. 2025;53:118. doi:10.1186/s41182-025-00792-8."
+  },
+  {
+    "original_number": 5,
+    "current_number": 5,
+    "reference": "Mare KU, Aychiluhm SB, Sabo KG, et al. Determinants of anemia level among reproductive-age women in 29 Sub-Saharan African countries: a multilevel mixed-effects modelling with ordered logistic regression analysis. *PLoS One*. 2023;18(11):e0294992. doi:10.1371/journal.pone.0294992."
+  },
+  {
+    "original_number": 8,
+    "current_number": 6,
+    "reference": "Tirore LL, Areba AS, Habte A, Desalegn M, Kebede AS. Prevalence and associated factors of severity levels of anemia among women of reproductive age in sub-Saharan Africa: a multilevel ordinal logistic regression analysis. *Front Public Health*. 2024;11:1349174. doi:10.3389/fpubh.2023.1349174."
+  },
+  {
+    "original_number": 6,
+    "current_number": 7,
+    "reference": "Correa-Agudelo E, Kim HY, Musuka GN, et al. The epidemiological landscape of anemia in women of reproductive age in sub-Saharan Africa. *Sci Rep*. 2021;11:11955. doi:10.1038/s41598-021-91198-z."
+  },
+  {
+    "original_number": 15,
+    "current_number": 8,
+    "reference": "Kibret KT, Chojenta C, D'Arcy E, Loxton D. Spatial distribution and determinant factors of anaemia among women of reproductive age in Ethiopia: a multilevel and spatial analysis. *BMJ Open*. 2019;9:e027276. doi:10.1136/bmjopen-2018-027276."
+  },
+  {
+    "original_number": 7,
+    "current_number": 9,
+    "reference": "Baye K, Hailu BA, Nanama S, Ntambi J, Laillou A. Subnational mapping of anaemia and aetiologic factors in the West and Central African region. *Public Health Nutr*. 2025;28:e6. doi:10.1017/S1368980024002222."
+  },
+  {
+    "original_number": 9,
+    "current_number": 10,
+    "reference": "Salifu MG, Da-Costa Vroom FB, Guure C. Anaemia among women of reproductive age in selected sub-Saharan African countries: multivariate decomposition analyses of the demographic and health surveys data 2008–2018. *Front Public Health*. 2024;11:1128214. doi:10.3389/fpubh.2023.1128214."
+  },
+  {
+    "original_number": 10,
+    "current_number": 11,
+    "reference": "Erreygers G. Correcting the concentration index. *J Health Econ*. 2009;28:504–515. doi:10.1016/j.jhealeco.2008.02.003."
+  },
+  {
+    "original_number": 11,
+    "current_number": 12,
+    "reference": "Wagstaff A, van Doorslaer E, Watanabe N. On decomposing the causes of health sector inequalities with an application to malnutrition inequalities in Vietnam. *J Econometrics*. 2003;112:207–223. doi:10.1016/S0304-4076(02)00161-6."
+  },
+  {
+    "original_number": 12,
+    "current_number": 13,
+    "reference": "Merlo J, Chaix B, Ohlsson H, et al. A brief conceptual tutorial of multilevel analysis in social epidemiology: using measures of clustering in multilevel logistic regression to investigate contextual phenomena. *J Epidemiol Community Health*. 2006;60:290–297. doi:10.1136/jech.2004.029454."
+  },
+  {
+    "original_number": 13,
+    "current_number": 14,
+    "reference": "World Health Organization. *Guideline on haemoglobin cutoffs to define anaemia in individuals and populations*. Geneva: World Health Organization; 2024."
+  },
+  {
+    "original_number": 14,
+    "current_number": 15,
+    "reference": "Gosdin L, Sharma AJ, Tripp K, et al. A school-based weekly iron and folic acid supplementation program effectively reduces anemia in a prospective cohort of Ghanaian adolescent girls. *J Nutr*. 2021;151:1646–1655. doi:10.1093/jn/nxab024."
+  }
+]

@@ -1,14 +1,16 @@
 # Submission Package Manifest
 
+> **Working package — not submission-ready.** The 9 October review found citation and reporting defects and outstanding scientific/author confirmations. See `docs/repair_audit_2026-10-09.md` and `submission/author_confirmation.md`. Historical checked items below do not certify the updated pipeline or current authorship declarations.
+
 ## Core upload files
 
 | Item | Repository source | Status |
 |---|---|---|
-| Title page | `submission/jph_title_page.md` | Ready |
-| Main manuscript | `submission/jph_main_manuscript.md` | Ready |
-| Structured abstract | `submission/jph_abstract_200_words.md` | Ready |
-| Cover letter | `submission/jph_cover_letter.md` | Ready |
-| Supplementary material | `supplementary/supplementary_material.md` | Ready |
+| Title page | `submission/jph_title_page.md` | Working draft; see submission gates |
+| Main manuscript | `submission/jph_main_manuscript.md` | Working draft; see submission gates |
+| Structured abstract | `submission/jph_abstract_200_words.md` | Working draft; see submission gates |
+| Cover letter | `submission/jph_cover_letter.md` | Working draft; see submission gates |
+| Supplementary material | `supplementary/supplementary_material.md` | Working draft; see submission gates |
 | STROBE mapping | `submission/strobe_mapping.md` | Ready; convert to official checklist format if portal requests |
 | Reference verification | `submission/reference_verification.md` | Complete |
 

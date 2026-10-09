@@ -1,3 +1,5 @@
+> Historical component draft; use `submission/jph_main_manuscript.md` for the current manuscript, references and declarations.
+
 # Conclusion Draft
 
 Anaemia remains a substantial public-health problem among women of reproductive age in Ghana, affecting approximately two in five women. The burden is not equally distributed: poorer women experience a disproportionate share of anaemia, and marked differences are evident across regions and communities.

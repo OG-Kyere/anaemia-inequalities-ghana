@@ -29,7 +29,7 @@ The concentration-index work asks whether anaemia is disproportionately concentr
 
 ## Repository structure
 
-\`\`\`text
+```text
 data/           Access instructions only; no restricted microdata
 docs/           Protocol, statistical analysis plan, and audit notes
 figures/        Aggregate publication figures
@@ -37,9 +37,12 @@ results/        Aggregate tables and model summaries
 manuscript/     Manuscript development files
 supplementary/  Supplementary methods and results
 submission/     Journal-targeted submission materials
-\`\`\`
+```
 
 ## Current status
+
+The 9 October repair review is documented in `docs/repair_audit_2026-10-09.md`. Code and manuscript checks now distinguish working-file correctness from scientific validation and submission readiness. The historical DHS reruns below predate these repairs; updated-data exports still need authorized-data revalidation.
+
 
 The descriptive, inequality, adjusted-regression, decomposition, and multilevel pipelines have been **validated by fresh local reruns against the authorized 2022 Ghana DHS IR file**. The regenerated sample sizes, prevalence estimate, concentration indices, adjusted odds ratios, 200-replicate decomposition bootstrap, and variational-Bayes community heterogeneity estimates reproduce the validated analysis.
 
@@ -47,7 +50,7 @@ A journal-targeted manuscript, supplementary package, and submission-asset expor
 
 ## Data governance
 
-Raw DHS files, extracted row-level datasets, and derived row-level data must stay outside Git. The repository's \`.gitignore\` excludes the Ghana IR dataset, common statistical data formats, and downloaded Ghana DHS ZIP archives.
+Raw DHS files, extracted row-level datasets, and derived row-level data must stay outside Git. The repository's `.gitignore` excludes the Ghana IR dataset, common statistical data formats, and downloaded Ghana DHS ZIP archives.
 
 ## Authors
 
@@ -62,3 +65,25 @@ Kwame Nkrumah University of Science and Technology, Ghana
 
 **Clement Acheampong**  
 Kwame Nkrumah University of Science and Technology, Ghana
+
+## Running checks
+
+```bash
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python src/06_project_diagnostics.py
+python tests/smoke_pipeline.py
+```
+
+The smoke test uses temporary synthetic data and does not validate Ghana DHS results. Continuous integration runs these same data-free checks.
+
+The runner resolves scripts and output paths against the repository, so it can be launched from another directory. Core runs now include the full-sample concentration bootstrap. `--bootstrap-reps` applies to the core and extended runs; use the documented default 200 for a reproduction attempt, never the two-replicate smoke-test setting for scientific inference.
+
+`submission/jph_main_manuscript.md` is the canonical working manuscript. `manuscript/full_manuscript.md` mirrors it; component drafts are historical. Numbering changes are documented in `submission/reference_numbering_map.json`.
+
+## Remaining submission gates
+
+- Confirm author contributions and final approval in `submission/author_confirmation.md`.
+- Revalidate the updated pipeline with authorized data; resolve the full-sample bootstrap provenance and multilevel convergence issues described in the repair audit.
+- Regenerate the empirical concentration curve and run `python src/05_prepare_submission_assets.py --require-reproduced` before journal submission. The ordinary exporter can create a clearly labelled preview from stored SVG points.
+- Complete journal-format files, author positions/postal address and the official STROBE checklist. The earlier downloadable preprint uses an older reference order and must be rebuilt before submission.
