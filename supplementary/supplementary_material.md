@@ -1,10 +1,10 @@
-# Supplementary Material
+# Supplementary material
 
 ## Supplementary Methods
 
 ### Survey design
 
-All descriptive prevalence and survey-weighted regression analyses incorporated the DHS individual women's sampling weight, primary sampling unit, and sampling stratum. The individual sampling weight was calculated as `v005 / 1,000,000`.
+Descriptive prevalence and survey-weighted regression analyses incorporated the DHS individual women's sampling weight, primary sampling unit and sampling stratum. The individual sampling weight was calculated as `v005 / 1,000,000`.
 
 ### Wealth-related inequality
 
@@ -16,7 +16,7 @@ Uncertainty was examined using stratified primary-sampling-unit bootstrap resamp
 
 The decomposition used an additive survey-weighted linear probability model. Wealth was used to construct the socioeconomic ranking and was not entered as an explanatory determinant.
 
-The reproducible decomposition included:
+The decomposition model included:
 - DHS five-year age-group indicators;
 - years of schooling;
 - residence;
@@ -26,7 +26,7 @@ The reproducible decomposition included:
 - employment;
 - current union status.
 
-BMI was entered using linear and quadratic terms. Wealth was used only to rank women.
+BMI was entered using linear and quadratic terms.
 
 ### Multilevel analysis
 
@@ -80,9 +80,7 @@ Approximate uncertainty:
 
 ## BMI functional-form sensitivity (narrative)
 
-The primary decomposition model treated BMI using linear and quadratic terms.
-
-The principal executable decomposition uses continuous BMI with a quadratic term. Earlier exploratory work with clinical BMI categories gave a similar substantive conclusion, but the fully reproducible specification reported above should be used for the final manuscript and supplementary tables.
+The primary decomposition used linear and quadratic terms for continuous BMI. Earlier exploratory analyses using clinical BMI categories gave a similar substantive conclusion. The specification reported above is the reproducible primary analysis.
 
 ---
 
@@ -125,4 +123,4 @@ Likewise, the inverse adjusted association between higher BMI categories and ana
 
 ## Multilevel estimator diagnostics
 
-The multilevel models were not survey-weighted. The initial BFGS run at gradient tolerance 1e-6 reported precision loss in the adjusted model. Both final seeded fits (seed 20261008; gradient tolerance 1e-5) converged, with maximum absolute gradients below the stated tolerance. Cluster variance, ICC, MOR and proportional change in variance were unchanged at the reported precision. The failed MAP/Laplace fit remains diagnostic only. See `docs/real_data_validation_2026-10-09.md` and `docs/multilevel_reproducibility_validation.md`.
+The multilevel models were not survey-weighted. The initial BFGS fit at gradient tolerance 1e-6 reported precision loss for the adjusted model. Both final fits converged with seed 20261008 and gradient tolerance 1e-5; their maximum absolute gradients were below that tolerance. Cluster variance, ICC, MOR and proportional change in variance were unchanged at the reported precision. The MAP/Laplace fit failed to converge and is included only as a diagnostic comparison. See `docs/real_data_validation_2026-10-09.md` and `docs/multilevel_reproducibility_validation.md`.

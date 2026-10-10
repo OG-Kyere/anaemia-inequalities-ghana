@@ -1,0 +1,26 @@
+{
+  "humanizer_skill": "https://github.com/blader/humanizer/blob/main/SKILL.md",
+  "humanizer_version": "3.1.0",
+  "skill_sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+  "numerical_tokens_unchanged": true,
+  "citation_sequence_unchanged": true,
+  "reference_titles_unchanged": true,
+  "canonical_mirror_identical": true,
+  "standalone_abstract_identical": true,
+  "abstract_words_whitespace": 148,
+  "full_sample_bootstrap_replicates": 5000,
+  "bootstrap_quantiles_match_record": true,
+  "multilevel_optimizer_checks_pass": true,
+  "rounding_discrepancies_pending_approval": [
+    {
+      "quantity": "Prevalence CI lower at two decimal places",
+      "stored_display": "39.60%",
+      "computed_display": "39.61%"
+    },
+    {
+      "quantity": "Adjusted cluster SD at three decimal places",
+      "stored_display": "0.327",
+      "computed_display": "0.326"
+    }
+  ]
+}
