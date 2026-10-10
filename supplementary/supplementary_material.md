@@ -10,7 +10,7 @@ All descriptive prevalence and survey-weighted regression analyses incorporated 
 
 Women were ranked from lowest to highest socioeconomic position using the continuous DHS household wealth score. The Erreygers-corrected concentration index was used as the primary inequality measure because anaemia was binary and bounded.
 
-Uncertainty in the corrected concentration index and decomposition estimates was examined using stratified primary-sampling-unit bootstrap resampling.
+Uncertainty was examined using stratified primary-sampling-unit bootstrap resampling: 5,000 replicates for the full-sample corrected concentration index and 200 for the decomposition (seed 20261008). The full-sample percentile 95% interval was -0.0924 to -0.0249.
 
 ### Decomposition
 

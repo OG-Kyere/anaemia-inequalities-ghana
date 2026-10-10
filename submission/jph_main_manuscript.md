@@ -9,7 +9,7 @@ Anaemia remains common among Ghanaian women of reproductive age, but national es
 We conducted a cross-sectional analysis of nationally representative data for women aged 15–49 years with valid anaemia measurements. Survey-weighted prevalence, Erreygers-corrected concentration indices, decomposition analysis, survey-weighted logistic regression, and multilevel logistic models were used.
 
 ### Results
-Among 7,557 women, anaemia prevalence was **41.1% (95% CI 39.6–42.6%)**, declining from **46.6%** in the poorest wealth quintile to **38.8%** in the richest. The Erreygers index was **-0.0589** (95% bootstrap CI **-0.0914 to -0.0212**), indicating concentration among poorer women. BMI/nutritional status contributed **77.7%** of measured inequality. Pregnancy was associated with higher adjusted odds of anaemia (aOR **1.77**, 95% CI **1.43–2.21**). Regional and residual community-level heterogeneity persisted after adjustment.
+Among 7,557 women, anaemia prevalence was **41.1% (95% CI 39.6–42.6%)**, declining from **46.6%** in the poorest wealth quintile to **38.8%** in the richest. The Erreygers index was **-0.0589** (95% bootstrap CI **-0.0924 to -0.0249**), indicating concentration among poorer women. BMI/nutritional status contributed **77.7%** of measured inequality. Pregnancy was associated with higher adjusted odds of anaemia (aOR **1.77**, 95% CI **1.43–2.21**). Regional and residual community-level heterogeneity persisted after adjustment.
 
 ### Conclusions
 Anaemia in Ghana is socioeconomically and geographically patterned. Equity-focused, nutritionally informed, and geographically targeted interventions are warranted.
@@ -56,7 +56,7 @@ Population-level analyses incorporated the DHS individual sampling weight, prima
 
 Women were ranked from poorest to richest using the continuous wealth score. We first calculated the standard concentration index and plotted the concentration curve. Because anaemia is a bounded binary outcome, the Erreygers-corrected concentration index was used as the primary inequality measure.[11] A negative value indicates that anaemia is concentrated disproportionately among poorer women.
 
-Uncertainty for the corrected index was assessed using stratified primary-sampling-unit bootstrap resampling within DHS strata.
+Uncertainty for the corrected index was assessed using 5,000 stratified primary-sampling-unit bootstrap replicates within DHS strata (seed 20261008), with a percentile 95% confidence interval. The decomposition retained its separate 200-replicate bootstrap.
 
 ### Decomposition analysis
 
@@ -90,7 +90,7 @@ Rural women had higher prevalence than urban women (**43.4% vs 39.4%**). Current
 
 ### Wealth-related inequality
 
-The standard concentration index was **-0.0358**, while the Erreygers-corrected concentration index was **-0.0589**. The stratified PSU bootstrap 95% confidence interval for the Erreygers index was **-0.0914 to -0.0212**, excluding zero. The concentration curve lay predominantly above the line of equality, indicating that poorer women accounted for a disproportionate share of anaemia (Figure 1).
+The standard concentration index was **-0.0358**, while the Erreygers-corrected concentration index was **-0.0589**. The stratified PSU bootstrap 95% confidence interval for the Erreygers index was **-0.0924 to -0.0249**, excluding zero. The concentration curve lay predominantly above the line of equality, indicating that poorer women accounted for a disproportionate share of anaemia (Figure 1).
 
 ### Decomposition of inequality
 
@@ -207,7 +207,7 @@ Source: `results/table1_weighted_characteristics.md`
 Source: `results/table2_full_adjusted_model.md`
 
 **Figure 1. Concentration curve for anaemia by household wealth rank.**
-The concentration curve plots the cumulative share of anaemia against the cumulative weighted population ranked from poorest to richest. The 45-degree line represents socioeconomic equality. The observed curve lies predominantly above the equality line, consistent with a disproportionate concentration of anaemia among poorer women. The Erreygers-corrected concentration index was -0.0589 (95% bootstrap CI -0.0914 to -0.0212).
+The concentration curve plots the cumulative share of anaemia against the cumulative weighted population ranked from poorest to richest. The 45-degree line represents socioeconomic equality. The observed curve lies predominantly above the equality line, consistent with a disproportionate concentration of anaemia among poorer women. The Erreygers-corrected concentration index was -0.0589 (95% bootstrap CI -0.0924 to -0.0249).
 
 **Alt text:** Line graph comparing the anaemia concentration curve with a diagonal equality line. The anaemia curve lies mostly above the equality line, showing that poorer women account for a larger share of anaemia than their population share.
 

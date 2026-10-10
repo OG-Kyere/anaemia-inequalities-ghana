@@ -47,3 +47,8 @@ The repository is a repaired working project, not a certified submission-ready o
 The authorized IR archive from the earlier conversation was located and reanalysed. The core point estimates, adjusted associations, decomposition share/intervals and multilevel summaries reproduce. The empirical curve was regenerated, and both final seeded multilevel fits converge at BFGS gradient tolerance 1e-5 without changing reported estimates. The faster PSU resampler preserves exact sampled rows and order. All 21 unit tests pass.
 
 See `docs/real_data_validation_2026-10-09.md` for the current status; earlier “data unavailable” and outstanding-convergence notes above describe the prior review stage. The original inequality interval remains a provenance discrepancy. A documented full-sample 5,000-replicate interval is available but awaits approval under the numerical lock. Author roles and final approval are also unconfirmed. Keep this a draft until those decisions and the final file rebuild are completed.
+
+
+## Update — 10 October 2026
+
+The corresponding author approved the 5,000-replicate inequality interval (-0.0924 to -0.0249); it is now applied throughout the current manuscript and figures. Earlier pending-approval statements above describe the historical review stage. See `docs/approved_interval_update_2026-10-10.md`. Author contributions and final approval remain provisional.

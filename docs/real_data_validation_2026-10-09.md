@@ -45,3 +45,8 @@ python src/06_project_diagnostics.py
 ```
 
 The option for full-sample inequality replicates is separate from the decomposition replicate count. Keeping the decomposition at 200 reproduces its locked intervals; the 5,000-replicate full-sample interval is a proposed correction pending author approval, not a silent replacement of the manuscript interval. The 5,000-replicate computation was run separately during this audit; the full pipeline's saved core bootstrap table records its original 200-replicate run.
+
+
+## Update — 10 October 2026
+
+The corresponding author approved the 5,000-replicate inequality interval (-0.0924 to -0.0249); it is now applied throughout the current manuscript and figures. Earlier pending-approval statements above describe the historical review stage. See `docs/approved_interval_update_2026-10-10.md`. Author contributions and final approval remain provisional.
