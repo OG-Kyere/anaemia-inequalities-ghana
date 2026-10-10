@@ -77,7 +77,7 @@ def make_concentration_curve(require_reproduced=False) -> str:
         population=(xy[:,0]-90)/640
         anaemia=(540-xy[:,1])/480
         provenance = 'Preview using stored SVG curve points; empirical curve not independently reproduced'
-        annotation='Erreygers index = -0.0589\n95% CI: -0.0914 to -0.0212'
+        annotation='Erreygers index = -0.0589\n95% CI: -0.0924 to -0.0249'
 
     fig, ax = plt.subplots(figsize=(7.6, 6.2))
     ax.plot(population, population, linestyle="--", linewidth=1.5, label="Line of equality")
@@ -173,3 +173,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
