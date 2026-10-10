@@ -1,9 +1,11 @@
 # Final Submission Checklist — Journal of Public Health
 
+> **Working package — not submission-ready.** The 9 October review found citation and reporting defects and outstanding scientific/author confirmations. See `docs/repair_audit_2026-10-09.md` and `submission/author_confirmation.md`. Historical checked items below do not certify the updated pipeline or current authorship declarations.
+
 ## Manuscript length
 
-- JPH main manuscript: approximately **2,582 words before references** after literature strengthening
-- Structured abstract: approximately **160 words**
+- JPH main manuscript: approximately **2,883 words before references** in the repaired working manuscript
+- Structured abstract: approximately **172 words**
 - Original Paper limit verified against the current journal instructions: **2,000–3,000 words**
 - Main display limit verified: **no more than 4 tables/figures combined**
 
@@ -106,3 +108,9 @@ Additional results remain in supplementary material.
 Anaemia remains highly prevalent among Ghanaian women of reproductive age and is disproportionately concentrated among poorer women. Nutritional status accounts for a large share of the measured socioeconomic inequality, while pregnancy, region, and residual community context remain important correlates.
 
 Do not strengthen this wording into causal claims during journal revision.
+
+## Real-data verification update — 9 October 2026
+
+The authorized IR archive from the earlier conversation was located and reanalysed. The core point estimates, adjusted associations, decomposition share/intervals and multilevel summaries reproduce. The empirical curve was regenerated, and both final seeded multilevel fits converge at BFGS gradient tolerance 1e-5 without changing reported estimates. The faster PSU resampler preserves exact sampled rows and order. All 21 unit tests pass.
+
+See `docs/real_data_validation_2026-10-09.md` for the current status; earlier “data unavailable” and outstanding-convergence notes above describe the prior review stage. The original inequality interval remains a provenance discrepancy. A documented full-sample 5,000-replicate interval is available but awaits approval under the numerical lock. Author roles and final approval are also unconfirmed. Keep this a draft until those decisions and the final file rebuild are completed.

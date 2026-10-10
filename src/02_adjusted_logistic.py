@@ -8,10 +8,9 @@ import patsy
 import scipy.stats as st
 import statsmodels.api as sm
 
-from common import load_analysis_data
+from common import load_analysis_data, OUTPUT_DIR
 
-OUT = Path("results/reproduced")
-OUT.mkdir(parents=True, exist_ok=True)
+OUT = OUTPUT_DIR
 
 
 FORMULA = """
@@ -54,7 +53,7 @@ def design_covariance(X, y, p, w, strata, psu):
     for _, g in cluster.groupby("strata", observed=True):
         m = len(g)
         if m <= 1:
-            continue
+            raise ValueError('Design covariance requires at least two PSUs per stratum.')
         u = g[cols].to_numpy(dtype=float)
         centered = u - u.mean(axis=0, keepdims=True)
         meat += (m / (m - 1.0)) * centered.T @ centered
@@ -62,7 +61,24 @@ def design_covariance(X, y, p, w, strata, psu):
     return bread_inv @ meat @ bread_inv
 
 
+def overall_wald_tests(beta, covariance, design_info):
+    rows = []
+    for name, section in design_info.term_name_slices.items():
+        if name == 'Intercept':
+            continue
+        b = np.asarray(beta)[section]
+        subcov = covariance[section, section]
+        df = int(np.linalg.matrix_rank(subcov))
+        if df < len(b):
+            raise ValueError(f'Wald covariance is rank deficient for {name}.')
+        statistic = float(b @ np.linalg.solve(subcov, b))
+        rows.append({'factor': name, 'wald_chi_square': statistic,
+                     'df': df, 'p_value': float(st.chi2.sf(statistic, df))})
+    return pd.DataFrame(rows)
+
+
 def main():
+    OUT.mkdir(parents=True, exist_ok=True)
     df = load_analysis_data().copy()
 
     model_df = df.dropna(subset=[
@@ -84,6 +100,8 @@ def main():
         family=sm.families.Binomial(),
         freq_weights=model_df.loc[X.index, "weight"],
     ).fit()
+    if not glm.converged:
+        raise RuntimeError('The adjusted logistic model did not converge.')
 
     p = glm.predict(X)
     cov = design_covariance(
@@ -113,6 +131,8 @@ def main():
     })
 
     result.to_csv(OUT / "adjusted_logistic_model.csv", index=False)
+    overall_wald_tests(beta, cov, X.design_info).to_csv(
+        OUT / 'adjusted_logistic_wald_tests.csv', index=False)
     print(f"Analytic n = {len(model_df):,}")
     print(result.to_string(index=False))
 

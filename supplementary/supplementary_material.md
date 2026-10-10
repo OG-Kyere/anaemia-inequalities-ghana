@@ -1,22 +1,22 @@
-# Supplementary Material
+# Supplementary material
 
 ## Supplementary Methods
 
 ### Survey design
 
-All descriptive prevalence and survey-weighted regression analyses incorporated the DHS individual women's sampling weight, primary sampling unit, and sampling stratum. The individual sampling weight was calculated as `v005 / 1,000,000`.
+Descriptive prevalence and survey-weighted regression analyses incorporated the DHS individual women's sampling weight, primary sampling unit and sampling stratum. The individual sampling weight was calculated as `v005 / 1,000,000`.
 
 ### Wealth-related inequality
 
 Women were ranked from lowest to highest socioeconomic position using the continuous DHS household wealth score. The Erreygers-corrected concentration index was used as the primary inequality measure because anaemia was binary and bounded.
 
-Uncertainty in the corrected concentration index and decomposition estimates was examined using stratified primary-sampling-unit bootstrap resampling.
+Uncertainty was examined using stratified primary-sampling-unit bootstrap resampling: 5,000 replicates for the full-sample corrected concentration index and 200 for the decomposition (seed 20261008). The full-sample percentile 95% interval was -0.0924 to -0.0249.
 
 ### Decomposition
 
 The decomposition used an additive survey-weighted linear probability model. Wealth was used to construct the socioeconomic ranking and was not entered as an explanatory determinant.
 
-The reproducible decomposition included:
+The decomposition model included:
 - DHS five-year age-group indicators;
 - years of schooling;
 - residence;
@@ -26,7 +26,7 @@ The reproducible decomposition included:
 - employment;
 - current union status.
 
-BMI was entered using linear and quadratic terms. Wealth was used only to rank women.
+BMI was entered using linear and quadratic terms.
 
 ### Multilevel analysis
 
@@ -34,9 +34,9 @@ Women were nested within DHS clusters. Random-intercept logistic models were use
 
 The intraclass correlation coefficient was calculated using the latent-variable approximation:
 
-[
-ICC=rac{sigma_u^2}{sigma_u^2+pi^2/3}.
-]
+\[
+ICC=\frac{\sigma_u^2}{\sigma_u^2+\pi^2/3}.
+\]
 
 The median odds ratio was used to express cluster heterogeneity on the odds-ratio scale.
 
@@ -56,7 +56,7 @@ The median odds ratio was used to express cluster heterogeneity on the odds-rati
 | Marital/union status | +0.001203 | -2.0% | -0.002581 to 0.005772 |
 | Residual | +0.003405 | -5.8% | -0.017297 to 0.025089 |
 
-The percentages are relative to the negative Erreygers index, so positive contributions appear as negative percentages and offset part of the measured pro-poor inequality.
+The decomposition uses 7,550 BMI-complete women and a complete-case Erreygers index of -0.058853. The percentages are relative to that negative index, so positive contributions appear as negative percentages and offset part of the measured pro-poor inequality.
 
 ---
 
@@ -78,11 +78,9 @@ Approximate uncertainty:
 
 ---
 
-## Supplementary Table S3. BMI functional-form sensitivity
+## BMI functional-form sensitivity (narrative)
 
-The primary decomposition model treated BMI using linear and quadratic terms.
-
-The principal executable decomposition uses continuous BMI with a quadratic term. Earlier exploratory work with clinical BMI categories gave a similar substantive conclusion, but the fully reproducible specification reported above should be used for the final manuscript and supplementary tables.
+The primary decomposition used linear and quadratic terms for continuous BMI. Earlier exploratory analyses using clinical BMI categories gave a similar substantive conclusion. The specification reported above is the reproducible primary analysis.
 
 ---
 
@@ -107,3 +105,22 @@ Repository file: `figures/figure4_decomposition.svg`.
 All decomposition percentages represent statistical contributions to observed socioeconomic inequality. They should not be interpreted as causal mediation effects.
 
 Likewise, the inverse adjusted association between higher BMI categories and anaemia should not be interpreted as evidence that excess adiposity prevents anaemia.
+
+## Supplementary Table S3. Overall Wald tests
+
+| Factor | Wald chi-square | df | p-value |
+|---|---:|---:|---:|
+| Age group | 9.96 | 6 | 0.126 |
+| Education | 0.44 | 3 | 0.933 |
+| Wealth quintile | 1.36 | 4 | 0.852 |
+| Residence | 0.19 | 1 | 0.663 |
+| Pregnancy status | 26.65 | 1 | **<0.001** |
+| Parity | 0.81 | 3 | 0.847 |
+| BMI category | 35.47 | 3 | **<0.001** |
+| Employment | 0.07 | 1 | 0.789 |
+| Marital status | 4.15 | 5 | 0.529 |
+| Region | 45.49 | 15 | **<0.001** |
+
+## Multilevel estimator diagnostics
+
+The multilevel models were not survey-weighted. The initial BFGS fit at gradient tolerance 1e-6 reported precision loss for the adjusted model. Both final fits converged with seed 20261008 and gradient tolerance 1e-5; their maximum absolute gradients were below that tolerance. Cluster variance, ICC, MOR and proportional change in variance were unchanged at the reported precision. The MAP/Laplace fit failed to converge and is included only as a diagnostic comparison. See `docs/real_data_validation_2026-10-09.md` and `docs/multilevel_reproducibility_validation.md`.

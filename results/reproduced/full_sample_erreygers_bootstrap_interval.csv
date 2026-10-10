@@ -1,0 +1,2 @@
+sample,n,point_erreygers,bootstrap_ci_low,bootstrap_ci_high,bootstrap_reps,seed
+Full valid-anaemia sample,7557,-0.05893796929817193,-0.09237167274547348,-0.02494165401130471,5000,20261008

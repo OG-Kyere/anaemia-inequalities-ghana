@@ -1,3 +1,5 @@
+> Historical component draft; use `submission/jph_main_manuscript.md` for the current manuscript, references and declarations.
+
 # Methods Draft
 
 ## Study design and data source
@@ -56,9 +58,9 @@ Covariates were selected a priori based on substantive relevance rather than ste
 
 The DHS sampling weight was calculated as:
 
-[
-w_i = rac{v005_i}{1,000,000}.
-]
+\[
+w_i = \frac{v005_i}{1,000,000}.
+\]
 
 Primary sampling units were identified using `v021`, and sampling strata using `v022`.
 
@@ -78,9 +80,9 @@ Women were ranked from poorest to richest using the continuous DHS wealth score.
 
 The standard concentration index was calculated as:
 
-[
-CI = rac{2}{mu}operatorname{Cov}(y,r),
-]
+\[
+CI = \frac{2}{\mu}\operatorname{Cov}(y,r),
+\]
 
 where (y) denotes anaemia status, (mu) its weighted mean, and (r) the fractional wealth rank.
 
@@ -124,9 +126,9 @@ The adjusted model included the same individual-level covariates as the main reg
 
 The intraclass correlation coefficient was calculated using the logistic latent-variable approximation:
 
-[
-ICC = rac{sigma_u^2}{sigma_u^2 + pi^2/3}.
-]
+\[
+ICC = \frac{\sigma_u^2}{\sigma_u^2 + \pi^2/3}.
+\]
 
 The median odds ratio was calculated as a measure of between-cluster heterogeneity.
 

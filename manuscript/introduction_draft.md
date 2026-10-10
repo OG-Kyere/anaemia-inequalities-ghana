@@ -1,3 +1,5 @@
+> Historical component draft; use `submission/jph_main_manuscript.md` for the current manuscript, references and declarations.
+
 # Introduction Draft
 
 Anaemia remains a major public-health concern among women of reproductive age, particularly in low- and lower-middle-income settings. The World Health Organization estimates that approximately 30% of women aged 15–49 years and 37% of pregnant women are affected globally, with the African Region among the most heavily affected. Anaemia has multiple causes, including micronutrient deficiencies, infection and inflammation, gynaecological and obstetric conditions, and inherited blood disorders, and its distribution is therefore shaped by both biological and social determinants.

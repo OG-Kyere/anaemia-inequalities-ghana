@@ -1,0 +1,354 @@
+{
+  "validated_on": "2026-10-09",
+  "data_file": "GHIR8CFL.DTA",
+  "data_sha256": "7d5a934afd3619b42510f8b457c112bca0b69e5de5a34454a92f62dd4b9753a8",
+  "full_sample_n": 7557,
+  "complete_case_n": 7550,
+  "bootstrap_seed": 20261008,
+  "comparison": [
+    {
+      "quantity": "Valid anaemia sample",
+      "reproduced": 7557.0,
+      "locked": 7557.0,
+      "digits": 0,
+      "matched": true
+    },
+    {
+      "quantity": "Weighted prevalence (%)",
+      "reproduced": 41.122474343596224,
+      "locked": 41.12,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Prevalence CI lower (%)",
+      "reproduced": 39.605026156652364,
+      "locked": 39.6,
+      "digits": 2,
+      "matched": false
+    },
+    {
+      "quantity": "Prevalence CI upper (%)",
+      "reproduced": 42.63992253054007,
+      "locked": 42.64,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Standard concentration index",
+      "reproduced": -0.035830753279654,
+      "locked": -0.0358,
+      "digits": 4,
+      "matched": true
+    },
+    {
+      "quantity": "Erreygers index",
+      "reproduced": -0.0589379692981719,
+      "locked": -0.0589,
+      "digits": 4,
+      "matched": true
+    },
+    {
+      "quantity": "FULL-SAMPLE bootstrap lower",
+      "reproduced": -0.0888452050872282,
+      "locked": -0.0914,
+      "digits": 4,
+      "matched": false
+    },
+    {
+      "quantity": "FULL-SAMPLE bootstrap upper",
+      "reproduced": -0.0223678157879862,
+      "locked": -0.0212,
+      "digits": 4,
+      "matched": false
+    },
+    {
+      "quantity": "Pregnancy aOR",
+      "reproduced": 1.774585311794202,
+      "locked": 1.77,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Pregnancy CI lower",
+      "reproduced": 1.4273102745105155,
+      "locked": 1.43,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Pregnancy CI upper",
+      "reproduced": 2.2063549076010838,
+      "locked": 2.21,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Overweight aOR",
+      "reproduced": 0.7336819454877371,
+      "locked": 0.73,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Overweight CI lower",
+      "reproduced": 0.6216138774204445,
+      "locked": 0.62,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Overweight CI upper",
+      "reproduced": 0.8659542791554912,
+      "locked": 0.87,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Obesity aOR",
+      "reproduced": 0.5972029164053296,
+      "locked": 0.6,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Obesity CI lower",
+      "reproduced": 0.4941036254250439,
+      "locked": 0.49,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Obesity CI upper",
+      "reproduced": 0.7218148279244626,
+      "locked": 0.72,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Bono aOR",
+      "reproduced": 0.6105289566871079,
+      "locked": 0.61,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Bono CI lower",
+      "reproduced": 0.4124126222553073,
+      "locked": 0.41,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Bono CI upper",
+      "reproduced": 0.9038171647488942,
+      "locked": 0.9,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Oti aOR",
+      "reproduced": 1.4808443852729218,
+      "locked": 1.48,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Oti CI lower",
+      "reproduced": 1.1085371210703798,
+      "locked": 1.11,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Oti CI upper",
+      "reproduced": 1.978192747642876,
+      "locked": 1.98,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "BMI contribution share (%)",
+      "reproduced": 77.70480272284108,
+      "locked": 77.7,
+      "digits": 1,
+      "matched": true
+    },
+    {
+      "quantity": "BMI contribution bootstrap lower",
+      "reproduced": -0.0617163862060387,
+      "locked": -0.0617,
+      "digits": 4,
+      "matched": true
+    },
+    {
+      "quantity": "BMI contribution bootstrap upper",
+      "reproduced": -0.0300447758937944,
+      "locked": -0.03,
+      "digits": 4,
+      "matched": true
+    },
+    {
+      "quantity": "Complete-case E interval (separate population)",
+      "reproduced": [
+        -0.0896672813679491,
+        -0.0234808366724362
+      ],
+      "matched": null
+    },
+    {
+      "quantity": "Null ICC (%)",
+      "reproduced": 4.35381350612613,
+      "locked": 4.35,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Null MOR",
+      "reproduced": 1.446477276408797,
+      "locked": 1.45,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Null variance",
+      "reproduced": 0.1497547663834877,
+      "locked": 0.15,
+      "digits": 3,
+      "matched": true
+    },
+    {
+      "quantity": "Null optimizer success",
+      "reproduced": true,
+      "matched": true,
+      "message": "Optimization terminated successfully."
+    },
+    {
+      "quantity": "Adjusted ICC (%)",
+      "reproduced": 3.13752333566636,
+      "locked": 3.14,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Adjusted MOR",
+      "reproduced": 1.3653124238848513,
+      "locked": 1.37,
+      "digits": 2,
+      "matched": true
+    },
+    {
+      "quantity": "Adjusted variance",
+      "reproduced": 0.1065638459411651,
+      "locked": 0.107,
+      "digits": 3,
+      "matched": true
+    },
+    {
+      "quantity": "Adjusted optimizer success",
+      "reproduced": false,
+      "matched": false,
+      "message": "Desired error not necessarily achieved due to precision loss."
+    },
+    {
+      "quantity": "Proportional change in variance (%)",
+      "reproduced": 28.84109900830835,
+      "locked": 28.8,
+      "digits": 1,
+      "matched": true
+    }
+  ],
+  "bootstrap_stability": [
+    {
+      "sample": "Full valid-anaemia sample",
+      "n": 7557,
+      "reps": 200,
+      "seed": 20261008,
+      "ci_low": -0.08884520508722826,
+      "ci_high": -0.022367815787986235,
+      "bootstrap_sd": 0.016672503076812673
+    },
+    {
+      "sample": "Full valid-anaemia sample",
+      "n": 7557,
+      "reps": 1000,
+      "seed": 20261008,
+      "ci_low": -0.09055053574630857,
+      "ci_high": -0.024056795943061204,
+      "bootstrap_sd": 0.017334335486923064
+    },
+    {
+      "sample": "Full valid-anaemia sample",
+      "n": 7557,
+      "reps": 5000,
+      "seed": 20261008,
+      "ci_low": -0.09237167274547348,
+      "ci_high": -0.02494165401130471,
+      "bootstrap_sd": 0.017280186065796774
+    }
+  ],
+  "locked_manuscript_interval": [
+    -0.0914,
+    -0.0212
+  ],
+  "manuscript_interval_changed": true,
+  "note": "The original interval provenance/settings are not preserved. Different bootstrap settings or Monte Carlo variation are possible; the new results do not by themselves establish how the original interval was computed.",
+  "final_seeded_multilevel": [
+    {
+      "model": "Null",
+      "n": 7557,
+      "cluster_sd": 0.3869816124702779,
+      "cluster_variance": 0.1497547683900963,
+      "icc": 0.0435381356192424,
+      "mor": 1.446477279986006,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully.",
+      "max_absolute_gradient": 6.550731573629065e-06,
+      "gradient_tolerance": 1e-05,
+      "seed": 20261008,
+      "pcv": null
+    },
+    {
+      "model": "Adjusted",
+      "n": 7550,
+      "cluster_sd": 0.3264411858954564,
+      "cluster_variance": 0.1065638478488319,
+      "icc": 0.031375233900709,
+      "mor": 1.3653124276901605,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully.",
+      "max_absolute_gradient": 8.616790931463905e-06,
+      "gradient_tolerance": 1e-05,
+      "seed": 20261008,
+      "pcv": 0.2884109868792715
+    }
+  ],
+  "adjusted_refit_diagnostic": {
+    "model": "Adjusted VB",
+    "optimizer": "BFGS",
+    "gtol": 1e-05,
+    "seed": 20261008,
+    "n": 7550,
+    "success": true,
+    "message": "Optimization terminated successfully.",
+    "max_absolute_gradient": 9.920329856472065e-06,
+    "cluster_sd": 0.32644122330870756,
+    "cluster_variance": 0.10656387227528548,
+    "icc": 0.03137524086686286,
+    "mor": 1.3653124764147122,
+    "iterations": 421,
+    "warnings": [],
+    "elapsed_seconds": 163.625
+  },
+  "approved_interval_update": {
+    "sample": "Full valid-anaemia sample",
+    "n": 7557,
+    "reps": 5000,
+    "seed": 20261008,
+    "ci_low": -0.09237167274547348,
+    "ci_high": -0.02494165401130471,
+    "bootstrap_sd": 0.017280186065796774,
+    "approved_on": "2026-10-10",
+    "approval": "Corresponding author instructed go ahead in the current chat"
+  }
+}

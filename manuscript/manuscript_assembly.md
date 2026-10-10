@@ -77,7 +77,7 @@ No external funding was received for this study.
 
 ## Competing interests
 
-The author declares no competing interests.
+The authors declare no competing interests.
 
 ## Reproducibility note
 

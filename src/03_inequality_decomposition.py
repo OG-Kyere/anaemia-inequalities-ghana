@@ -23,10 +23,10 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 
-from common import concentration_indices, load_analysis_data, weighted_midrank
+from common import concentration_indices, load_analysis_data, weighted_midrank, OUTPUT_DIR
+from common import resample_psus_within_strata as _resample_psus
 
-OUT = Path("results/reproduced")
-OUT.mkdir(parents=True, exist_ok=True)
+OUT = OUTPUT_DIR
 
 DOMAIN_TERMS = {
     "Age": ["age_2", "age_3", "age_4", "age_5", "age_6", "age_7"],
@@ -49,23 +49,23 @@ def analysis_frame(df: pd.DataFrame) -> pd.DataFrame:
     x["psu"] = df["psu"]
 
     for code in range(2, 8):
-        x[f"age_{code}"] = (df["v013"] == code).astype(float)
+        x[f"age_{code}"] = (df["v013"] == code).astype(float).where(df['v013'].notna())
     x["education_years"] = df["v133"].astype(float)
-    x["rural"] = (df["v025"] == 2).astype(float)
-    x["pregnant"] = (df["v213"] == 1).astype(float)
+    x["rural"] = (df["v025"] == 2).astype(float).where(df['v025'].notna())
+    x["pregnant"] = (df["v213"] == 1).astype(float).where(df['v213'].notna())
     x["parity"] = df["v201"].astype(float)
     x["bmi"] = df["bmi"].astype(float)
     x["bmi_sq"] = x["bmi"] ** 2
-    x["employed"] = (df["v714"] == 1).astype(float)
+    x["employed"] = (df["v714"] == 1).astype(float).where(df['v714'].notna())
 
     # DHS v501 codes 1 (married) and 2 (living together) as currently in union.
-    x["in_union"] = df["v501"].isin([1, 2]).astype(float)
+    x["in_union"] = df["v501"].isin([1, 2]).astype(float).where(df['v501'].notna())
 
     required = [
         "anaemia", "weight", "wealth", "strata", "psu",
         *[term for terms in DOMAIN_TERMS.values() for term in terms],
     ]
-    return x.dropna(subset=required).copy()
+    return x.replace([np.inf, -np.inf], np.nan).dropna(subset=required).copy()
 
 
 def weighted_cov(x: np.ndarray, r: np.ndarray, w: np.ndarray) -> float:
@@ -111,14 +111,14 @@ def decompose(frame: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, float]]:
         rows.append({
             "domain": domain,
             "absolute_contribution": contribution,
-            "percent_of_observed_E": 100.0 * contribution / E,
+            "percent_of_observed_E": 100.0 * contribution / E if E != 0 else float('nan'),
         })
 
     residual = float(E - measured_total)
     rows.append({
         "domain": "Residual",
         "absolute_contribution": residual,
-        "percent_of_observed_E": 100.0 * residual / E,
+        "percent_of_observed_E": 100.0 * residual / E if E != 0 else float('nan'),
     })
 
     meta = {
@@ -134,18 +134,7 @@ def resample_psus_within_strata(
     frame: pd.DataFrame,
     rng: np.random.Generator,
 ) -> pd.DataFrame:
-    pieces = []
-    for stratum, g in frame.groupby("strata", observed=True):
-        psus = pd.unique(g["psu"])
-        sampled = rng.choice(psus, size=len(psus), replace=True)
-
-        for draw_id, selected_psu in enumerate(sampled):
-            piece = g.loc[g["psu"] == selected_psu].copy()
-            # Give repeated copies unique bootstrap cluster identifiers.
-            piece["psu_boot"] = f"{stratum}_{draw_id}"
-            pieces.append(piece)
-
-    return pd.concat(pieces, ignore_index=True)
+    return _resample_psus(frame, rng)
 
 
 def bootstrap(
@@ -153,6 +142,8 @@ def bootstrap(
     reps: int,
     seed: int,
 ) -> pd.DataFrame:
+    if reps < 2:
+        raise ValueError('At least two bootstrap replicates are required.')
     rng = np.random.default_rng(seed)
     records = []
 
@@ -180,6 +171,9 @@ def main() -> None:
         help="Write point decomposition only.",
     )
     args = parser.parse_args()
+    if not args.no_bootstrap and args.bootstrap_reps < 2:
+        parser.error('--bootstrap-reps must be at least 2')
+    OUT.mkdir(parents=True, exist_ok=True)
 
     frame = analysis_frame(load_analysis_data())
 

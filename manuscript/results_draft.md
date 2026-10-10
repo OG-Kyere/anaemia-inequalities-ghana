@@ -1,3 +1,5 @@
+> Historical component draft; use `submission/jph_main_manuscript.md` for the current manuscript, references and declarations.
+
 # Results Draft
 
 ## Study population and anaemia prevalence

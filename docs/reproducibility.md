@@ -8,35 +8,35 @@ Request the **2022 Ghana Individual Recode (IR)** file from The DHS Program.
 
 Either place it at:
 
-\`\`\`text
+```text
 data/raw/GHIR8CFL.DTA
-\`\`\`
+```
 
-or point the environment variable \`DHS_IR_PATH\` to the authorized local file.
+or point the environment variable `DHS_IR_PATH` to the authorized local file.
 
 PowerShell example:
 
-\`\`\`powershell
+```powershell
 $env:DHS_IR_PATH="C:\\path\\to\\GHIR8CFL.DTA"
-\`\`\`
+```
 
 Git Bash / Linux / macOS:
 
-\`\`\`bash
+```bash
 export DHS_IR_PATH="/path/to/GHIR8CFL.DTA"
-\`\`\`
+```
 
 ## 2. Install dependencies
 
-\`\`\`bash
+```bash
 python -m pip install -r requirements.txt
-\`\`\`
+```
 
 ## 3. Run the core pipeline
 
-\`\`\`bash
+```bash
 python run_analysis.py
-\`\`\`
+```
 
 This regenerates:
 
@@ -47,9 +47,9 @@ This regenerates:
 
 Outputs are written to:
 
-\`\`\`text
+```text
 results/reproduced/
-\`\`\`
+```
 
 ## Validation status
 
@@ -71,12 +71,12 @@ The rerun reproduced:
 
 These agree with the locked manuscript results.
 
-See \`docs/core_reproducibility_validation.md\` for the validation table.
+See `docs/core_reproducibility_validation.md` for the validation table.
 
 ## Remaining reproducibility work
 
-The decomposition bootstrap and multilevel random-intercept analyses are documented but still need to be incorporated into the executable pipeline and cross-checked against the locked outputs.
+The executable extended and multilevel runs are documented in `docs/extended_reproducibility.md`. Core runs now also export aggregate curve coordinates, weighted subgroup shares, overall Wald tests, and a distinct full-sample concentration-index bootstrap. The historical decomposition bootstrap uses 7,550 complete cases; its interval must not silently substitute for a 7,557-woman bootstrap interval. Revalidation against authorized DHS data is required for the updated outputs.
 
 ## Data protection
 
-Do not commit the raw IR file, extracted row-level data, or any derived record-level dataset. The repository's \`.gitignore\` excludes the expected DHS file formats and Ghana DHS ZIP archives.
+Do not commit the raw IR file, extracted row-level data, or any derived record-level dataset. The repository's `.gitignore` excludes the expected DHS file formats and Ghana DHS ZIP archives.

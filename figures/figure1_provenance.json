@@ -1,0 +1,13 @@
+{
+  "source": "Authorized Ghana 2022 DHS IR rerun",
+  "population_n": 7557,
+  "curve_grid_points": 101,
+  "erreygers_index": -0.05893796929817193,
+  "interval_annotation": "Author-approved 5,000-replicate percentile interval",
+  "row_level_data_exported": false,
+  "bootstrap_reps": 5000,
+  "seed": 20261008,
+  "bootstrap_ci_low": -0.09237167274547348,
+  "bootstrap_ci_high": -0.02494165401130471,
+  "approved_on": "2026-10-10"
+}
