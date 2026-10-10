@@ -6,6 +6,10 @@ matches the locked manuscript heterogeneity estimates. Laplace/MAP is retained
 only as a diagnostic option; in this dataset it fails to converge and collapses
 the cluster variance toward zero.
 
+The final seeded VB run uses BFGS gtol=1e-5. The historical stricter gtol=1e-6
+run reported precision loss; retain that diagnostic rather than suppressing it.
+Optimizer status and maximum absolute gradient are written with the estimates.
+
 These models are contextual complements to the design-based survey analyses;
 they do not replace survey-weighted prevalence or inequality estimates.
 """
@@ -46,7 +50,8 @@ def mor_from_sd(sd: float) -> float:
     return float(np.exp(np.sqrt(2.0) * sd * 0.6744897501960817))
 
 
-def fit_model(df: pd.DataFrame, formula: str, method: str):
+def fit_model(df: pd.DataFrame, formula: str, method: str, gtol=1e-5, seed=20261008):
+    np.random.seed(seed)
     model = BinomialBayesMixedGLM.from_formula(
         formula,
         {"cluster": "0 + C(psu)"},
@@ -58,13 +63,13 @@ def fit_model(df: pd.DataFrame, formula: str, method: str):
     if method == "map":
         result = model.fit_map(
             method="BFGS",
-            minim_opts={"maxiter": 2000, "gtol": 1e-6},
+            minim_opts={"maxiter": 2000, "gtol": gtol},
             scale_fe=True,
         )
     else:
         result = model.fit_vb(
             fit_method="BFGS",
-            minim_opts={"maxiter": 2000, "gtol": 1e-6},
+            minim_opts={"maxiter": 2000, "gtol": gtol},
             scale_fe=True,
         )
 
@@ -79,6 +84,9 @@ def fit_model(df: pd.DataFrame, formula: str, method: str):
         "mor": mor_from_sd(sd),
         "optimizer_success": bool(result.optim_retvals.get('success', False)),
         "optimizer_message": str(result.optim_retvals.get('message', 'unavailable')),
+        "max_absolute_gradient": float(np.max(np.abs(result.optim_retvals['jac']))),
+        "gradient_tolerance": gtol,
+        "seed": seed,
     }
 
 
@@ -90,7 +98,13 @@ def main() -> None:
         default="vb",
         help="VB reproduces the locked results; MAP is diagnostic only.",
     )
+    parser.add_argument('--gtol',type=float,default=1e-5)
+    parser.add_argument('--seed',type=int,default=20261008)
     args = parser.parse_args()
+    if not np.isfinite(args.gtol) or args.gtol <= 0:
+        parser.error('--gtol must be finite and positive')
+    if not 0 <= args.seed < 2**32:
+        parser.error('--seed must be between 0 and 2**32 - 1')
     OUT.mkdir(parents=True, exist_ok=True)
 
     df = load_analysis_data().copy()
@@ -103,11 +117,11 @@ def main() -> None:
     ]).copy()
 
     print(f"Fitting null model with n={len(null_df):,} ...")
-    _, null = fit_model(null_df, "anaemia ~ 1", args.method)
+    _, null = fit_model(null_df, "anaemia ~ 1", args.method,args.gtol,args.seed)
 
     print(f"Fitting adjusted model with n={len(adjusted_df):,} ...")
     adjusted_result, adjusted = fit_model(
-        adjusted_df, ADJUSTED_FORMULA, args.method
+        adjusted_df, ADJUSTED_FORMULA, args.method,args.gtol,args.seed
     )
 
     pcv = (

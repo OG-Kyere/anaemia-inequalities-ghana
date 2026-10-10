@@ -83,6 +83,8 @@ def check_imports() -> int:
     for name in REQUIRED_IMPORTS:
         try:
             mod = importlib.import_module(name)
+            if getattr(mod, '__file__', None) is None:
+                raise ImportError('Only an empty namespace was found; the dependency installation is incomplete.')
             version = getattr(mod, "__version__", "version unavailable")
             ok(f"{name}: {version}")
         except Exception as exc:

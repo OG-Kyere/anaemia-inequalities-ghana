@@ -1,0 +1,3 @@
+model,n,cluster_sd,cluster_variance,icc,mor,optimizer_success,optimizer_message,max_absolute_gradient,gradient_tolerance,seed,pcv
+Null,7557,0.3869816124702779,0.14975476839009635,0.04353813561924242,1.446477279986006,True,Optimization terminated successfully.,6.550731573629065e-06,1e-05,20261008,
+Adjusted,7550,0.3264411858954564,0.10656384784883192,0.03137523390070902,1.3653124276901605,True,Optimization terminated successfully.,8.616790931463905e-06,1e-05,20261008,0.2884109868792715

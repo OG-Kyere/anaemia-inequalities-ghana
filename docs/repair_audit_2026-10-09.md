@@ -41,3 +41,9 @@ The full core/decomposition/multilevel runner was also exercised on isolated syn
 7. **Journal format:** the Markdown source uses numbered citation identifiers; a typesetter can render them as superscripts. The earlier Overleaf/PDF files retain the earlier reference order and should not be submitted as the current manuscript. Final journal upload formatting and its official STROBE checklist still require completion.
 
 The repository is a repaired working project, not a certified submission-ready or newly scientifically validated package.
+
+## Real-data verification update — 9 October 2026
+
+The authorized IR archive from the earlier conversation was located and reanalysed. The core point estimates, adjusted associations, decomposition share/intervals and multilevel summaries reproduce. The empirical curve was regenerated, and both final seeded multilevel fits converge at BFGS gradient tolerance 1e-5 without changing reported estimates. The faster PSU resampler preserves exact sampled rows and order. All 21 unit tests pass.
+
+See `docs/real_data_validation_2026-10-09.md` for the current status; earlier “data unavailable” and outstanding-convergence notes above describe the prior review stage. The original inequality interval remains a provenance discrepancy. A documented full-sample 5,000-replicate interval is available but awaits approval under the numerical lock. Author roles and final approval are also unconfirmed. Keep this a draft until those decisions and the final file rebuild are completed.

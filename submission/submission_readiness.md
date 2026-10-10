@@ -56,3 +56,9 @@ Confirmed authors: **Gideon Ofosu Kyere, Wilhemina Adoma Pels, Prince Apaah and 
 7. Upload the required manuscript, tables, figures, supplement, and any STROBE file requested by the submission portal.
 
 Run the corrected pipeline with authorized data and resolve the scientific checks in the repair audit before submission.
+
+## Real-data verification update — 9 October 2026
+
+The authorized IR archive from the earlier conversation was located and reanalysed. The core point estimates, adjusted associations, decomposition share/intervals and multilevel summaries reproduce. The empirical curve was regenerated, and both final seeded multilevel fits converge at BFGS gradient tolerance 1e-5 without changing reported estimates. The faster PSU resampler preserves exact sampled rows and order. All 21 unit tests pass.
+
+See `docs/real_data_validation_2026-10-09.md` for the current status; earlier “data unavailable” and outstanding-convergence notes above describe the prior review stage. The original inequality interval remains a provenance discrepancy. A documented full-sample 5,000-replicate interval is available but awaits approval under the numerical lock. Author roles and final approval are also unconfirmed. Keep this a draft until those decisions and the final file rebuild are completed.

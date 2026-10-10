@@ -125,4 +125,4 @@ Likewise, the inverse adjusted association between higher BMI categories and ana
 
 ## Multilevel estimator diagnostics
 
-The multilevel models were not survey-weighted. Variational Bayes reproduced the stored estimates, but the optimizer emitted a convergence warning. Matching stored values does not establish convergence. The MAP/Laplace fit failed to converge and is diagnostic only. See `docs/multilevel_reproducibility_validation.md`.
+The multilevel models were not survey-weighted. The initial BFGS run at gradient tolerance 1e-6 reported precision loss in the adjusted model. Both final seeded fits (seed 20261008; gradient tolerance 1e-5) converged, with maximum absolute gradients below the stated tolerance. Cluster variance, ICC, MOR and proportional change in variance were unchanged at the reported precision. The failed MAP/Laplace fit remains diagnostic only. See `docs/real_data_validation_2026-10-09.md` and `docs/multilevel_reproducibility_validation.md`.

@@ -259,16 +259,21 @@ def concentration_curve(y, rank_variable, weights, points=101) -> pd.DataFrame:
 
 
 def resample_psus_within_strata(frame, rng):
-    pieces = []
-    for stratum, group in frame.groupby('strata', observed=True):
-        psus = pd.unique(group['psu'])
+    positions, identifiers = [], []
+    all_psus = frame['psu'].to_numpy()
+    for stratum, rows in frame.groupby('strata', observed=True).indices.items():
+        local_psus = all_psus[rows]
+        psus = pd.unique(local_psus)
+        cluster_rows = {psu: rows[local_psus == psu] for psu in psus}
         for draw_id, selected in enumerate(rng.choice(psus, size=len(psus), replace=True)):
-            piece = group.loc[group['psu'] == selected].copy()
-            piece['psu_boot'] = f'{stratum}_{draw_id}'
-            pieces.append(piece)
-    if not pieces:
+            selected_rows = cluster_rows[selected]
+            positions.append(selected_rows)
+            identifiers.extend([f'{stratum}_{draw_id}'] * len(selected_rows))
+    if not positions:
         raise ValueError('Cannot resample an empty survey frame.')
-    return pd.concat(pieces, ignore_index=True)
+    sample = frame.iloc[np.concatenate(positions)].copy().reset_index(drop=True)
+    sample['psu_boot'] = identifiers
+    return sample
 
 
 def bootstrap_concentration_indices(frame, reps=200, seed=20261008):

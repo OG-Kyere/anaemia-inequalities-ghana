@@ -29,14 +29,19 @@ def main():
     parser.add_argument("--extended", action="store_true")
     parser.add_argument("--multilevel", action="store_true")
     parser.add_argument("--bootstrap-reps", type=int, default=200)
+    parser.add_argument('--inequality-bootstrap-reps',type=int,default=None,
+                        help='Full-sample inequality replicates; defaults to --bootstrap-reps.')
     parser.add_argument("--multilevel-method", choices=["vb", "map"], default="vb")
     args = parser.parse_args()
     if args.bootstrap_reps < 2:
         parser.error('--bootstrap-reps must be at least 2 to estimate intervals')
+    inequality_reps=args.inequality_bootstrap_reps or args.bootstrap_reps
+    if args.inequality_bootstrap_reps is not None and args.inequality_bootstrap_reps < 2:
+        parser.error('--inequality-bootstrap-reps must be at least 2')
 
     for script in CORE:
         if script.endswith('01_descriptive_and_inequality.py'):
-            run(script, '--bootstrap-reps', str(args.bootstrap_reps))
+            run(script, '--bootstrap-reps', str(inequality_reps))
         else:
             run(script)
 

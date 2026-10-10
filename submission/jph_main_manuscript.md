@@ -72,7 +72,7 @@ Survey-weighted logistic regression was used to estimate adjusted associations w
 
 Two-level random-intercept logistic models were fitted with women nested within DHS clusters. A null model quantified baseline clustering, and an adjusted model included the same covariates as the primary regression model. Cluster heterogeneity was summarized using the latent-variable intraclass correlation coefficient (ICC) and median odds ratio (MOR), as recommended for multilevel logistic analyses.[13] The proportional change in variance quantified the reduction in between-cluster variance after adjustment.
 
-The multilevel models used variational Bayes with normally distributed fixed-effect priors (standard deviation 2) and a normal prior on log cluster standard deviation (standard deviation 1). These models were not survey-weighted and were complementary contextual analyses; national prevalence and inequality estimates remained based on the complex survey design. The optimizer emitted a convergence warning in the recorded validation, so the variance-component estimates require cautious interpretation; matching stored values does not establish numerical convergence.
+The multilevel models used variational Bayes with normally distributed fixed-effect priors on the scaled design matrix (standard deviation 2) and a normal prior on log cluster standard deviation (standard deviation 1). These models were not survey-weighted and were complementary contextual analyses; national prevalence and inequality estimates remained based on the complex survey design. Both final seeded BFGS fits converged at a gradient tolerance of 1e-5; the earlier stricter-tolerance precision-loss diagnostic is documented in the supplement.
 
 ### Sensitivity and missing-data analyses
 

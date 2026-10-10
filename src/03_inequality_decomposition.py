@@ -24,6 +24,7 @@ import pandas as pd
 import statsmodels.api as sm
 
 from common import concentration_indices, load_analysis_data, weighted_midrank, OUTPUT_DIR
+from common import resample_psus_within_strata as _resample_psus
 
 OUT = OUTPUT_DIR
 
@@ -133,18 +134,7 @@ def resample_psus_within_strata(
     frame: pd.DataFrame,
     rng: np.random.Generator,
 ) -> pd.DataFrame:
-    pieces = []
-    for stratum, g in frame.groupby("strata", observed=True):
-        psus = pd.unique(g["psu"])
-        sampled = rng.choice(psus, size=len(psus), replace=True)
-
-        for draw_id, selected_psu in enumerate(sampled):
-            piece = g.loc[g["psu"] == selected_psu].copy()
-            # Give repeated copies unique bootstrap cluster identifiers.
-            piece["psu_boot"] = f"{stratum}_{draw_id}"
-            pieces.append(piece)
-
-    return pd.concat(pieces, ignore_index=True)
+    return _resample_psus(frame, rng)
 
 
 def bootstrap(
