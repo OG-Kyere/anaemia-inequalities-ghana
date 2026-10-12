@@ -2,7 +2,7 @@
 
 ## Overall prevalence
 
-Among 7,557 women with valid anaemia measurements, the survey-weighted prevalence of any anaemia was **41.12%** (95% CI **39.60% to 42.64%**).
+Among 7,557 women with valid anaemia measurements, the survey-weighted prevalence of any anaemia was **41.12%** (95% CI **39.61% to 42.64%**).
 
 The confidence interval accounts for Ghana DHS sampling weights, strata, and primary sampling units using Taylor-linearized variance estimation for a weighted proportion.
 

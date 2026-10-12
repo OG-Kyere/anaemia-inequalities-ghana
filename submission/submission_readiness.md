@@ -67,3 +67,8 @@ See `docs/real_data_validation_2026-10-09.md` for the current status; earlier â€
 ## Update â€” 10 October 2026
 
 The corresponding author approved the 5,000-replicate inequality interval (-0.0924 to -0.0249); it is now applied throughout the current manuscript and figures. Earlier pending-approval statements above describe the historical review stage. See `docs/approved_interval_update_2026-10-10.md`. Author contributions and final approval remain provisional.
+
+
+## Update: 12 October 2026
+
+The author approved both rounding corrections; they are now applied. Earlier pending-rounding statements describe the historical review stage. See `docs/approved_rounding_2026-10-12.md`.

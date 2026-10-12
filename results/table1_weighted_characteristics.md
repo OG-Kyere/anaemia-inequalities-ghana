@@ -45,7 +45,7 @@ Weighted percentages describe the national distribution of women represented by 
 
 ## Overall prevalence
 
-The survey-weighted prevalence of any anaemia was **41.12% (95% CI 39.60%–42.64%)**.
+The survey-weighted prevalence of any anaemia was **41.12% (95% CI 39.61%–42.64%)**.
 
 ## Notes
 

@@ -11,7 +11,8 @@
   "full_sample_bootstrap_replicates": 5000,
   "bootstrap_quantiles_match_record": true,
   "multilevel_optimizer_checks_pass": true,
-  "rounding_discrepancies_pending_approval": [
+  "rounding_discrepancies_resolved_on": "2026-10-12",
+  "approved_rounding_corrections": [
     {
       "quantity": "Prevalence CI lower at two decimal places",
       "stored_display": "39.60%",

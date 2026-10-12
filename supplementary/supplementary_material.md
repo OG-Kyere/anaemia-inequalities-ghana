@@ -64,7 +64,7 @@ The decomposition uses 7,550 BMI-complete women and a complete-case Erreygers in
 
 | Measure | Null model | Adjusted model |
 |---|---:|---:|
-| Cluster-level SD | 0.387 | 0.327 |
+| Cluster-level SD | 0.387 | 0.326 |
 | Cluster-level variance | 0.150 | 0.107 |
 | ICC | 4.35% | 3.14% |
 | Median odds ratio | 1.45 | 1.37 |

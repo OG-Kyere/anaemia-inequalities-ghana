@@ -28,3 +28,8 @@ Contributor roles and final manuscript approval remain pending for all four auth
 ## Document build
 
 The final PDF compilation, visual inspection and ZIP integrity results are recorded in the delivered project's `BUILD_CHECKS.md`. No restricted microdata are included in the repository or Overleaf package. Historical audit records are retained as history.
+
+
+## Update: 12 October 2026
+
+The author approved both rounding corrections; they are now applied. Earlier pending-rounding statements describe the historical review stage. See `docs/approved_rounding_2026-10-12.md`.
