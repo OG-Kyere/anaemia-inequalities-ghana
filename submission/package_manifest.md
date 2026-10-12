@@ -1,14 +1,16 @@
 # Submission Package Manifest
 
+> **Working package — not submission-ready.** The 9 October review found citation and reporting defects and outstanding scientific/author confirmations. See `docs/repair_audit_2026-10-09.md` and `submission/author_confirmation.md`. Historical checked items below do not certify the updated pipeline or current authorship declarations.
+
 ## Core upload files
 
 | Item | Repository source | Status |
 |---|---|---|
-| Title page | `submission/jph_title_page.md` | Ready |
-| Main manuscript | `submission/jph_main_manuscript.md` | Ready |
-| Structured abstract | `submission/jph_abstract_200_words.md` | Ready |
-| Cover letter | `submission/jph_cover_letter.md` | Ready |
-| Supplementary material | `supplementary/supplementary_material.md` | Ready |
+| Title page | `submission/jph_title_page.md` | Working draft; see submission gates |
+| Main manuscript | `submission/jph_main_manuscript.md` | Working draft; see submission gates |
+| Structured abstract | `submission/jph_abstract_200_words.md` | Working draft; see submission gates |
+| Cover letter | `submission/jph_cover_letter.md` | Working draft; see submission gates |
+| Supplementary material | `supplementary/supplementary_material.md` | Working draft; see submission gates |
 | STROBE mapping | `submission/strobe_mapping.md` | Ready; convert to official checklist format if portal requests |
 | Reference verification | `submission/reference_verification.md` | Complete |
 
@@ -49,3 +51,9 @@ Do not reintroduce the earlier decomposition percentages (77.8%, 17.3%, etc.). T
 - All authors are affiliated with the Department of Statistics and Actuarial Science, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana.
 - Corresponding email: **kyereofosu2003@gmail.com**
 - Specific CRediT roles remain to be confirmed by all authors before journal submission.
+
+## Real-data verification update — 9 October 2026
+
+The authorized IR archive from the earlier conversation was located and reanalysed. The core point estimates, adjusted associations, decomposition share/intervals and multilevel summaries reproduce. The empirical curve was regenerated, and both final seeded multilevel fits converge at BFGS gradient tolerance 1e-5 without changing reported estimates. The faster PSU resampler preserves exact sampled rows and order. All 21 unit tests pass.
+
+See `docs/real_data_validation_2026-10-09.md` for the current status; earlier “data unavailable” and outstanding-convergence notes above describe the prior review stage. The original inequality interval remains a provenance discrepancy. A documented full-sample 5,000-replicate interval is available but awaits approval under the numerical lock. Author roles and final approval are also unconfirmed. Keep this a draft until those decisions and the final file rebuild are completed.

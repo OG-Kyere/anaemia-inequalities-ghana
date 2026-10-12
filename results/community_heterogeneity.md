@@ -56,7 +56,7 @@ The adjusted model included:
 
 Estimated cluster-level standard deviation:
 
-**0.327**
+**0.326**
 
 Estimated cluster-level variance:
 

@@ -22,6 +22,8 @@ import os
 import py_compile
 import subprocess
 import sys
+import json
+from manuscript_checks import citation_issues
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -81,6 +83,8 @@ def check_imports() -> int:
     for name in REQUIRED_IMPORTS:
         try:
             mod = importlib.import_module(name)
+            if getattr(mod, '__file__', None) is None:
+                raise ImportError('Only an empty namespace was found; the dependency installation is incomplete.')
             version = getattr(mod, "__version__", "version unavailable")
             ok(f"{name}: {version}")
         except Exception as exc:
@@ -131,6 +135,26 @@ def check_submission_consistency() -> int:
             if token in text:
                 failures += 1
                 fail(f"{path.relative_to(ROOT)} contains {meaning}: {token}")
+        if any(ord(c) < 32 and c not in '\n\r\t' for c in text):
+            failures += 1
+            fail(f'{path.relative_to(ROOT)} contains broken equation/control characters')
+
+    manuscript = ROOT / 'submission/jph_main_manuscript.md'
+    if manuscript.exists():
+        for issue in citation_issues(manuscript.read_text(encoding='utf-8')):
+            failures += 1
+            fail(issue)
+        if not citation_issues(manuscript.read_text(encoding='utf-8')):
+            ok('All references are cited and numbered by first appearance')
+        text = manuscript.read_text(encoding='utf-8')
+        if '## Ethics statement' not in text:
+            failures += 1
+            fail('Canonical submission manuscript has no ethics statement')
+        if 'pending author confirmation' in text.lower():
+            warn('Author contributions / final approval still require author confirmation')
+        if 'not survey-weighted' not in text:
+            failures += 1
+            fail('Multilevel weighting limitation must be stated explicitly')
 
     title = (ROOT / "submission" / "jph_title_page.md").read_text(encoding="utf-8")
     final_authors = [
@@ -172,7 +196,7 @@ def check_submission_consistency() -> int:
         for path, token in unresolved:
             warn(f"unresolved administrative placeholder in {path}: {token}")
     else:
-        ok("no administrative placeholders remain")
+        ok("no obsolete email/affiliation placeholders remain")
 
     return failures
 
@@ -296,9 +320,24 @@ def check_submission_assets() -> int:
     missing = [name for name in expected if not (generated / name).exists()]
     if missing:
         for name in missing:
-            warn(f"missing generated asset: {name}")
+            fail(f"missing generated asset: {name}")
+        return len(missing)
     else:
         ok("all six journal-upload assets are present")
+    provenance=generated/'asset_provenance.json'
+    if provenance.exists() and 'Preview' in json.loads(provenance.read_text())['figure1']:
+        warn('Figure 1 uses stored preview points; regenerate the empirical curve before submission')
+    if not missing:
+        from PIL import Image
+        for name in expected:
+            if name.endswith(('.png','.tiff')):
+                with Image.open(generated/name) as image:
+                    image.verify()
+                with Image.open(generated/name) as image:
+                    if min(image.size)<1800 or min(image.info.get('dpi',(0,0)))<599:
+                        fail(f'{name} is not a high-resolution 600-dpi export')
+                        return 1
+        ok('Image exports are readable and have the expected high-resolution dimensions/DPI')
     return 0
 
 

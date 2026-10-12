@@ -1,0 +1,10 @@
+# Environment used for the 9 October 2026 authorized-data revalidation (Python 3.12).
+# Keep requirements.txt as the general installation entry point.
+pandas==3.0.6
+numpy==2.5.3
+pyarrow==26.0.0
+scipy==1.18.1
+statsmodels==0.15.0
+patsy==1.0.3
+matplotlib==3.11.2
+Pillow==12.3.0

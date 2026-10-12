@@ -1,0 +1,29 @@
+[
+  {
+    "sample": "Full valid-anaemia sample",
+    "n": 7557,
+    "reps": 200,
+    "seed": 20261008,
+    "ci_low": -0.08884520508722826,
+    "ci_high": -0.022367815787986235,
+    "bootstrap_sd": 0.016672503076812673
+  },
+  {
+    "sample": "Full valid-anaemia sample",
+    "n": 7557,
+    "reps": 1000,
+    "seed": 20261008,
+    "ci_low": -0.09055053574630857,
+    "ci_high": -0.024056795943061204,
+    "bootstrap_sd": 0.017334335486923064
+  },
+  {
+    "sample": "Full valid-anaemia sample",
+    "n": 7557,
+    "reps": 5000,
+    "seed": 20261008,
+    "ci_low": -0.09237167274547348,
+    "ci_high": -0.02494165401130471,
+    "bootstrap_sd": 0.017280186065796774
+  }
+]

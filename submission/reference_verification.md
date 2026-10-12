@@ -62,3 +62,9 @@ The expanded **15-reference** bibliography used in the Journal of Public Health 
 - current WHO haemoglobin guidance.
 
 The literature expansion strengthens the novelty framing while preserving the manuscript's original numerical results and non-causal interpretation.
+
+## Citation repair on 9 October 2026
+
+The bibliography's former numbering did not match several in-text citations after expansion. Those links were corrected and all references renumbered by first appearance. The numbered list above records the earlier verification identifiers; use `submission/reference_numbering_map.json` to map them to the current manuscript. Methods citations now link to Erreygers, Wagstaff and Merlo; GDHS and WHO guidance citations link to the intended reports. The multicountry/spatial/decomposition references and the Ghana intervention cohort are discussed in context rather than merely included as uncited bibliography entries.
+
+Sources consulted for the repairs: the official PLOS article (10.1371/journal.pone.0294992), Scientific Reports article (10.1038/s41598-021-91198-z), Cambridge article (10.1017/S1368980024002222), Frontiers decomposition article (10.3389/fpubh.2023.1128214), Frontiers severity article (10.3389/fpubh.2023.1349174), and the primary-paper record for the Ghana prospective cohort (10.1093/jn/nxab024). No new numerical results for the present study were introduced.

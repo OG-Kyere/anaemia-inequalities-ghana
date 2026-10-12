@@ -2,7 +2,7 @@
 
 ## Overall prevalence
 
-Among 7,557 women with valid anaemia measurements, the survey-weighted prevalence of any anaemia was **41.12%** (95% CI **39.60% to 42.64%**).
+Among 7,557 women with valid anaemia measurements, the survey-weighted prevalence of any anaemia was **41.12%** (95% CI **39.61% to 42.64%**).
 
 The confidence interval accounts for Ghana DHS sampling weights, strata, and primary sampling units using Taylor-linearized variance estimation for a weighted proportion.
 
@@ -56,7 +56,7 @@ Women were ranked using the continuous DHS household wealth score (`v191`) and s
 
 - Standard concentration index: **-0.0358**
 - Erreygers corrected concentration index: **-0.0589**
-- Stratified PSU bootstrap 95% CI for the Erreygers index: **-0.0914 to -0.0212**
+- Stratified PSU bootstrap 95% CI for the Erreygers index: **-0.0924 to -0.0249**
 
 The negative index indicates that anaemia is disproportionately concentrated among socioeconomically disadvantaged women. The confidence interval excludes zero in the preliminary design-respecting bootstrap analysis.
 

@@ -84,7 +84,7 @@ Primary model:
 
 ```
 logit[P(Y_ij = 1)] = beta_0 + beta'X_ij + u_j
-u_j ~ Normal(0, sigma_u^2)
+u_j ~ Normal(0, \sigma_u^2)
 ```
 
 Model sequence:
