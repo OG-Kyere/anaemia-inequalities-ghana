@@ -1,4 +1,4 @@
-> Synchronized working manuscript. Canonical submission source: `submission/jph_main_manuscript.md`. Author declarations remain provisional.
+> Synchronized working manuscript. Canonical submission source: `submission/jph_main_manuscript.md`.
 
 # Socioeconomic and Geographic Inequalities in Anaemia Among Women of Reproductive Age in Ghana
 
@@ -162,9 +162,6 @@ We thank The DHS Program, the Ghana Statistical Service and ICF for making the 2
 
 OpenAI ChatGPT was used to assist with code development, statistical workflow documentation and manuscript drafting and language editing. All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.
 
-## Author contributions
-
-Contributor roles and final manuscript approval are pending author confirmation. This working version is not ready for submission; see `submission/author_confirmation.md`.
 
 ## Ethics statement
 
