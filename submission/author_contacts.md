@@ -9,4 +9,4 @@ Author order remains Gideon Ofosu Kyere, Wilhemina Adoma Pels, Prince Apaah and 
 | Prince Apaah | https://orcid.org/0009-0004-9551-4879 | papaah1@st.knust.edu.gh |
 | Clement Acheampong | https://orcid.org/0009-0008-8436-4544 | acheampongc479@gmail.com |
 
-The corresponding author remains Gideon Ofosu Kyere. Prince's and Clement's details were supplied by the corresponding author on 12 October 2026. Both ORCID check digits are valid; public profile ownership has not been independently verified. Author positions and final approval remain pending.
+The corresponding author remains Gideon Ofosu Kyere. Prince's and Clement's details were supplied by the corresponding author on 12 October 2026. Both ORCID check digits are valid; public profile ownership has not been independently verified. All four authors have approved the final manuscript, as confirmed by the corresponding author on 12 October 2026. Author positions remain pending.
