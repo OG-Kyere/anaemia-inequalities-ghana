@@ -22,12 +22,16 @@ Kumasi, Ghana
 **Prince Apaah**  
 Department of Statistics and Actuarial Science  
 Kwame Nkrumah University of Science and Technology  
-Kumasi, Ghana
+Kumasi, Ghana  
+ORCID: https://orcid.org/0009-0004-9551-4879  
+Email: papaah1@st.knust.edu.gh
 
 **Clement Acheampong**  
 Department of Statistics and Actuarial Science  
 Kwame Nkrumah University of Science and Technology  
-Kumasi, Ghana
+Kumasi, Ghana  
+ORCID: https://orcid.org/0009-0008-8436-4544  
+Email: acheampongc479@gmail.com
 
 ## Corresponding author
 
