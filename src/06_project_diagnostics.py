@@ -304,10 +304,13 @@ def check_submission_assets() -> int:
     expected = [
         "Table_I_weighted_characteristics.csv",
         "Table_II_adjusted_logistic_regression.csv",
-        "Figure_1_concentration_curve.png",
-        "Figure_1_concentration_curve.tiff",
-        "Figure_2_regional_prevalence.png",
-        "Figure_2_regional_prevalence.tiff",
+        "Table_III_panel_A_decomposition.csv",
+        "Table_III_panel_B_community_heterogeneity.csv",
+        "Table_S1_overall_Wald_tests.csv",
+        "Figure_S1_concentration_curve.png",
+        "Figure_S1_concentration_curve.tiff",
+        "Figure_1_regional_prevalence.png",
+        "Figure_1_regional_prevalence.tiff",
     ]
 
     if not generated.exists():
@@ -323,10 +326,10 @@ def check_submission_assets() -> int:
             fail(f"missing generated asset: {name}")
         return len(missing)
     else:
-        ok("all six journal-upload assets are present")
+        ok("all nine selected display assets are present")
     provenance=generated/'asset_provenance.json'
-    if provenance.exists() and 'Preview' in json.loads(provenance.read_text())['figure1']:
-        warn('Figure 1 uses stored preview points; regenerate the empirical curve before submission')
+    if provenance.exists() and 'Preview' in json.loads(provenance.read_text()).get('supplementary_figure_s1', ''):
+        warn('Supplementary Figure S1 uses stored preview points; regenerate the empirical curve before submission')
     if not missing:
         from PIL import Image
         for name in expected:

@@ -1,8 +1,8 @@
 """Prepare journal-upload assets from repository sources.
 
 Creates:
-- editable CSV versions of Tables I and II;
-- high-resolution PNG and TIFF versions of Figures 1 and 2.
+- editable CSV versions of Tables I, II and the two panels of Table III;
+- high-resolution PNG and TIFF versions of main Figure 1 and Supplementary Figure S1.
 
 This Windows-safe version uses Matplotlib directly and does not require Cairo.
 Outputs go to submission/generated/.
@@ -101,7 +101,7 @@ def make_concentration_curve(require_reproduced=False) -> str:
         fig.text(.5, .01, 'PREVIEW: stored curve points; regenerate from authorized data before submission.',
                  ha='center', fontsize=8)
 
-    save_png_and_tiff(fig, "Figure_1_concentration_curve")
+    save_png_and_tiff(fig, "Figure_S1_concentration_curve")
     return provenance
 
 
@@ -137,7 +137,7 @@ def make_regional_prevalence() -> None:
             ha='right',va='top',fontsize=10,
             bbox={'facecolor':'white','edgecolor':'none','alpha':.9})
 
-    save_png_and_tiff(fig, "Figure_2_regional_prevalence")
+    save_png_and_tiff(fig, "Figure_1_regional_prevalence")
 
 
 def main() -> None:
@@ -157,13 +157,17 @@ def main() -> None:
         OUT / "Table_II_adjusted_logistic_regression.csv",
     )
     extract_markdown_table(ROOT/'results/table2_full_adjusted_model.md',
-                           OUT/'Table_S3_overall_Wald_tests.csv',1)
+                           OUT/'Table_S1_overall_Wald_tests.csv',1)
+    extract_markdown_table(ROOT/'results/table3_inequality_and_heterogeneity.md',
+                           OUT/'Table_III_panel_A_decomposition.csv',0)
+    extract_markdown_table(ROOT/'results/table3_inequality_and_heterogeneity.md',
+                           OUT/'Table_III_panel_B_community_heterogeneity.csv',1)
 
     provenance=make_concentration_curve(args.require_reproduced)
     make_regional_prevalence()
-    (OUT/'asset_provenance.json').write_text(json.dumps({'figure1':provenance,
+    (OUT/'asset_provenance.json').write_text(json.dumps({'supplementary_figure_s1':provenance,
         'tables':'Locked repository aggregate tables; not re-estimated during export',
-        'figure2':'Repository regional aggregate table; not re-estimated during export'},indent=2),encoding='utf8')
+        'figure1':'Repository regional aggregate table; not re-estimated during export'},indent=2),encoding='utf8')
 
     print("Submission assets created in:")
     print(OUT)

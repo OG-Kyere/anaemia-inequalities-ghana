@@ -4,8 +4,8 @@
 
 ## Manuscript length
 
-- JPH main manuscript: approximately **2,883 words before references** in the repaired working manuscript
-- Structured abstract: approximately **172 words**
+- Current main text (Introduction through Conclusion): **2,857 words** by whitespace count excluding headings, including equation notation; table bodies and references counted separately
+- Structured abstract: under **200 words**; synchronized with the canonical manuscript
 - Original Paper limit verified against the current journal instructions: **2,000–3,000 words**
 - Main display limit verified: **no more than 4 tables/figures combined**
 
@@ -36,8 +36,8 @@ The four-display limit is satisfied with:
 
 1. Table I — weighted characteristics and anaemia prevalence
 2. Table II — adjusted survey-weighted logistic regression
-3. Figure 1 — concentration curve
-4. Figure 2 — regional anaemia prevalence
+3. Table III — panel A, validated decomposition; panel B, community-level heterogeneity
+4. Figure 1 — regional anaemia prevalence
 
 Additional results remain in supplementary material.
 
@@ -53,8 +53,9 @@ Additional results remain in supplementary material.
 
 ## Supplementary material
 
-- [x] Validated decomposition table
-- [x] Community-level heterogeneity table
+- [x] Decomposition and heterogeneity tables promoted to main Table III; no estimate changes
+- [x] Concentration curve retained as Supplementary Figure S1
+- [x] Overall Wald tests retained as Supplementary Table S1
 - [x] Wealth-gradient figure
 - [x] Validated decomposition figure
 - [x] Interpretation cautions
@@ -87,8 +88,8 @@ Additional results remain in supplementary material.
 - [x] Confirm Clement Acheampong's affiliation: KNUST, Department of Statistics and Actuarial Science
 - [x] Confirm second author: Wilhemina Adoma Pels, KNUST, Department of Statistics and Actuarial Science
 - [x] Confirm final author order: Gideon Ofosu Kyere; Wilhemina Adoma Pels; Prince Apaah; Clement Acheampong
-- [ ] Convert Tables I–II to the journal's preferred editable Word/table format
-- [ ] Export Figures 1–2 as journal-compatible high-resolution files (preferably TIFF/EPS/JPG as requested)
+- [ ] Convert Tables I–III to the journal's preferred editable Word/table format
+- [ ] Export main Figure 1 and Supplementary Figures S1–S3 as journal-compatible high-resolution files (preferably TIFF/EPS/JPG as requested)
 - [ ] Add page/line numbering only if requested by the submission system
 - [x] Verify expanded bibliography against final source records
 - [ ] Upload an official STROBE checklist if the submission system requests it

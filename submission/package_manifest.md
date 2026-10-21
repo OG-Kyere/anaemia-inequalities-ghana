@@ -20,8 +20,8 @@
 |---|---|---|
 | Table I | `results/table1_weighted_characteristics.md` | Export locally to editable CSV/Word table |
 | Table II | `results/table2_full_adjusted_model.md` | Export locally to editable CSV/Word table |
-| Figure 1 | `figures/figure1_concentration_curve.svg` | Export locally to high-resolution PNG/TIFF |
-| Figure 2 | `figures/figure2_regional_prevalence.svg` | Export locally to high-resolution PNG/TIFF |
+| Table III (panels A and B) | `results/table3_inequality_and_heterogeneity.md` | Export both panels to editable CSV/Word tables under one numbered display |
+| Figure 1 | `figures/figure2_regional_prevalence.svg` | Export locally to high-resolution PNG/TIFF |
 
 Use:
 
@@ -33,11 +33,14 @@ Generated upload files appear under `submission/generated/`, which is intentiona
 
 ## Supplementary displays
 
-- wealth-gradient figure;
-- validated decomposition figure;
-- decomposition table;
-- community-level heterogeneity table;
+- concentration curve (Figure S1);
+- wealth-gradient figure (Figure S2);
+- validated decomposition figure (Figure S3);
+- overall Wald tests (Table S1);
+- approximate multilevel uncertainty;
 - interpretation and reproducibility notes.
+
+The decomposition and multilevel tables formerly numbered S1 and S2 are main Table III, panels A and B. No estimates or underlying SVG assets were changed. See `docs/appendix_promotion_2026-10-21.md` for the selection rationale and validation.
 
 ## Final lock
 

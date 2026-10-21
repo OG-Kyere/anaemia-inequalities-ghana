@@ -1,84 +1,30 @@
-# Manuscript Assembly Guide
+# Manuscript assembly guide
 
-## Working title
+Use `submission/jph_main_manuscript.md` as the canonical manuscript and `manuscript/full_manuscript.md` as its synchronized working mirror. Historical component drafts are not assembly sources.
 
-**Socioeconomic and Geographic Inequalities in Anaemia Among Women of Reproductive Age in Ghana**
+## Current paper
 
-## Recommended manuscript order
+Title: **Socioeconomic and Geographic Inequalities in Anaemia Among Women of Reproductive Age in Ghana**.
 
-1. Title page
-2. Abstract
-3. Keywords
-4. Introduction
-5. Methods
-6. Results
-7. Discussion
-8. Conclusion
-9. Ethics statement
-10. Data availability statement
-11. Funding statement
-12. Competing interests
-13. Author contributions
-14. References
-15. Tables
-16. Figures
-17. Supplementary material
+Order: title page; structured abstract; keywords; Introduction; Methods; Results; Discussion; Conclusion; declarations; references; main tables; figure legends; supplementary material. Preserve the four journal-specific Discussion subheadings.
 
-## Current manuscript files
+## Main displays
 
-- `introduction_draft.md`
-- `methods_draft.md`
-- `results_draft.md`
-- `discussion_draft.md`
-- `abstract_draft.md`
-- `conclusion_draft.md`
-- `core_references.md`
-- `figure_plan.md`
+1. Table I: participant characteristics and weighted prevalence.
+2. Table II: adjusted survey-weighted logistic associations.
+3. Table III: panel A, validated wealth-related inequality decomposition; panel B, separate unweighted community-level models.
+4. Figure 1: regional prevalence (`figures/figure2_regional_prevalence.svg`).
 
-## Core main-text tables
+Main Table III source: `results/table3_inequality_and_heterogeneity.md`. Its panels retain separate headings, sample sizes and estimator notes.
 
-### Table 1
-Weighted characteristics and anaemia prevalence by subgroup.
+## Supplement
 
-### Table 2
-Survey-weighted adjusted logistic regression estimates.
+Use `supplementary/supplementary_material.md`: overall Wald tests (Table S1); concentration curve (Figure S1); wealth gradient (Figure S2); decomposition chart (Figure S3); approximate multilevel uncertainty and estimator diagnostics. See `manuscript/figure_plan.md` for source mappings.
 
-### Table 3
-Decomposition of wealth-related inequality in anaemia.
+Do not present planned continuous-haemoglobin or severity analyses as completed. Do not substitute older exploratory decomposition values for the validated results.
 
-## Core figures
+## Export
 
-### Figure 1
-Concentration curve for anaemia by household wealth rank.
+Run `python src/05_prepare_submission_assets.py --require-reproduced` for selected editable CSV tables and 600-dpi image exports from stored aggregates. Generated assets stay in ignored `submission/generated/`. These exports do not re-estimate results or require microdata. The concentration-curve aggregate is required by the flag.
 
-### Figure 2
-Survey-weighted regional anaemia prevalence with 95% confidence intervals.
-
-### Figure 3
-Decomposition of the Erreygers concentration index.
-
-## Suggested supplementary material
-
-- full regional prevalence table;
-- sensitivity analysis using alternative BMI specifications;
-- pregnancy-stratified analysis;
-- concentration-index bootstrap details;
-- multilevel variance-component results;
-- alternative outcome definitions;
-- variable dictionary.
-
-## Data availability statement
-
-The data analysed in this study are available from The DHS Program upon reasonable request and approval. The restricted microdata are not redistributed through this repository.
-
-## Funding statement
-
-No external funding was received for this study.
-
-## Competing interests
-
-The authors declare no competing interests.
-
-## Reproducibility note
-
-All non-restricted analysis code, documentation, derived aggregate results, and manuscript materials will be maintained in this repository. Raw and row-level DHS microdata will remain excluded in accordance with The DHS Program data-use terms.
+Final Word/RTF formatting, author roles, author approval and journal submission remain separate steps. Restricted DHS microdata must not be redistributed.

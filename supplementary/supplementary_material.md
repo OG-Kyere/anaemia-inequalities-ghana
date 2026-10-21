@@ -42,33 +42,12 @@ The median odds ratio was used to express cluster heterogeneity on the odds-rati
 
 ---
 
-## Supplementary Table S1. Decomposition of wealth-related inequality
+## Primary results promoted to the main paper
 
-| Domain | Absolute contribution | % of observed Erreygers index | 95% bootstrap interval |
-|---|---:|---:|---:|
-| BMI / nutritional status | -0.045731 | 77.7% | -0.061716 to -0.030045 |
-| Education | -0.009184 | 15.6% | -0.025104 to 0.006950 |
-| Residence | -0.004023 | 6.8% | -0.023362 to 0.013460 |
-| Parity | -0.002892 | 4.9% | -0.014688 to 0.009773 |
-| Pregnancy status | -0.002221 | 3.8% | -0.005493 to 0.000020 |
-| Age | +0.000570 | -1.0% | -0.003250 to 0.004169 |
-| Employment | +0.000021 | -0.04% | -0.000592 to 0.000687 |
-| Marital/union status | +0.001203 | -2.0% | -0.002581 to 0.005772 |
-| Residual | +0.003405 | -5.8% | -0.017297 to 0.025089 |
-
-The decomposition uses 7,550 BMI-complete women and a complete-case Erreygers index of -0.058853. The percentages are relative to that negative index, so positive contributions appear as negative percentages and offset part of the measured pro-poor inequality.
-
+The validated decomposition and community-level heterogeneity results are now presented in main Table III, panels A and B, respectively. Panel A uses 7,550 women and a complete-case Erreygers index of -0.058853; panel B reports the null (n = 7,557) and adjusted (n = 7,550) unweighted models. Numerical estimates are unchanged.
 ---
 
-## Supplementary Table S2. Community-level heterogeneity
-
-| Measure | Null model | Adjusted model |
-|---|---:|---:|
-| Cluster-level SD | 0.387 | 0.326 |
-| Cluster-level variance | 0.150 | 0.107 |
-| ICC | 4.35% | 3.14% |
-| Median odds ratio | 1.45 | 1.37 |
-| Proportional change in variance | — | 28.8% |
+## Additional multilevel uncertainty
 
 Approximate uncertainty:
 - null-model ICC: 3.91%–4.84%;
@@ -76,6 +55,8 @@ Approximate uncertainty:
 - null-model MOR: 1.42–1.48;
 - adjusted MOR: 1.34–1.39.
 
+
+These are approximate summaries carried forward from the earlier analysis, not design-based survey confidence intervals. They are not newly estimated here.
 ---
 
 ## BMI functional-form sensitivity (narrative)
@@ -86,13 +67,26 @@ The primary decomposition used linear and quadratic terms for continuous BMI. Ea
 
 ## Supplementary Figure S1
 
+**Concentration curve for anaemia by household wealth rank.**
+
+
+The curve plots the cumulative share of anaemia against the cumulative weighted population ranked from poorest to richest. The 45-degree line indicates equality. The curve lies predominantly above this line, indicating a disproportionate concentration of anaemia among poorer women. The Erreygers-corrected concentration index was -0.0589 (95% bootstrap CI -0.0924 to -0.0249).
+
+**Alt text:** Line graph comparing the anaemia concentration curve with a diagonal equality line. The anaemia curve lies mostly above the equality line, showing that poorer women account for a larger share of anaemia than their population share.
+
+Source: `figures/figure1_concentration_curve.svg`
+
+---
+
+## Supplementary Figure S2
+
 **Wealth gradient in survey-weighted anaemia prevalence.**
 
 Repository file: `figures/figure3_wealth_gradient.svg`.
 
 ---
 
-## Supplementary Figure S2
+## Supplementary Figure S3
 
 **Decomposition of the Erreygers-corrected concentration index.**
 
@@ -106,7 +100,7 @@ All decomposition percentages represent statistical contributions to observed so
 
 Likewise, the inverse adjusted association between higher BMI categories and anaemia should not be interpreted as evidence that excess adiposity prevents anaemia.
 
-## Supplementary Table S3. Overall Wald tests
+## Supplementary Table S1. Overall Wald tests
 
 | Factor | Wald chi-square | df | p-value |
 |---|---:|---:|---:|
