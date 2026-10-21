@@ -35,6 +35,8 @@ def set_styles(doc):
     section.top_margin=section.bottom_margin=Inches(.85)
     section.left_margin=section.right_margin=Inches(.85)
     for style in doc.styles:
+        for border in style.element.xpath('.//w:pBdr'):
+            border.getparent().remove(border)
         if style.type == 1:
             style.font.name='Times New Roman'
             style.font.color.rgb=RGBColor(0,0,0)
@@ -65,7 +67,7 @@ def equation_layout(text):
         number=re.search(r'\\tag\{(\d+)\}',math)
         tag=number.group(1) if number else None
         math=re.sub(r'\\tag\{\d+\}','',math).strip()
-        math=math.replace('v005',r'\mathrm{v005}')
+        math=math.replace('v005',r'\text{v005}')
         if tag in ('3','6','7','8'):
             parts=re.split(r'\\qquad\s*',math)
             math='\\begin{gathered}\n'+' \\\\\n'.join(p.strip() for p in parts)+'\n\\end{gathered}'
@@ -118,8 +120,8 @@ def style_tables(doc):
                     shade=OxmlElement('w:shd'); shade.set(qn('w:fill'),'EDEDED'); cell._tc.get_or_add_tcPr().append(shade)
                 for p in cell.paragraphs:
                     p.paragraph_format.line_spacing=1.15
-                    p.paragraph_format.space_after=Pt(2)
-                    p.paragraph_format.space_before=Pt(2)
+                    p.paragraph_format.space_after=Pt(1)
+                    p.paragraph_format.space_before=Pt(1)
                     p.alignment=WD_ALIGN_PARAGRAPH.LEFT if j==0 or (count==5 and j==1) else WD_ALIGN_PARAGRAPH.CENTER
                     for run in p.runs:
                         run.font.name='Times New Roman'; run.font.size=Pt(9.5)
@@ -177,7 +179,7 @@ abstract=main.split('\n## Abstract\n')[1].split('\nKeywords:')[0].replace('### '
 keywords='Keywords:'+main.split('\nKeywords:')[1].split('\n')[0]
 body='## Introduction\n'+main.split('\n## Introduction\n')[1].split('\n## Main displays\n')[0]
 body=body.replace('## References\n','PAGEBREAK\n\n## References\n')
-body=re.sub(r'(?m)^(\d+)\. ',r'\1\\. ',body)
+body=re.sub(r'(?m)^(\d+)\. ',r'\n\1\\. ',body)
 body=body.replace('All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.','All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.')
 front='# '+TITLE+'\n\n'+NAMES+'\n\n'+AFFILIATION+'\n\nCorresponding author: Gideon Ofosu Kyere\n\nEmail: kyereofosu2003@gmail.com\n\n'+keywords
 main_md=front+'\n\nPAGEBREAK\n\n# Abstract\n\n'+abstract+'\n\nPAGEBREAK\n\n'+body
