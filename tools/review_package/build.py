@@ -72,7 +72,20 @@ def equation_layout(text):
     return re.sub(r'\$\$([\s\S]*?)\$\$',convert,text)
 
 def style_tables(doc):
-    for table in doc.tables:
+    # Rebuild pandoc tables with standard Word cells before applying layout.
+    # This avoids custom reference-style dependencies in headless importers.
+    originals=list(doc.tables)
+    rebuilt=[]
+    for old in originals:
+        values=[[cell.text for cell in row.cells] for row in old.rows]
+        table=doc.add_table(rows=len(values),cols=len(values[0]))
+        table.style='Table Grid'
+        for i,row in enumerate(values):
+            for j,value in enumerate(row): table.cell(i,j).text=value
+        old._tbl.addnext(table._tbl)
+        old._tbl.getparent().remove(old._tbl)
+        rebuilt.append(table)
+    for table in rebuilt:
         table.alignment=WD_TABLE_ALIGNMENT.CENTER
         table.autofit=False
         count=len(table.columns)
@@ -86,7 +99,7 @@ def style_tables(doc):
         borders=OxmlElement('w:tblBorders')
         for edge in ['top','left','bottom','right','insideH','insideV']:
             b=OxmlElement('w:'+edge); b.set(qn('w:val'),'single'); b.set(qn('w:sz'),'4'); b.set(qn('w:color'),'D9D9D9'); borders.append(b)
-        table._tbl.tblPr.append(borders)
+        table._tbl.tblPr.insert_element_before(borders,'w:shd','w:tblLayout','w:tblCellMar','w:tblLook')
         for i,row in enumerate(table.rows):
             no_split=OxmlElement('w:cantSplit'); row._tr.get_or_add_trPr().append(no_split)
             if i==0:
@@ -96,7 +109,7 @@ def style_tables(doc):
                 margins=OxmlElement('w:tcMar')
                 for side in ('top','left','bottom','right'):
                     el=OxmlElement('w:'+side); el.set(qn('w:w'),'65'); el.set(qn('w:type'),'dxa'); margins.append(el)
-                cell._tc.get_or_add_tcPr().append(margins)
+                cell._tc.get_or_add_tcPr().insert_element_before(margins,'w:vAlign')
                 if i==0:
                     shade=OxmlElement('w:shd'); shade.set(qn('w:fill'),'EDEDED'); cell._tc.get_or_add_tcPr().append(shade)
                 for p in cell.paragraphs:
@@ -133,6 +146,7 @@ def make_doc(name, markdown):
         if p._p.xpath('.//m:oMathPara'):
             p.paragraph_format.keep_together=True
         for run in p.runs:
+            run.font.name='Times New Roman'
             if run.font.color.type is not None:
                 run.font.color.rgb=RGBColor(0,0,0)
     style_tables(doc)
@@ -159,6 +173,7 @@ abstract=main.split('\n## Abstract\n')[1].split('\nKeywords:')[0].replace('### '
 keywords='Keywords:'+main.split('\nKeywords:')[1].split('\n')[0]
 body='## Introduction\n'+main.split('\n## Introduction\n')[1].split('\n## Main displays\n')[0]
 body=body.replace('## References\n','PAGEBREAK\n\n## References\n')
+body=re.sub(r'(?m)^(\d+)\. ',r'\1\\. ',body)
 body=body.replace('All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.','All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.')
 front='# '+TITLE+'\n\n'+NAMES+'\n\n'+AFFILIATION+'\n\nCorresponding author: Gideon Ofosu Kyere\n\nEmail: kyereofosu2003@gmail.com\n\n'+keywords
 main_md=front+'\n\nPAGEBREAK\n\n# Abstract\n\n'+abstract+'\n\nPAGEBREAK\n\n'+body
@@ -193,7 +208,7 @@ items=[
 ('2','Rationale','Introduction','Prior determinants, spatial and temporal decomposition studies distinguished.'),
 ('3','Objectives','Introduction, final paragraph','Prevalence, inequality, decomposition, associations and clustering specified.'),
 ('4','Study design','Methods, Study design and data source','Secondary cross-sectional analysis.'),
-('5','Setting and dates','Methods, Study design and data source; reference 3','Ghana 2022 GDHS identified. Exact fieldwork dates should be confirmed against FR387 before submission.'),
+('5','Setting and dates','Methods, Study design and data source; reference 3','Ghana and exact fieldwork dates reported; dates cross-checked against the cited 2022 GDHS analysis (reference 4).'),
 ('6a','Eligibility and selection','Methods, Study design and data source; Outcome','Women aged 15–49 with valid classification; survey cluster selection described.'),
 ('7','Variables','Methods, Outcome; Socioeconomic and explanatory variables','Outcome, wealth and prespecified covariates defined.'),
 ('8','Measurement','Methods; reference 3','DHS classification and covariate source identified. See survey report for field measurement protocol.'),
@@ -251,7 +266,7 @@ The corresponding author reports that the latest revision suggestions came from 
 - Confirm the author order, current positions, affiliation postal address/code and corresponding-author contact.
 - Supply agreed CRediT roles. No roles have been inferred and no contributions section has been invented.
 - Confirm originality, exclusive submission, funding, conflicts, ethics and DHS data-access declarations, and the accuracy of the AI-use statement.
-- Resolve the STROBE entries on exact fieldwork dates and haemoglobin-testing disposition against the official report if available.
+- Resolve the STROBE entry on haemoglobin-testing disposition against the official report if available.
 
 ## Final approval record
 

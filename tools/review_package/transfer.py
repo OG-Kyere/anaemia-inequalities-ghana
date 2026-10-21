@@ -9,7 +9,7 @@ repo=os.environ['GITHUB_REPOSITORY']
 token=os.environ['GITHUB_TOKEN']
 manifest=[]
 files=[p for p in (root/'final').rglob('*') if p.is_file()]
-files += [p for p in (root/'qa').rglob('*') if p.suffix in ('.png','.pdf')]
+files += [p for p in (root/'qa').rglob('*.pdf')]
 for p in files:
     payload=json.dumps({'encoding':'base64','content':base64.b64encode(p.read_bytes()).decode()}).encode()
     req=Request('https://api.github.com/repos/'+repo+'/git/blobs',data=payload,headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','Content-Type':'application/json'},method='POST')

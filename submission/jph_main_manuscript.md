@@ -36,7 +36,7 @@ We examined socioeconomic and geographic inequalities in anaemia among women age
 
 ### Study design and data source
 
-We conducted a secondary cross-sectional analysis of the 2022 GDHS, a nationally representative household survey implemented using a stratified multistage sampling design.[3] Enumeration areas served as primary sampling units, and households were selected within clusters. The Individual Recode file contained 15,014 women aged 15–49 years.
+We conducted a secondary cross-sectional analysis of the 2022 GDHS, a nationally representative household survey implemented using a stratified multistage sampling design.[3] Enumeration areas served as primary sampling units, and households were selected within clusters. Survey fieldwork ran from 17 October 2022 to 14 January 2023.[4] The Individual Recode file contained 15,014 women aged 15–49 years.
 
 The primary analytic sample included women with a valid haemoglobin-based anaemia classification. Of the 15,014 women in the Individual Recode file, 7,557 met this criterion. Models requiring BMI excluded seven women whose BMI values were unavailable or flagged, leaving 7,550 women for the adjusted regression and decomposition.
 
