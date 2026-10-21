@@ -65,6 +65,7 @@ def equation_layout(text):
         number=re.search(r'\\tag\{(\d+)\}',math)
         tag=number.group(1) if number else None
         math=re.sub(r'\\tag\{\d+\}','',math).strip()
+        math=math.replace('v005',r'\mathrm{v005}')
         if tag in ('3','6','7','8'):
             parts=re.split(r'\\qquad\s*',math)
             math='\\begin{gathered}\n'+' \\\\\n'.join(p.strip() for p in parts)+'\n\\end{gathered}'
@@ -89,9 +90,12 @@ def style_tables(doc):
         table.alignment=WD_TABLE_ALIGNMENT.CENTER
         table.autofit=False
         count=len(table.columns)
-        widths={5:[1.45,1.75,.65,.65,2.05],4:[2.0,1.0,1.0,2.55],3:[3.35,1.6,1.6]}.get(count,[6.55/count]*count)
+        widths={5:[1.25,1.6,.8,.7,2.2],4:[2.0,1.0,1.0,2.55],3:[3.35,1.6,1.6]}.get(count,[6.55/count]*count)
         first=table.cell(0,0).text
-        if first=='Factor' and count==5: widths=[1.2,2.0,.55,1.5,1.3]
+        if first=='Factor' and count==5: widths=[1.2,2.0,.85,1.35,1.15]
+        for cell in table.rows[0].cells:
+            if cell.text=='Unweighted n': cell.text='Unweighted\nn'
+            if cell.text=='Adjusted OR': cell.text='Adjusted\nOR'
         if first=='Item': widths=[.45,1.05,2.0,3.1]
         if first=='Author' and count==4: widths=[1.2,1.6,1.65,2.1]
         for j,col in enumerate(table.columns):
@@ -177,11 +181,13 @@ body=re.sub(r'(?m)^(\d+)\. ',r'\1\\. ',body)
 body=body.replace('All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.','All analytic decisions, numerical outputs, interpretations and final manuscript text were reviewed and verified by the authors, who take full responsibility for the work.')
 front='# '+TITLE+'\n\n'+NAMES+'\n\n'+AFFILIATION+'\n\nCorresponding author: Gideon Ofosu Kyere\n\nEmail: kyereofosu2003@gmail.com\n\n'+keywords
 main_md=front+'\n\nPAGEBREAK\n\n# Abstract\n\n'+abstract+'\n\nPAGEBREAK\n\n'+body
-main_md+='\n\nPAGEBREAK\n\n# Table I\n\nParticipant characteristics and survey-weighted anaemia prevalence\n\n'+block_table(read('results/table1_weighted_characteristics.md'))+'\nAnalytic sample: 7,557 women. Percentages and prevalence incorporate sampling weights, strata and primary sampling units. CI denotes confidence interval.\n'
+main_md+='\n\nPAGEBREAK\n\n# Table I\n\nParticipant characteristics and survey-weighted anaemia prevalence\n\n'+block_table(read('results/table1_weighted_characteristics.md'))+'\nAnalytic sample: 7,557 women; BMI categories use 7,550 women because seven BMI values were unavailable or flagged. Percentages and prevalence incorporate sampling weights, strata and primary sampling units. CI denotes confidence interval.\n'
 main_md+='\nPAGEBREAK\n\n# Table II\n\nSurvey-weighted adjusted associations with anaemia\n\n'+block_table(read('results/table2_full_adjusted_model.md'))+'\nAnalytic sample: 7,550 women. The model includes all listed factors. Adjusted odds ratios and confidence intervals use the stratified PSU sandwich covariance. Overall factor tests are in Supplementary Table S1.\n'
 table3=read('results/table3_inequality_and_heterogeneity.md').split('**Aggregate sources:**')[0]
 table3=table3.replace('# Table III. Wealth-related inequality decomposition and community-level heterogeneity','# Table III\n\nWealth-related inequality decomposition and community-level heterogeneity')
 table3=table3.replace('## Panel A.','## Panel A').replace('## Panel B.','## Panel B')
+table3=re.sub(r'The decomposition uses[\s\S]*?(?=## Panel B)', 'Panel A: 7,550 BMI-complete women; observed Erreygers index = -0.058853. Positive absolute contributions offset the negative index.\n\n',table3)
+table3=re.sub(r'The null model includes[\s\S]*$', '**Notes:** Panel A uses a survey-weighted linear probability model with percentile intervals from 200 stratified PSU bootstrap replicates. Contributions are statistical, not causal; BMI does not identify anaemia aetiology. Panel B uses unweighted variational Bayes. PCV is descriptive because model samples differ. Approximate uncertainty and diagnostics are in the supplement. ICC = intraclass correlation coefficient; SD = standard deviation; PCV = proportional change in variance. Neither panel estimates an intervention effect.\n',table3)
 main_md+='\nPAGEBREAK\n\n'+table3
 legend=main.split('**Figure 1. Survey-weighted anaemia prevalence by region.**\n')[1].split('\nSource:')[0]
 main_md+='\nPAGEBREAK\n\n# Figure legend\n\n## Figure 1\n\nSurvey-weighted anaemia prevalence by region\n\n'+legend
