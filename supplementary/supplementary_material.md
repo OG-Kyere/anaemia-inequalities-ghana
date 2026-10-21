@@ -42,9 +42,9 @@ The median odds ratio was used to express cluster heterogeneity on the odds-rati
 
 ---
 
-## Primary results promoted to the main paper
+## Primary decomposition and community results
 
-The validated decomposition and community-level heterogeneity results are now presented in main Table III, panels A and B, respectively. Panel A uses 7,550 women and a complete-case Erreygers index of -0.058853; panel B reports the null (n = 7,557) and adjusted (n = 7,550) unweighted models. Numerical estimates are unchanged.
+The decomposition and community-level heterogeneity results are presented in main Table III, panels A and B, respectively. Panel A uses 7,550 women and a complete-case Erreygers index of -0.058853; panel B reports the null (n = 7,557) and adjusted (n = 7,550) unweighted models.
 ---
 
 ## Additional multilevel uncertainty
@@ -56,7 +56,7 @@ Approximate uncertainty:
 - adjusted MOR: 1.34–1.39.
 
 
-These are approximate summaries carried forward from the earlier analysis, not design-based survey confidence intervals. They are not newly estimated here.
+These approximate uncertainty summaries are distinct from design-based survey confidence intervals.
 ---
 
 ## BMI functional-form sensitivity (narrative)

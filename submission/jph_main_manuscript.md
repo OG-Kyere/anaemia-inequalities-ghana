@@ -151,7 +151,7 @@ The multilevel models used variational Bayes with normally distributed fixed-eff
 
 ### Sensitivity and missing-data analyses
 
-Exploratory checks examined alternative BMI specifications, pregnancy-stratified patterns and regional prevalence. Planned analyses of continuous haemoglobin and alternative anaemia-severity definitions have no executable results in the repository and are not reported as completed sensitivity analyses. Most prespecified socioeconomic and reproductive covariates were complete in the analytic sample. Models requiring BMI excluded seven women with unavailable or flagged values.
+Exploratory checks examined alternative BMI specifications, pregnancy-stratified patterns and regional prevalence. Analyses of continuous haemoglobin and alternative anaemia-severity definitions were planned but were not included in the reported analyses. Most prespecified socioeconomic and reproductive covariates were complete in the analytic sample. Models requiring BMI excluded seven women with unavailable or flagged values.
 
 ## Results
 
@@ -215,7 +215,7 @@ Monitoring should therefore report anaemia prevalence by wealth and region along
 
 The cross-sectional design prevents causal inference and does not establish temporal ordering. Haemoglobin identifies anaemia but cannot determine its aetiology; the data therefore cannot distinguish iron-deficiency anaemia from anaemia associated with infection, inflammation, inherited haemoglobin disorders, blood loss or other micronutrient deficiencies.
 
-BMI is an imperfect proxy for nutritional status. Its large decomposition contribution describes a statistical pattern and does not justify recommending weight gain. Decomposition estimates depend on model specification. Earlier exploratory BMI-category analyses suggested a similar pattern, but those checks are not a new independent validation of the primary decomposition.
+BMI is an imperfect proxy for nutritional status. Its large decomposition contribution describes a statistical pattern and does not justify recommending weight gain. Decomposition estimates depend on model specification. Exploratory BMI-category analyses suggested a similar pattern but do not establish robustness to other model specifications.
 
 Selection into the haemoglobin-tested analytic sample could introduce bias if women without valid measurements differed systematically in ways not fully addressed by survey weighting. Measurement error is also possible for self-reported reproductive and socioeconomic variables. The close agreement with the official national anaemia estimate supports the analytic setup, but does not exclude selection or measurement bias.
 
@@ -231,6 +231,10 @@ Anaemia among women of reproductive age in Ghana is concentrated disproportionat
 
 The findings support population-wide prevention that addresses nutritional needs, with additional attention to socioeconomic and geographic differences. Monitoring inequality alongside national prevalence can help assess whether progress reaches women with the greatest burden. This study does not establish which interventions will reduce anaemia.
 
+## Funding
+
+No external funding was received.
+
 ## Acknowledgements
 
 We thank The DHS Program, the Ghana Statistical Service and ICF for making the 2022 Ghana Demographic and Health Survey data available for research.
@@ -245,10 +249,6 @@ The study used de-identified secondary data from the 2022 Ghana Demographic and 
 ## Data availability
 
 The microdata analysed in this study are available from The DHS Program following application and approval. Restricted DHS microdata are not redistributed through the project repository.
-
-## Funding
-
-No external funding was received.
 
 ## Conflict of interest
 
