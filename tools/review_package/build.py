@@ -200,6 +200,9 @@ title=read('submission/jph_title_page.md').replace('# Title Page','# '+TITLE).re
 make_doc('Title_Page',title)
 
 supp=read('supplementary/supplementary_material.md')
+supp=re.sub(r'(?m)^---\s*$','',supp)
+supp=supp.replace('The decomposition model included:\n-','The decomposition model included:\n\n-')
+supp=supp.replace('Approximate uncertainty:\n-','Approximate uncertainty:\n\n-')
 supp=supp.replace('\\[','$$').replace('\\]','$$')
 supp=re.sub(r'(?m)^Repository file:.*\n','',supp)
 supp=re.sub(r'(?m)^Source:.*\n','',supp)
