@@ -124,6 +124,22 @@ BMI/nutritional status made the largest measured contribution to wealth-related 
 
 The BMI-domain contribution remained consistently negative in the 200-replicate bootstrap (-0.0457, 95% bootstrap interval -0.0617 to -0.0300). Bootstrap intervals for the smaller domains included zero, so their individual contributions should be interpreted cautiously.
 
+**Table III. Decomposition of wealth-related inequality in anaemia (complete-case analytic sample).**
+
+| Domain | Absolute contribution | % of Erreygers index | 95% bootstrap interval |
+|---|---:|---:|---|
+| BMI / nutritional status | −0.045731 | 77.7 | −0.061716 to −0.030045 |
+| Education | −0.009184 | 15.6 | −0.025104 to 0.006950 |
+| Residence | −0.004023 | 6.8 | −0.023362 to 0.013460 |
+| Parity | −0.002892 | 4.9 | −0.014688 to 0.009773 |
+| Pregnancy status | −0.002221 | 3.8 | −0.005493 to 0.000020 |
+| Age | +0.000570 | −1.0 | −0.003250 to 0.004169 |
+| Employment | +0.000021 | −0.04 | −0.000592 to 0.000687 |
+| Marital/union status | +0.001203 | −2.0 | −0.002581 to 0.005772 |
+| Residual | +0.003405 | −5.8 | −0.017297 to 0.025089 |
+
+*Notes:* Domain contributions are statistical, not causal; positive contributions offset negative pro-poor inequality. Confidence intervals are from 200 stratified PSU bootstrap replicates. The percentages refer to the decomposition complete-case index, not necessarily to the full-sample Erreygers index. Promoted from the previous manuscript supplement; reconcile with the latest machine-generated output before journal export.
+
 ### Adjusted associations with anaemia
 
 Overall Wald tests provided the strongest evidence of association for pregnancy status, BMI category and region in the fully adjusted survey-weighted model (Table II).
@@ -137,6 +153,18 @@ The overall Wald tests for wealth quintile and education were not statistically 
 ### Community-level heterogeneity
 
 The null multilevel model had cluster-level variance 0.150, corresponding to ICC 4.35% and MOR 1.45. After adjustment, cluster variance declined to 0.107, with ICC 3.14% and MOR 1.37. The variational-Bayes models reproduced these estimates. Between-cluster variance was approximately 28.8% lower after adjustment, with residual contextual heterogeneity remaining.
+
+**Table IV. Community-level heterogeneity in anaemia (supplementary, unweighted variational-Bayes models).**
+
+| Measure | Null model | Adjusted model |
+|---|---:|---:|
+| Cluster-level standard deviation | 0.387 | 0.327 |
+| Cluster-level variance | 0.150 | 0.107 |
+| Latent-scale ICC | 4.35% | 3.14% |
+| Median odds ratio | 1.45 | 1.37 |
+| Proportional change in variance | — | 28.8% |
+
+*Notes:* Cluster models did not incorporate the complex survey design; their estimates are contextual supplements, not design-based national estimates. Promoted from an earlier manuscript appendix; final numerical reconciliation is required.
 
 ## Discussion
 
@@ -228,6 +256,10 @@ Source: `results/table1_weighted_characteristics.md`
 
 **Table II.** Survey-weighted adjusted associations with anaemia.
 Source: `results/table2_full_adjusted_model.md`
+
+**Table III.** Decomposition results are now presented within the Results section above.
+
+**Table IV.** Community-level model summaries are now presented within the Results section above.
 
 **Figure 1. Concentration curve for anaemia by household wealth rank.**
 The curve plots the cumulative share of anaemia against the cumulative weighted population ranked from poorest to richest. The 45-degree line indicates equality. The curve lies predominantly above this line, indicating a disproportionate concentration of anaemia among poorer women. The Erreygers-corrected concentration index was -0.0589 (95% bootstrap CI -0.0924 to -0.0249).
