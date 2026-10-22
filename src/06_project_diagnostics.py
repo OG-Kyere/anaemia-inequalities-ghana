@@ -306,11 +306,15 @@ def check_submission_assets() -> int:
         "Table_II_adjusted_logistic_regression.csv",
         "Table_III_panel_A_decomposition.csv",
         "Table_III_panel_B_community_heterogeneity.csv",
-        "Table_S1_overall_Wald_tests.csv",
-        "Figure_S1_concentration_curve.png",
-        "Figure_S1_concentration_curve.tiff",
-        "Figure_1_regional_prevalence.png",
-        "Figure_1_regional_prevalence.tiff",
+        "Table_IV_overall_Wald_tests.csv",
+        "Figure_1_wealth_gradient.png",
+        "Figure_1_wealth_gradient.tiff",
+        "Figure_2_concentration_curve.png",
+        "Figure_2_concentration_curve.tiff",
+        "Figure_3_regional_prevalence.png",
+        "Figure_3_regional_prevalence.tiff",
+        "Figure_4_decomposition.png",
+        "Figure_4_decomposition.tiff",
     ]
 
     if not generated.exists():
@@ -369,3 +373,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
