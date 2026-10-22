@@ -184,14 +184,14 @@ body=body.replace('All analytic decisions, numerical outputs, interpretations an
 front='# '+TITLE+'\n\n'+NAMES+'\n\n'+AFFILIATION+'\n\nCorresponding author: Gideon Ofosu Kyere\n\nEmail: kyereofosu2003@gmail.com\n\n'+keywords
 main_md=front+'\n\nPAGEBREAK\n\n# Abstract\n\n'+abstract+'\n\nPAGEBREAK\n\n'+body
 main_md+='\n\nPAGEBREAK\n\n# Table I\n\nParticipant characteristics and survey-weighted anaemia prevalence\n\n'+block_table(read('results/table1_weighted_characteristics.md'))+'\nAnalytic sample: 7,557 women; BMI categories use 7,550 women because seven BMI values were unavailable or flagged. Percentages and prevalence incorporate sampling weights, strata and primary sampling units. CI denotes confidence interval.\n'
-main_md+='\nPAGEBREAK\n\n# Table II\n\nSurvey-weighted adjusted associations with anaemia\n\n'+block_table(read('results/table2_full_adjusted_model.md'))+'\nAnalytic sample: 7,550 women. The model includes all listed factors. Adjusted odds ratios and confidence intervals use the stratified PSU sandwich covariance. Overall factor tests are in Supplementary Table S1.\n'
+main_md+='\nPAGEBREAK\n\n# Table II\n\nSurvey-weighted adjusted associations with anaemia\n\n'+block_table(read('results/table2_full_adjusted_model.md'))+'\nAnalytic sample: 7,550 women. The model includes all listed factors. Adjusted odds ratios and confidence intervals use the stratified PSU sandwich covariance. Overall factor tests are in Table IV.\n'
 table3=read('results/table3_inequality_and_heterogeneity.md').split('**Aggregate sources:**')[0]
 table3=table3.replace('# Table III. Wealth-related inequality decomposition and community-level heterogeneity','# Table III\n\nWealth-related inequality decomposition and community-level heterogeneity')
 table3=table3.replace('## Panel A.','## Panel A').replace('## Panel B.','## Panel B')
 table3=re.sub(r'The decomposition uses[\s\S]*?(?=## Panel B)', 'Panel A: 7,550 BMI-complete women; observed Erreygers index = -0.058853. Positive absolute contributions offset the negative index.\n\n',table3)
 table3=re.sub(r'The null model includes[\s\S]*$', '**Notes:** Panel A uses a survey-weighted linear probability model with percentile intervals from 200 stratified PSU bootstrap replicates. Contributions are statistical, not causal; BMI does not identify anaemia aetiology. Panel B uses unweighted variational Bayes. PCV is descriptive because model samples differ. Approximate uncertainty and diagnostics are in the supplement. ICC = intraclass correlation coefficient; SD = standard deviation; PCV = proportional change in variance. Neither panel estimates an intervention effect.\n',table3)
 main_md+='\nPAGEBREAK\n\n'+table3
-legend=main.split('**Figure 1. Survey-weighted anaemia prevalence by region.**\n')[1].split('\nSource:')[0]
+legend=main.split('**Figure 3. Survey-weighted anaemia prevalence by region.**\n')[1].split('\nSource:')[0]
 main_md+='\nPAGEBREAK\n\n# Figure legend\n\n## Figure 1\n\nSurvey-weighted anaemia prevalence by region\n\n'+legend
 main_md+='\nPAGEBREAK\n\n# Figure 1\n\n!['+'Regional anaemia prevalence with 95% confidence intervals'+']('+str(FIGS/'Figure_1_regional_prevalence.png')+'){width=6.25in}\n'
 make_doc('Main_Manuscript',main_md)
@@ -209,8 +209,6 @@ supp=re.sub(r'(?m)^Source:.*\n','',supp)
 supp=supp.replace('See `docs/real_data_validation_2026-10-09.md` and `docs/multilevel_reproducibility_validation.md`.','The converged variational-Bayes model is the reported estimator; the failed MAP/Laplace fit is diagnostic only.')
 # Keep the tables and prose together, then append full-page figure displays.
 supp=supp.replace('## Supplementary material','# Supplementary material')
-for index,(stem,source) in enumerate(figure_map[1:],1):
-    supp+='\nPAGEBREAK\n\n# Supplementary Figure S'+str(index)+'\n\n![Supplementary Figure S'+str(index)+']('+str(FIGS/(stem+'.png'))+'){width=6.25in}\n'
 make_doc('Supplementary_Material',supp)
 
 items=[
@@ -326,9 +324,9 @@ make_doc('Cover_Letter',letter)
 
 readme='''# Anaemia manuscript review package
 
-Main_Manuscript.docx contains the clean paper with native Word equations, editable Tables I–III and the main figure. Title_Page.docx, Supplementary_Material.docx, STROBE_Checklist.docx and Cover_Letter.docx are separate package components. Author_Review_and_Confirmation.docx records the scientific checks and outstanding author attestations.
+Main_Manuscript.docx contains the clean paper with native Word equations, editable Tables I–IV and all four main figures in the two-column reading layout. Title_Page.docx, Supplementary_Material.docx, STROBE_Checklist.docx and Cover_Letter.docx are separate package components. Author_Review_and_Confirmation.docx records the scientific checks and outstanding author attestations.
 
-The figures folder contains main Figure 1 and supplementary Figures S1–S3 in PNG and TIFF at 600 dpi. The source graphics were rasterised without changing estimates or geometry.
+The figures folder contains main Figures 1–4 in PNG and TIFF at 600 dpi. The source graphics were rasterised without changing estimates or geometry.
 
 The package is for final author review. Coauthor suggestions are incorporated, but final approval of these assembled files, positions, contributions and submission declarations remains pending. No DHS microdata is included. No merge or submission has been performed.
 '''
@@ -345,3 +343,8 @@ assert xml.count('<m:oMathPara>')==8, 'Expected eight editable display equations
 assert len(Document(FINAL/'Main_Manuscript.docx').tables)==4, 'Tables I, II and two panels of III expected'
 print('Built six DOCX files and four paired figure exports')
 
+from two_column import format_main
+format_main(FINAL,ROOT)
+final_main=Document(FINAL/"Main_Manuscript.docx")
+style_tables(final_main)
+final_main.save(FINAL/"Main_Manuscript.docx")

@@ -42,10 +42,9 @@ The median odds ratio was used to express cluster heterogeneity on the odds-rati
 
 ---
 
-## Primary decomposition and community results
+## Main-paper results
 
-The decomposition and community-level heterogeneity results are presented in main Table III, panels A and B, respectively. Panel A uses 7,550 women and a complete-case Erreygers index of -0.058853; panel B reports the null (n = 7,557) and adjusted (n = 7,550) unweighted models.
----
+All four results tables and all four figures are included in the main manuscript. This supplement retains supporting methodology, approximate multilevel uncertainty and estimator diagnostics.
 
 ## Additional multilevel uncertainty
 
@@ -65,34 +64,8 @@ The primary decomposition used linear and quadratic terms for continuous BMI. Ea
 
 ---
 
-## Supplementary Figure S1
-
-**Concentration curve for anaemia by household wealth rank.**
 
 
-The curve plots the cumulative share of anaemia against the cumulative weighted population ranked from poorest to richest. The 45-degree line indicates equality. The curve lies predominantly above this line, indicating a disproportionate concentration of anaemia among poorer women. The Erreygers-corrected concentration index was -0.0589 (95% bootstrap CI -0.0924 to -0.0249).
-
-**Alt text:** Line graph comparing the anaemia concentration curve with a diagonal equality line. The anaemia curve lies mostly above the equality line, showing that poorer women account for a larger share of anaemia than their population share.
-
-Source: `figures/figure1_concentration_curve.svg`
-
----
-
-## Supplementary Figure S2
-
-**Wealth gradient in survey-weighted anaemia prevalence.**
-
-Repository file: `figures/figure3_wealth_gradient.svg`.
-
----
-
-## Supplementary Figure S3
-
-**Decomposition of the Erreygers-corrected concentration index.**
-
-Repository file: `figures/figure4_decomposition.svg`.
-
----
 
 ## Supplementary interpretation note
 
@@ -100,20 +73,6 @@ All decomposition percentages represent statistical contributions to observed so
 
 Likewise, the inverse adjusted association between higher BMI categories and anaemia should not be interpreted as evidence that excess adiposity prevents anaemia.
 
-## Supplementary Table S1. Overall Wald tests
-
-| Factor | Wald chi-square | df | p-value |
-|---|---:|---:|---:|
-| Age group | 9.96 | 6 | 0.126 |
-| Education | 0.44 | 3 | 0.933 |
-| Wealth quintile | 1.36 | 4 | 0.852 |
-| Residence | 0.19 | 1 | 0.663 |
-| Pregnancy status | 26.65 | 1 | **<0.001** |
-| Parity | 0.81 | 3 | 0.847 |
-| BMI category | 35.47 | 3 | **<0.001** |
-| Employment | 0.07 | 1 | 0.789 |
-| Marital status | 4.15 | 5 | 0.529 |
-| Region | 45.49 | 15 | **<0.001** |
 
 ## Multilevel estimator diagnostics
 

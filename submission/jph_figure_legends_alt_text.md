@@ -1,14 +1,18 @@
-# Figure legends and alt text
+# Main figure legends
 
-## Main Figure 1. Survey-weighted anaemia prevalence by region
+## Figure 1 Wealth gradient in anaemia prevalence
 
-Survey-weighted anaemia prevalence and 95% confidence intervals are shown for Ghana's 16 regions. The dashed reference line marks the national prevalence of 41.1%. Regional prevalence ranged from approximately 30.1% in Bono to 51.8% in Oti.
+Survey-weighted prevalence and 95% confidence intervals across wealth quintiles.
 
-**Alt text:** Horizontal point-and-whisker plot of anaemia prevalence across 16 Ghanaian regions. Bono has the lowest estimate at about 30%, Oti the highest at about 52%, and several northern regions are above the national prevalence of 41%.
+## Figure 2 Concentration curve for anaemia by household wealth rank
 
-## Supplementary Figure S1. Concentration curve for anaemia by household wealth rank
+Cumulative anaemia and population ranked from poorest to richest; the dashed diagonal indicates equality. Erreygers index -0.0589 (95% bootstrap CI -0.0924 to -0.0249).
 
-The curve plots the cumulative share of anaemia against the cumulative weighted population ranked from poorest to richest. The 45-degree line indicates equality. The curve lies predominantly above this line, indicating a disproportionate concentration of anaemia among poorer women. The Erreygers-corrected concentration index was -0.0589 (95% bootstrap CI -0.0924 to -0.0249).
+## Figure 3 Survey-weighted anaemia prevalence by region
 
-**Alt text:** Line graph comparing the anaemia concentration curve with a diagonal equality line. The anaemia curve lies mostly above the equality line, showing that poorer women account for a larger share of anaemia than their population share.
+Survey-weighted prevalence and 95% confidence intervals in Ghana's 16 regions; the dashed line marks national prevalence of 41.1%.
+
+## Figure 4 Decomposition of wealth-related anaemia inequality
+
+Absolute statistical contributions to the complete-case Erreygers index (-0.058853). Table III gives bootstrap intervals. Contributions are not causal effects.
 

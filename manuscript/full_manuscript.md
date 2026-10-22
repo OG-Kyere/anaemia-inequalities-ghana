@@ -1,5 +1,3 @@
-> Synchronized working manuscript. Canonical submission source: `submission/jph_main_manuscript.md`.
-
 # Socioeconomic and Geographic Inequalities in Anaemia Among Women of Reproductive Age in Ghana
 
 ## Abstract
@@ -161,29 +159,29 @@ Exploratory checks examined alternative BMI specifications, pregnancy-stratified
 
 Among 7,557 women with valid anaemia measurements, the survey-weighted prevalence of anaemia was 41.1% (95% CI 39.6–42.6%).
 
-Anaemia prevalence was 46.6% (95% CI 43.5–49.7%) among women in the poorest wealth quintile and 38.8% (95% CI 35.2–42.5%) among those in the richest quintile. Prevalence also declined across educational categories, from 45.4% among women with no formal education to 36.8% among those with higher education.
+Anaemia prevalence was 46.6% (95% CI 43.5–49.7%) among women in the poorest wealth quintile and 38.8% (95% CI 35.2–42.5%) among those in the richest quintile (Figure 1). Prevalence also declined across educational categories, from 45.4% among women with no formal education to 36.8% among those with higher education.
 
 Rural women had higher prevalence than urban women (43.4% vs 39.4%). Currently pregnant women had higher prevalence than women who were not pregnant or were unsure (51.4% vs 40.4%). Prevalence also differed by BMI category: 49.3% among underweight women, 44.6% among women of normal weight, 37.6% among overweight women and 33.9% among women with obesity (Table I).
 
 ### Wealth-related inequality
 
-The standard concentration index was -0.0358, while the Erreygers-corrected concentration index was -0.0589. The stratified PSU bootstrap 95% confidence interval for the Erreygers index was -0.0924 to -0.0249, excluding zero. The concentration curve lay predominantly above the line of equality, indicating that poorer women accounted for a disproportionate share of anaemia (Supplementary Figure S1).
+The standard concentration index was -0.0358, while the Erreygers-corrected concentration index was -0.0589. The stratified PSU bootstrap 95% confidence interval for the Erreygers index was -0.0924 to -0.0249, excluding zero. The concentration curve lay predominantly above the line of equality, indicating that poorer women accounted for a disproportionate share of anaemia (Figure 2).
+
+### Adjusted associations with anaemia
+
+In the fully adjusted survey-weighted model (n = 7,550), overall Wald tests identified associations with pregnancy status (χ² = 26.65, df = 1), BMI category (χ² = 35.47, df = 3) and region (χ² = 45.49, df = 15), all p < 0.001 (Table II; Table IV).
+
+Currently pregnant women had higher adjusted odds of anaemia than women who were not pregnant or were unsure (aOR 1.77, 95% CI 1.43–2.21). Compared with normal-weight women, overweight women had lower adjusted odds (aOR 0.73, 95% CI 0.62–0.87) and women with obesity had lower adjusted odds (aOR 0.60, 95% CI 0.49–0.72). Underweight women had higher estimated odds, but the confidence interval included the null (aOR 1.18, 95% CI 0.96–1.47).
+
+Regional differences also persisted. Relative to Greater Accra, women in Oti had higher adjusted odds of anaemia (aOR 1.48, 95% CI 1.11–1.98), whereas women in Bono had lower adjusted odds (aOR 0.61, 95% CI 0.41–0.90). Weighted regional prevalence ranged from approximately 30.1% in Bono to 51.8% in Oti (Figure 3).
+
+The overall Wald tests for wealth quintile (p = 0.852) and education (p = 0.933) were not statistically significant after adjustment, although prevalence differed across these groups. These conditional associations and the population-level inequality index describe different quantities. Including correlated characteristics, such as nutrition, reproductive status and geography, can attenuate adjusted wealth coefficients; this cross-sectional analysis cannot establish a causal pathway.
 
 ### Decomposition of inequality
 
 The complete-case decomposition included 7,550 women, with an Erreygers index of -0.058853 (Table III, panel A). BMI/nutritional status made the largest measured contribution to wealth-related inequality, accounting for approximately 77.7% of the observed Erreygers index. Education contributed 15.6%, residence 6.8%, parity 4.9% and pregnancy status 3.8%. Age, employment and marital/union status made small offsetting contributions, and the residual also offset part of the pro-poor inequality.
 
-The BMI-domain contribution remained consistently negative in the 200-replicate bootstrap (-0.0457, 95% bootstrap interval -0.0617 to -0.0300). Bootstrap intervals for the smaller domains included zero, so their individual contributions should be interpreted cautiously.
-
-### Adjusted associations with anaemia
-
-In the fully adjusted survey-weighted model (n = 7,550), overall Wald tests identified associations with pregnancy status (χ² = 26.65, df = 1), BMI category (χ² = 35.47, df = 3) and region (χ² = 45.49, df = 15), all p < 0.001 (Table II; Supplementary Table S1).
-
-Currently pregnant women had higher adjusted odds of anaemia than women who were not pregnant or were unsure (aOR 1.77, 95% CI 1.43–2.21). Compared with normal-weight women, overweight women had lower adjusted odds (aOR 0.73, 95% CI 0.62–0.87) and women with obesity had lower adjusted odds (aOR 0.60, 95% CI 0.49–0.72). Underweight women had higher estimated odds, but the confidence interval included the null (aOR 1.18, 95% CI 0.96–1.47).
-
-Regional differences also persisted. Relative to Greater Accra, women in Oti had higher adjusted odds of anaemia (aOR 1.48, 95% CI 1.11–1.98), whereas women in Bono had lower adjusted odds (aOR 0.61, 95% CI 0.41–0.90). Weighted regional prevalence ranged from approximately 30.1% in Bono to 51.8% in Oti (Figure 1).
-
-The overall Wald tests for wealth quintile (p = 0.852) and education (p = 0.933) were not statistically significant after adjustment, although prevalence differed across these groups. These conditional associations and the population-level inequality index describe different quantities. Including correlated characteristics, such as nutrition, reproductive status and geography, can attenuate adjusted wealth coefficients; this cross-sectional analysis cannot establish a causal pathway.
+Figure 4 displays the absolute contributions. The BMI-domain contribution remained consistently negative in the 200-replicate bootstrap (-0.0457, 95% bootstrap interval -0.0617 to -0.0300). Bootstrap intervals for the smaller domains included zero, so their individual contributions should be interpreted cautiously.
 
 ### Community-level heterogeneity
 
@@ -276,19 +274,31 @@ The authors declare no conflict of interest.
 
 ## Main displays
 
-**Table I.** Weighted participant characteristics and anaemia prevalence.
+**Table I.** Participant characteristics and anaemia prevalence
 Source: `results/table1_weighted_characteristics.md`
 
-**Table II.** Survey-weighted adjusted associations with anaemia.
-Source: `results/table2_full_adjusted_model.md` (adjusted estimates; overall factor tests in Supplementary Table S1)
+**Table II.** Adjusted associations with anaemia
+Source: `results/table2_full_adjusted_model.md`
 
-**Table III.** Wealth-related inequality decomposition and community-level heterogeneity.
-Panel A presents the validated decomposition and 200-replicate bootstrap intervals; panel B presents complementary unweighted multilevel summaries. The panels describe different estimands and are not a single fitted model.
+**Table III.** Inequality decomposition and community heterogeneity
 Source: `results/table3_inequality_and_heterogeneity.md`
 
-**Figure 1. Survey-weighted anaemia prevalence by region.**
-Survey-weighted anaemia prevalence and 95% confidence intervals are shown for Ghana's 16 regions. The dashed reference line marks the national prevalence of 41.1%. Regional prevalence ranged from approximately 30.1% in Bono to 51.8% in Oti.
+**Table IV.** Overall Wald tests in the adjusted model
+Source: `results/table4_overall_wald_tests.md`
 
-**Alt text:** Horizontal point-and-whisker plot of anaemia prevalence across 16 Ghanaian regions. Bono has the lowest estimate at about 30%, Oti the highest at about 52%, and several northern regions are above the national prevalence of 41%.
+**Figure 1. Wealth gradient in anaemia prevalence.**
+Survey-weighted prevalence and 95% confidence intervals across wealth quintiles.
+Source: `figures/figure3_wealth_gradient.svg`
 
+**Figure 2. Concentration curve for anaemia by household wealth rank.**
+Cumulative anaemia and population ranked from poorest to richest; the dashed diagonal indicates equality. Erreygers index -0.0589 (95% bootstrap CI -0.0924 to -0.0249).
+Source: `figures/figure1_concentration_curve.svg`
+
+**Figure 3. Survey-weighted anaemia prevalence by region.**
+Survey-weighted prevalence and 95% confidence intervals in Ghana's 16 regions; the dashed line marks national prevalence of 41.1%.
 Source: `figures/figure2_regional_prevalence.svg`
+
+**Figure 4. Decomposition of wealth-related anaemia inequality.**
+Absolute statistical contributions to the complete-case Erreygers index (-0.058853). Table III gives bootstrap intervals. Contributions are not causal effects.
+Source: `figures/figure4_decomposition.svg`
+

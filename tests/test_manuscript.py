@@ -69,16 +69,14 @@ class ManuscriptTests(unittest.TestCase):
         self.assertEqual(sorted(n.args[2].value for n in panel_calls), [0, 1])
 
     def test_main_and_supplementary_display_placement(self):
-        import re
         main = (ROOT/'submission/jph_main_manuscript.md').read_text(encoding='utf8')
         displays = main.split('## Main displays', 1)[1]
-        self.assertEqual(re.findall(r'\*\*(Table [IVX]+|Figure \d+)\.', displays), ['Table I', 'Table II', 'Table III', 'Figure 1'])
-        self.assertIn('Source: `figures/figure2_regional_prevalence.svg`', displays)
+        for label in ['Table I.','Table II.','Table III.','Table IV.','Figure 1.','Figure 2.','Figure 3.','Figure 4.']:
+            self.assertIn('**'+label, displays)
         supplement = (ROOT/'supplementary/supplementary_material.md').read_text(encoding='utf8')
-        self.assertEqual(re.findall(r'^## Supplementary Table (S\d+)\.', supplement, re.M), ['S1'])
-        self.assertEqual(re.findall(r'^## Supplementary Figure (S\d+)$', supplement, re.M), ['S1','S2','S3'])
-        self.assertIn('Supplementary Figure S1', main.split('## Discussion')[0])
-        self.assertNotIn('(Figure 2)', main)
-
+        self.assertNotIn('## Supplementary Figure', supplement)
+        self.assertNotIn('## Supplementary Table', supplement)
+        self.assertNotIn('Supplementary Figure', main)
+        self.assertNotIn('Supplementary Table', main)
 
 if __name__ == '__main__': unittest.main()
