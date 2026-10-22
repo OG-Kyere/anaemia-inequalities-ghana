@@ -22,7 +22,7 @@ jobs:
       - name: Install document build tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq --no-install-recommends pandoc libreoffice-writer fonts-liberation poppler-utils librsvg2-bin
+          sudo apt-get install -y -qq --no-install-recommends pandoc libreoffice-writer libreoffice-math fonts-liberation poppler-utils librsvg2-bin
           python -m pip install -q python-docx pillow pdf2image lxml
       - name: Assemble six Word files and figures from public sources
         run: python tools/review_package/build.py
