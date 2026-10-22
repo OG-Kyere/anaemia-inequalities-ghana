@@ -336,7 +336,8 @@ The package is for final author review. Coauthor suggestions are incorporated, b
 for path in FINAL.glob('*.docx'):
     with ZipFile(path) as z:
         xml=z.read('word/document.xml').decode()
-    assert 'EQUATIONNUMBER' not in xml and 'PAGEBREAK' not in xml
+    if 'EQUATIONNUMBER' in xml or 'PAGEBREAK' in xml:
+        print('Intermediate markers',path.name,[p.text for p in Document(path).paragraphs if 'PAGEBREAK' in p.text or 'EQUATIONNUMBER' in p.text])
 with ZipFile(FINAL/'Main_Manuscript.docx') as z:
     xml=z.read('word/document.xml').decode()
 assert xml.count('<m:oMathPara>')==8, 'Expected eight editable display equations'
@@ -348,3 +349,8 @@ format_main(FINAL,ROOT)
 final_main=Document(FINAL/"Main_Manuscript.docx")
 style_tables(final_main)
 final_main.save(FINAL/"Main_Manuscript.docx")
+for path in FINAL.glob('*.docx'):
+    with ZipFile(path) as z:
+        xml=z.read('word/document.xml').decode()
+    assert 'EQUATIONNUMBER' not in xml and 'PAGEBREAK' not in xml, path.name
+

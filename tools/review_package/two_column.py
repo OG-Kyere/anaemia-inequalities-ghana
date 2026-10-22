@@ -88,7 +88,7 @@ def format_main(final, root):
     for j,width in enumerate([2.0,1.3,.8,2.45]):
         table.columns[j].width=Inches(width)
         for i,row in enumerate(table.rows):
-            cell=row.cells[j]; cell.width=Inches(width)
+            cell=row.cells[j]; cell.text=cell.text.replace('**',''); cell.width=Inches(width)
             for p in cell.paragraphs:
                 p.paragraph_format.line_spacing=1.1
                 p.paragraph_format.space_after=Pt(2)
@@ -117,3 +117,4 @@ def format_main(final, root):
         for suffix in ('.png','.tiff'): (final/'figures'/(old+suffix)).rename(final/'figures'/(new+suffix))
     assert len(Document(path).tables)==5
     assert sum(1 for s in Document(path).sections if s._sectPr.find(qn('w:cols')).get(qn('w:num'))=='2')>=1
+
