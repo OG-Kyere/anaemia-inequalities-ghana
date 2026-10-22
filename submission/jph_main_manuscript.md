@@ -138,7 +138,7 @@ The BMI-domain contribution remained consistently negative in the 200-replicate 
 | Marital/union status | +0.001203 | −2.0 | −0.002581 to 0.005772 |
 | Residual | +0.003405 | −5.8 | −0.017297 to 0.025089 |
 
-*Notes:* Domain contributions are statistical, not causal; positive contributions offset negative pro-poor inequality. Confidence intervals are from 200 stratified PSU bootstrap replicates. The percentages refer to the decomposition complete-case index, not necessarily to the full-sample Erreygers index. Promoted from the previous manuscript supplement; reconcile with the latest machine-generated output before journal export.
+*Notes:* Domain contributions are statistical, not causal; positive contributions offset negative pro-poor inequality. Confidence intervals are from 200 stratified PSU bootstrap replicates. The percentages refer to the decomposition complete-case index, not necessarily to the full-sample Erreygers index. Point estimates and bootstrap intervals reconciled with `results/reproduced/inequality_decomposition_point.csv`, `inequality_decomposition_meta.csv`, and `inequality_decomposition_bootstrap_intervals.csv`.
 
 ### Adjusted associations with anaemia
 
@@ -158,13 +158,13 @@ The null multilevel model had cluster-level variance 0.150, corresponding to ICC
 
 | Measure | Null model | Adjusted model |
 |---|---:|---:|
-| Cluster-level standard deviation | 0.387 | 0.327 |
+| Cluster-level standard deviation | 0.387 | 0.326 |
 | Cluster-level variance | 0.150 | 0.107 |
 | Latent-scale ICC | 4.35% | 3.14% |
 | Median odds ratio | 1.45 | 1.37 |
 | Proportional change in variance | — | 28.8% |
 
-*Notes:* Cluster models did not incorporate the complex survey design; their estimates are contextual supplements, not design-based national estimates. Promoted from an earlier manuscript appendix; final numerical reconciliation is required.
+*Notes:* Cluster models did not incorporate the complex survey design; their estimates are contextual supplements, not design-based national estimates. Point estimates reconciled with `results/reproduced/community_heterogeneity_vb.csv`; the adjusted SD is reported as 0.326 after rounding the saved value 0.326441. Other point estimates match the saved outputs. The supplementary unweighted design limitation remains.
 
 ## Discussion
 
