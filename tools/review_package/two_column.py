@@ -51,13 +51,17 @@ def format_main(final, root):
         c.set(qn('w:num'),str(n)); c.set(qn('w:space'),'360')
         c.set(qn('w:equalWidth'),'1')
     def change(n):
+        existing=doc.sections[-1]._sectPr.find(qn('w:cols'))
+        if existing is not None and existing.get(qn('w:num'),'1')==str(n): return
         doc.add_section(WD_SECTION_START.CONTINUOUS); columns(n)
     def add(seq):
         for el in seq: doc.element.body.insert(-1,el)
     def display(seq):
         for el in seq[:2]:
             if el.tag==qn('w:p'): Paragraph(el,doc._body).paragraph_format.keep_with_next=True
-        change(1); add(seq); change(2)
+        if seq and text(seq[0]) in ('Table II','Table III'):
+            Paragraph(seq[0],doc._body).paragraph_format.page_break_before=True
+        change(1); add(seq)
     def figure(n,stem,title,caption):
         change(1)
         p=doc.add_paragraph('Figure '+str(n)+'. '+title,'Heading 2')
@@ -65,19 +69,18 @@ def format_main(final, root):
         p=doc.add_paragraph(); p.paragraph_format.keep_with_next=True
         p.add_run().add_picture(str(final/'figures'/stem),width=Inches(6.15))
         p=doc.add_paragraph(caption); p.paragraph_format.space_after=Pt(7)
-        change(2)
     columns(1); add(front); change(2); add(methods)
     doc.add_paragraph('Results','Heading 1')
     add(chunks[heads[0]]); display(table1)
     figure(1,'Figure_S2_wealth_gradient.png','Wealth gradient in anaemia prevalence',
            'Survey-weighted prevalence with 95% confidence intervals across household wealth quintiles. The poorest and richest quintiles had prevalence of 46.6% and 38.8%, respectively.')
-    add(chunks[heads[1]])
+    change(2); add(chunks[heads[1]])
     figure(2,'Figure_S1_concentration_curve.png','Concentration curve for anaemia',
            'Women are ranked from poorest to richest. The dashed diagonal marks equality. Erreygers index = -0.0589; 95% stratified PSU bootstrap interval -0.0924 to -0.0249 (5,000 replicates).')
-    add(chunks[heads[2]]); display(table2)
+    change(2); add(chunks[heads[2]]); display(table2)
     figure(3,'Figure_1_regional_prevalence.png','Anaemia prevalence by region',
            'Survey-weighted prevalence with 95% confidence intervals in Ghana\'s 16 regions. The dashed line marks national prevalence of 41.1%; estimates range from about 30.1% in Bono to 51.8% in Oti.')
-    add(chunks[heads[3]]); add(chunks[heads[4]]); display(table3)
+    change(2); add(chunks[heads[3]]); add(chunks[heads[4]]); display(table3)
     change(1)
     doc.add_paragraph('Table IV. Overall Wald tests in the adjusted survey-weighted model','Heading 2')
     source=(root/'results/table4_overall_wald_tests.md').read_text(encoding='utf8')
@@ -101,10 +104,9 @@ def format_main(final, root):
     for cell in table.rows[0].cells:
         sh=OxmlElement('w:shd'); sh.set(qn('w:fill'),'EDEDED'); cell._tc.get_or_add_tcPr().append(sh)
     doc.add_paragraph('Analytic sample: 7,550 women. Tests use the survey-weighted full model with stratification and PSU clustering. df denotes degrees of freedom.')
-    change(2)
     figure(4,'Figure_S3_decomposition.png','Decomposition of wealth-related anaemia inequality',
            'Absolute contributions to the complete-case Erreygers index (-0.058853; n = 7,550). Negative contributions reinforce concentration among poorer women; positive contributions offset it. Table III gives bootstrap intervals. Contributions are statistical, not causal.')
-    add(tail); add(references)
+    change(2); add(tail); add(references)
     for p in doc.paragraphs:
         if p._p.xpath('.//m:oMathPara'):
             tabs=p.paragraph_format.tab_stops; tabs.clear_all()
