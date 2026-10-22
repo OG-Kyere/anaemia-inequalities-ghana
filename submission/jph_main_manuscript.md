@@ -3,10 +3,10 @@
 ## Abstract
 
 ### Background
-Anaemia is common among Ghanaian women of reproductive age. We quantified wealth-related inequality, examined its measured contributors and assessed geographic and community-level variation that national estimates may conceal.
+Although anaemia affects about two in five Ghanaian women of reproductive age, national prevalence and risk-factor analyses do not establish how the burden is distributed across the full socioeconomic ranking. We examined wealth-related inequality in anaemia, its measured statistical contributors, and variation across regions and communities.
 
 ### Methods
-We analysed nationally representative cross-sectional data for women aged 15–49 years with valid anaemia measurements. Analyses included survey-weighted prevalence and logistic regression, Erreygers-corrected concentration indices, inequality decomposition and multilevel logistic models.
+We analysed the 2022 Ghana Demographic and Health Survey, including 7,557 women aged 15–49 years with valid anaemia measurements. Survey-weighted estimates accounted for sampling weights, strata and clusters. We calculated the Erreygers-corrected concentration index with a stratified cluster bootstrap (5,000 replicates); decomposed wealth-related inequality using a survey-weighted linear probability model among 7,550 complete cases (200 bootstrap replicates); and estimated adjusted odds ratios using survey-weighted logistic regression. Unweighted Bayesian random-intercept logistic models assessed supplementary community-level heterogeneity.
 
 ### Results
 Among 7,557 women, anaemia prevalence was 41.1% (95% CI 39.6–42.6%), declining from 46.6% in the poorest wealth quintile to 38.8% in the richest. The Erreygers index was -0.0589 (95% bootstrap CI -0.0924 to -0.0249), indicating concentration among poorer women. BMI/nutritional status contributed 77.7% of measured inequality. Pregnancy was associated with higher adjusted odds of anaemia (aOR 1.77, 95% CI 1.43–2.21). Regional and residual community-level heterogeneity persisted after adjustment.
@@ -20,7 +20,7 @@ Keywords: anaemia; women of reproductive age; socioeconomic inequality; concentr
 
 Anaemia is a common haematological and nutritional public-health problem among women of reproductive age. The World Health Organization (WHO) estimates that roughly three in ten women aged 15–49 years worldwide are anaemic. The burden is particularly high among pregnant women and in low- and middle-income countries.[1,2] Anaemia has several causes, including iron and other micronutrient deficiencies, infection, inflammation, blood loss, gynaecological and obstetric conditions, and inherited disorders. Its distribution reflects biological vulnerability as well as social conditions.
 
-The 2022 Ghana Demographic and Health Survey (GDHS) reported anaemia in about two in five women of reproductive age.[3] A recent analysis of the same survey found higher prevalence among pregnant women and associations with nutritional status, parity, wealth and geographic location.[4] Such prevalence comparisons and regression models describe group differences and adjusted associations. They do not directly quantify inequality across the socioeconomic ranking.
+The 2022 Ghana Demographic and Health Survey (GDHS) reported anaemia in about two in five women of reproductive age.[3] Agulu and colleagues subsequently examined anaemia prevalence and associated factors separately among pregnant and nonpregnant Ghanaian women using the 2022 GDHS.[4] This establishes the contemporary burden and identifies conditional associations, but such regression estimates do not by themselves quantify how anaemia is distributed along the full wealth ranking or partition the measured contributions to that inequality.
 
 Multicountry analyses have examined anaemia severity using multilevel models,[5,6] while spatial studies have described geographic variation in anaemia among women across sub-Saharan Africa and within Ethiopia.[7,8] Subnational mapping in West and Central Africa provides a further geographic perspective.[9] Decomposition has also been used to examine changes in anaemia prevalence between survey periods in selected countries, including Ghana,[10] a different question from decomposing wealth-related inequality within one survey.
 
@@ -28,7 +28,7 @@ National prevalence can decline while disadvantaged groups continue to carry a g
 
 Concentration curves and indices summarise how a health outcome is distributed across the socioeconomic ranking. The Erreygers correction normalises the index for bounded outcomes such as binary anaemia status.[11] Decomposition estimates the statistical contributions of measured characteristics to this inequality.[12] Multilevel models quantify variation between communities after accounting for individual characteristics.[13]
 
-We examined socioeconomic and geographic inequalities in anaemia among women aged 15–49 years in Ghana. We estimated prevalence across population groups, quantified wealth-related inequality and its measured contributors, and assessed adjusted associations with anaemia. We also examined whether community-level heterogeneity persisted after adjustment.
+Against that background, we examined socioeconomic and geographic inequalities in anaemia among women aged 15–49 years in Ghana. Specifically, we estimated design-adjusted prevalence across population groups; quantified wealth-related inequality using a bounded-outcome concentration index; decomposed that index into measured statistical contributions; and assessed adjusted individual-level associations and residual between-community heterogeneity. The central contribution is the decomposition of wealth-ranked inequality rather than a claim to be the first analysis of anaemia prevalence or risk factors using the 2022 GDHS.
 
 ## Methods
 
@@ -50,27 +50,53 @@ Prespecified covariates were age group, educational attainment, urban or rural r
 
 ### Complex-survey analysis
 
-Population-level analyses incorporated the DHS individual sampling weight, primary sampling unit and sampling stratum. The individual weight was calculated as `v005/1,000,000`. Survey-weighted proportions and 95% confidence intervals were estimated overall and within demographic, socioeconomic, reproductive, nutritional and geographic subgroups.
+Population-level analyses incorporated the DHS individual sampling weight, primary sampling unit (PSU) and sampling stratum. The individual weight was calculated as `v005/1,000,000`. For binary anaemia status $Y_i$, weighted prevalence was estimated as
+
+$\widehat P=\frac{\sum_{i=1}^n w_iY_i}{\sum_{i=1}^n w_i},$
+
+where $w_i$ denotes the sampling weight. For Taylor linearisation, observation $i$ contributed $z_i=w_i(Y_i-\widehat P)/\sum_iw_i$. Writing $Z_{hj}=\sum_{i\in(h,j)}z_i$ for the sum within PSU $j$ in stratum $h$, the implemented design variance was
+
+$\widehat{\operatorname{Var}}(\widehat P)=\sum_{h=1}^H\frac{m_h}{m_h-1}\sum_{j=1}^{m_h}(Z_{hj}-\overline Z_h)^2,$
+
+where $m_h$ is the number of sampled PSUs in stratum $h$. The code used normal-reference 95% confidence intervals, $\widehat P\pm1.96\sqrt{\widehat{\operatorname{Var}}(\widehat P)}$. For subgroup estimates, the full available survey design was retained and out-of-domain observations contributed zero to the linearised variable.
 
 ### Socioeconomic inequality
 
-Women were ranked from poorest to richest using the continuous wealth score. We first calculated the standard concentration index and plotted the concentration curve. Because anaemia is a bounded binary outcome, the Erreygers-corrected concentration index was used as the primary inequality measure.[11] A negative value indicates that anaemia is concentrated disproportionately among poorer women.
+Women were ranked from poorest to richest using the continuous wealth score. Ties were assigned survey-weighted fractional midranks $R_i$. Let $\mu=\sum_iw_iY_i/\sum_iw_i$ and let $\operatorname{Cov}_w$ denote a covariance calculated with normalised sampling weights. The standard concentration index and its Erreygers correction for the binary outcome bounded by zero and one were, respectively,[11]
 
-We estimated a percentile 95% confidence interval for the corrected index using 5,000 bootstrap replicates, resampling primary sampling units within DHS strata (seed 20261008). The decomposition used a separate 200-replicate bootstrap.
+$C_Y=\frac{2}{\mu}\operatorname{Cov}_w(Y,R),\qquad E_Y=4\mu C_Y=8\operatorname{Cov}_w(Y,R).$
+
+The concentration curve displays cumulative weighted anaemia against cumulative weighted population share ordered by wealth. A negative index indicates a disproportionate concentration of anaemia among poorer women. The Erreygers index was the primary measure because anaemia is binary. A percentile 95% confidence interval for the full-sample corrected index was calculated from 5,000 bootstrap replicates resampling PSUs within DHS strata (seed 20261008); the decomposition used a separate 200-replicate bootstrap.
 
 ### Decomposition analysis
 
 The Erreygers index was decomposed using a survey-weighted linear probability model based on established concentration-index decomposition methods.[12] The decomposition model included age, years of education, residence, pregnancy status, parity, BMI, employment and marital status. Wealth itself was not entered as a determinant because it defined the socioeconomic ranking. The reproducible specification used DHS five-year age-group indicators and modelled BMI with linear and quadratic terms.
 
-Each domain contribution combined its association with anaemia and its socioeconomic distribution. We used bootstrap resampling to assess uncertainty. Contributions depend on the model specification and describe statistical patterns, not causal effects.
+Writing the weighted linear probability model as $Y_i=\alpha+\sum_{k=1}^K\beta_kX_{ki}+\varepsilon_i$, the implemented absolute contribution for term $k$ was
+
+$D_k=8\widehat\beta_k\operatorname{Cov}_w(X_k,R),\qquad E_Y=\sum_{k=1}^KD_k+E_{\mathrm{res}},$
+
+where $E_{\mathrm{res}}$ was calculated as the observed index minus the sum of measured contributions. Each domain's contribution was the sum of its constituent terms and its percentage share was $100D_{\mathrm{domain}}/E_Y$. In particular, the BMI/nutritional-status domain combined the contributions of BMI and BMI squared, rather than those of categorical BMI indicators. The decomposition was fitted to complete cases with BMI and other specified variables present ($n=7,550$), and its $E_Y$ denominator was recalculated on that same analytic sample; this is distinct from the full-sample inequality estimate ($n=7,557$). PSU-within-stratum bootstrap resampling (200 replicates) assessed contribution uncertainty. Contributions depend on the model specification and describe statistical patterns, not causal effects.
 
 ### Adjusted regression
 
-Survey-weighted logistic regression was used to estimate adjusted associations with anaemia. The full model included age group, education, wealth quintile, residence, pregnancy status, parity, BMI category, employment, marital status and region. Adjusted odds ratios (aORs) and 95% confidence intervals were reported. Overall Wald tests were used for categorical variables.
+Survey-weighted logistic regression was used to estimate adjusted associations with anaemia:
+
+$\log\frac{p_i}{1-p_i}=\beta_0+\sum_{k=1}^K\beta_kX_{ki},\qquad \mathrm{aOR}_k=\exp(\widehat\beta_k),$
+
+where $p_i=\Pr(Y_i=1\mid X_i)$. The full model included age group, education, wealth quintile, residence, pregnancy status, parity, BMI category, employment, marital status and region. The model was fitted by weighted binomial maximum likelihood. Design-based standard errors were estimated using the stratified PSU-score sandwich covariance $\widehat V=A^{-1}BA^{-1}$, where $A$ is the weighted model information and $B$ sums centred PSU scores within strata with finite-PSU corrections. The implemented coefficients used normal-reference 95% intervals and chi-square Wald tests for categorical terms; these were not finite-design-degrees-of-freedom $t$ or $F$ tests. Odds ratios were not interpreted as prevalence ratios.
 
 ### Community-level heterogeneity
 
-Two-level random-intercept logistic models were fitted with women nested within DHS clusters. A null model quantified baseline clustering, and an adjusted model included the same covariates as the primary regression model. We summarised cluster heterogeneity using the latent-variable intraclass correlation coefficient (ICC) and median odds ratio (MOR).[13] The proportional change in variance quantified the reduction in between-cluster variance after adjustment.
+Two-level random-intercept logistic models were fitted with women nested within DHS clusters. A null model quantified baseline clustering, and an adjusted model included the same covariates as the primary regression model. Writing $p_{ij}$ for the anaemia probability of woman $i$ in DHS cluster $j$, the supplementary random-intercept specification was
+
+$\operatorname{logit}(p_{ij})=\beta_0+\sum_{k=1}^K\beta_kX_{kij}+u_j,\qquad u_j\sim N(0,\sigma_u^2).$
+
+We summarised cluster heterogeneity using the latent-variable intraclass correlation coefficient (ICC), median odds ratio (MOR), and proportional change in variance (PCV):[13]
+
+$\mathrm{ICC}=\frac{\sigma_u^2}{\sigma_u^2+\pi^2/3},\quad \mathrm{MOR}=\exp\!\left[\sqrt{2\sigma_u^2}\,\Phi^{-1}(0.75)\right],\quad \mathrm{PCV}=\frac{\sigma_{u,0}^2-\sigma_{u,1}^2}{\sigma_{u,0}^2},$
+
+where subscripts 0 and 1 denote null and adjusted models. PCV was expressed as a proportion in code and as a percentage when multiplied by 100 in reporting.
 
 The multilevel models used variational Bayes with normally distributed fixed-effect priors on the scaled design matrix (standard deviation 2) and a normal prior on log cluster standard deviation (standard deviation 1). These models were not survey-weighted and were complementary contextual analyses; national prevalence and inequality estimates remained based on the complex survey design. Both final seeded BFGS fits converged at a gradient tolerance of 1e-5; the earlier stricter-tolerance precision-loss diagnostic is documented in the supplement.
 
@@ -98,6 +124,22 @@ BMI/nutritional status made the largest measured contribution to wealth-related 
 
 The BMI-domain contribution remained consistently negative in the 200-replicate bootstrap (-0.0457, 95% bootstrap interval -0.0617 to -0.0300). Bootstrap intervals for the smaller domains included zero, so their individual contributions should be interpreted cautiously.
 
+**Table III. Decomposition of wealth-related inequality in anaemia (complete-case analytic sample).**
+
+| Domain | Absolute contribution | % of Erreygers index | 95% bootstrap interval |
+|---|---:|---:|---|
+| BMI / nutritional status | −0.045731 | 77.7 | −0.061716 to −0.030045 |
+| Education | −0.009184 | 15.6 | −0.025104 to 0.006950 |
+| Residence | −0.004023 | 6.8 | −0.023362 to 0.013460 |
+| Parity | −0.002892 | 4.9 | −0.014688 to 0.009773 |
+| Pregnancy status | −0.002221 | 3.8 | −0.005493 to 0.000020 |
+| Age | +0.000570 | −1.0 | −0.003250 to 0.004169 |
+| Employment | +0.000021 | −0.04 | −0.000592 to 0.000687 |
+| Marital/union status | +0.001203 | −2.0 | −0.002581 to 0.005772 |
+| Residual | +0.003405 | −5.8 | −0.017297 to 0.025089 |
+
+*Notes:* Domain contributions are statistical, not causal; positive contributions offset negative pro-poor inequality. Confidence intervals are from 200 stratified PSU bootstrap replicates. The percentages refer to the decomposition complete-case index, not necessarily to the full-sample Erreygers index. Point estimates and bootstrap intervals reconciled with `results/reproduced/inequality_decomposition_point.csv`, `inequality_decomposition_meta.csv`, and `inequality_decomposition_bootstrap_intervals.csv`.
+
 ### Adjusted associations with anaemia
 
 Overall Wald tests provided the strongest evidence of association for pregnancy status, BMI category and region in the fully adjusted survey-weighted model (Table II).
@@ -111,6 +153,18 @@ The overall Wald tests for wealth quintile and education were not statistically 
 ### Community-level heterogeneity
 
 The null multilevel model had cluster-level variance 0.150, corresponding to ICC 4.35% and MOR 1.45. After adjustment, cluster variance declined to 0.107, with ICC 3.14% and MOR 1.37. The variational-Bayes models reproduced these estimates. Between-cluster variance was approximately 28.8% lower after adjustment, with residual contextual heterogeneity remaining.
+
+**Table IV. Community-level heterogeneity in anaemia (supplementary, unweighted variational-Bayes models).**
+
+| Measure | Null model | Adjusted model |
+|---|---:|---:|
+| Cluster-level standard deviation | 0.387 | 0.326 |
+| Cluster-level variance | 0.150 | 0.107 |
+| Latent-scale ICC | 4.35% | 3.14% |
+| Median odds ratio | 1.45 | 1.37 |
+| Proportional change in variance | — | 28.8% |
+
+*Notes:* Cluster models did not incorporate the complex survey design; their estimates are contextual supplements, not design-based national estimates. Point estimates reconciled with `results/reproduced/community_heterogeneity_vb.csv`; the adjusted SD is reported as 0.326 after rounding the saved value 0.326441. Other point estimates match the saved outputs. The supplementary unweighted design limitation remains.
 
 ## Discussion
 
@@ -202,6 +256,10 @@ Source: `results/table1_weighted_characteristics.md`
 
 **Table II.** Survey-weighted adjusted associations with anaemia.
 Source: `results/table2_full_adjusted_model.md`
+
+**Table III.** Decomposition results are now presented within the Results section above.
+
+**Table IV.** Community-level model summaries are now presented within the Results section above.
 
 **Figure 1. Concentration curve for anaemia by household wealth rank.**
 The curve plots the cumulative share of anaemia against the cumulative weighted population ranked from poorest to richest. The 45-degree line indicates equality. The curve lies predominantly above this line, indicating a disproportionate concentration of anaemia among poorer women. The Erreygers-corrected concentration index was -0.0589 (95% bootstrap CI -0.0924 to -0.0249).
