@@ -1,0 +1,47 @@
+name: Build manuscript review package
+on:
+  push:
+    branches: ['review/manuscript-equations-gap-bibliography-2026-10-21']
+    paths:
+      - 'tools/review_package/**'
+      - '.github/workflows/review_package.yml'
+      - 'submission/*.md'
+      - 'supplementary/*.md'
+      - 'results/table3_inequality_and_heterogeneity.md'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install document build tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends pandoc libreoffice-writer libreoffice-math fonts-liberation poppler-utils librsvg2-bin
+          python -m pip install -q python-docx pillow pdf2image lxml
+      - name: Assemble six Word files and figures from public sources
+        run: python tools/review_package/build.py
+      - name: Render and verify Word files
+        run: |
+          for file in work/review_package/final/*.docx; do
+            stem=$(basename "$file" .docx)
+            python tools/review_package/render_docx.py "$file" --output_dir "work/review_package/qa/$stem" --emit_pdf --dpi 120
+          done
+      - name: Prepare file transfer manifest
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python tools/review_package/transfer.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: anaemia-word-review-package
+          path: work/review_package/final/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: anaemia-package-render-qa
+          path: work/review_package/qa/
+

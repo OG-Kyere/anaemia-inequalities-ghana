@@ -1,8 +1,8 @@
 """Prepare journal-upload assets from repository sources.
 
 Creates:
-- editable CSV versions of Tables I and II;
-- high-resolution PNG and TIFF versions of Figures 1 and 2.
+- editable CSV versions of Tables I–IV, including both panels of Table III;
+- high-resolution PNG and TIFF versions of main Figures 1–4.
 
 This Windows-safe version uses Matplotlib directly and does not require Cairo.
 Outputs go to submission/generated/.
@@ -101,7 +101,7 @@ def make_concentration_curve(require_reproduced=False) -> str:
         fig.text(.5, .01, 'PREVIEW: stored curve points; regenerate from authorized data before submission.',
                  ha='center', fontsize=8)
 
-    save_png_and_tiff(fig, "Figure_1_concentration_curve")
+    save_png_and_tiff(fig, "Figure_2_concentration_curve")
     return provenance
 
 
@@ -137,7 +137,25 @@ def make_regional_prevalence() -> None:
             ha='right',va='top',fontsize=10,
             bbox={'facecolor':'white','edgecolor':'none','alpha':.9})
 
-    save_png_and_tiff(fig, "Figure_2_regional_prevalence")
+    save_png_and_tiff(fig, "Figure_3_regional_prevalence")
+
+
+def make_additional_main_figures() -> None:
+    import re
+    rows=markdown_tables((ROOT/'results/table1_weighted_characteristics.md').read_text(encoding='utf8'))[0][1:]
+    start=next(i for i,row in enumerate(rows) if row[0]=='Wealth quintile')
+    wealth=rows[start:start+5]
+    values=np.array([[float(x) for x in re.findall(r'\d+\.\d+',row[4])] for row in wealth])
+    fig,ax=plt.subplots(figsize=(7.6,5.2))
+    ax.errorbar(range(5),values[:,0],yerr=np.vstack([values[:,0]-values[:,1],values[:,2]-values[:,0]]),fmt='o',capsize=3)
+    ax.set_xticks(range(5),[row[1] for row in wealth]);ax.set_ylabel('Anaemia prevalence (%)')
+    ax.set_title('Wealth gradient in anaemia prevalence')
+    save_png_and_tiff(fig,'Figure_1_wealth_gradient')
+    rows=markdown_tables((ROOT/'results/table3_inequality_and_heterogeneity.md').read_text(encoding='utf8'))[0][1:]
+    fig,ax=plt.subplots(figsize=(8.2,5.8))
+    ax.barh([r[0] for r in rows],[float(r[1]) for r in rows]);ax.invert_yaxis();ax.axvline(0,color='grey',linestyle='--')
+    ax.set_xlabel('Absolute contribution to the Erreygers index');ax.set_title('Decomposition of wealth-related anaemia inequality')
+    save_png_and_tiff(fig,'Figure_4_decomposition')
 
 
 def main() -> None:
@@ -156,14 +174,19 @@ def main() -> None:
         ROOT / "results" / "table2_full_adjusted_model.md",
         OUT / "Table_II_adjusted_logistic_regression.csv",
     )
-    extract_markdown_table(ROOT/'results/table2_full_adjusted_model.md',
-                           OUT/'Table_S3_overall_Wald_tests.csv',1)
+    extract_markdown_table(ROOT/'results/table4_overall_wald_tests.md',
+                           OUT/'Table_IV_overall_Wald_tests.csv',0)
+    extract_markdown_table(ROOT/'results/table3_inequality_and_heterogeneity.md',
+                           OUT/'Table_III_panel_A_decomposition.csv',0)
+    extract_markdown_table(ROOT/'results/table3_inequality_and_heterogeneity.md',
+                           OUT/'Table_III_panel_B_community_heterogeneity.csv',1)
 
     provenance=make_concentration_curve(args.require_reproduced)
     make_regional_prevalence()
-    (OUT/'asset_provenance.json').write_text(json.dumps({'figure1':provenance,
+    make_additional_main_figures()
+    (OUT/'asset_provenance.json').write_text(json.dumps({'figure2':provenance,
         'tables':'Locked repository aggregate tables; not re-estimated during export',
-        'figure2':'Repository regional aggregate table; not re-estimated during export'},indent=2),encoding='utf8')
+        'figures1_3_4':'Repository aggregate tables; not re-estimated during export'},indent=2),encoding='utf8')
 
     print("Submission assets created in:")
     print(OUT)
@@ -173,3 +196,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

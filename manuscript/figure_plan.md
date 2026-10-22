@@ -1,72 +1,17 @@
-# Figure Plan
+# Main and supplementary display plan — 21 October 2026
 
-## Figure 1. Concentration curve for anaemia by household wealth rank
+Canonical source: `submission/jph_main_manuscript.md`. Existing SVG filenames are retained as stable asset identifiers; manuscript figure numbers below define their current placement.
 
-Purpose: visually display wealth-related inequality in anaemia.
+| Placement | Source | Purpose |
+|---|---|---|
+| Main Table I | `results/table1_weighted_characteristics.md` | Participant characteristics and weighted anaemia prevalence. |
+| Main Table II | `results/table2_full_adjusted_model.md`, first table | Full adjusted survey-weighted logistic regression. |
+| Main Table III, panel A | `results/table3_inequality_and_heterogeneity.md`, first table | Validated inequality decomposition, signed contributions and bootstrap uncertainty. |
+| Main Table III, panel B | Same file, second table | Separate null/adjusted unweighted multilevel models, sample sizes and heterogeneity summaries. |
+| Main Figure 1 | `figures/figure2_regional_prevalence.svg` | Regional prevalence and confidence intervals; national reference 41.1%. |
+| Supplementary Table S1 | `supplementary/supplementary_material.md` | Overall Wald tests; also second table in the Table II source file. |
+| Supplementary Figure S1 | `figures/figure1_concentration_curve.svg` | Empirical wealth-ranked concentration curve; E and its interval remain in the main Results. |
+| Supplementary Figure S2 | `figures/figure3_wealth_gradient.svg` | Wealth-quintile prevalence gradient. |
+| Supplementary Figure S3 | `figures/figure4_decomposition.svg` | Complementary decomposition chart; main Table III supplies uncertainty. |
 
-Elements:
-- x-axis: cumulative weighted population share ranked from poorest to richest;
-- y-axis: cumulative weighted share of anaemia;
-- 45-degree line of equality;
-- observed concentration curve;
-- annotation with Erreygers corrected concentration index and 95% CI.
-
-Interpretation: a curve above the equality line indicates concentration of anaemia among poorer women.
-
-## Figure 2. Survey-weighted anaemia prevalence by region
-
-Purpose: show geographic variation across Ghana's 16 regions.
-
-Recommended format:
-- horizontal point-and-whisker plot;
-- regional prevalence estimates sorted from lowest to highest;
-- 95% confidence intervals;
-- national prevalence reference line at 41.12%.
-
-The current estimates range from approximately 30.1% in Bono to 51.8% in Oti.
-
-## Figure 3. Wealth gradient in anaemia prevalence
-
-Purpose: complement the concentration curve with an intuitive categorical summary.
-
-Recommended format:
-- point estimates for the five wealth quintiles;
-- 95% confidence intervals;
-- quintiles ordered from poorest to richest.
-
-Observed weighted prevalence:
-- poorest: 46.6%;
-- poorer: 41.8%;
-- middle: 40.8%;
-- richer: 39.3%;
-- richest: 38.8%.
-
-## Figure 4. Decomposition of the Erreygers concentration index
-
-Purpose: display the relative contribution of measured domains to socioeconomic inequality.
-
-Recommended format:
-- horizontal bar chart of absolute contributions to the Erreygers index;
-- BMI / nutritional status;
-- education;
-- residence;
-- parity;
-- pregnancy status;
-- age;
-- employment;
-- marital status;
-- residual.
-
-The visual should emphasize direction and magnitude rather than presenting percentages alone.
-
-## Figure 5. Adjusted odds ratios for key determinants
-
-Purpose: summarize the fully adjusted survey-weighted logistic model.
-
-Recommended format:
-- forest plot;
-- adjusted ORs and 95% CIs;
-- omit reference categories;
-- group terms by demographic, socioeconomic, reproductive, nutritional, and geographic domains.
-
-The figure should be supplementary if the full regression table is included in the main manuscript.
+There are four numbered main displays: three tables and one figure. Table III's panels answer different questions and use distinct models; the labels and notes must remain explicit. No SVG values or shapes were changed. Approximate multilevel uncertainty, sensitivity narratives and estimator diagnostics remain supplementary.

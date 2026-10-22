@@ -1,3 +1,38 @@
+# Bibliography audit — 21 October 2026
+
+This audit uses the current numbering in `submission/jph_main_manuscript.md`, not the historical verification identifiers below. All 15 entries were checked for identity and bibliographic details against the records linked here. In-text coverage and first-appearance order were checked separately. No references were added, removed or renumbered.
+
+| Current number | Reference | Record checked | Outcome and use |
+|---|---|---|---|
+| 1 | WHO. Anaemia (2025) | [WHO fact sheet](https://www.who.int/news-room/fact-sheets/detail/anaemia) | Confirmed title, corporate author and 10 February 2025 date. Added URL/access date. Supports causes and burden context. |
+| 2 | WHO global anaemia estimates: key findings, 2025 | [WHO publication](https://www.who.int/publications/i/item/9789240113930) | Confirmed title, 15 August 2025 date and ISBN 978-92-4-011393-0. Added URL/access date. The [2025 estimates page](https://www.who.int/data/gho/data/themes/topics/anaemia_in_women_and_children) reports 30.7% of women in 2023; the Introduction's rounded “roughly three in ten” remains supported. |
+| 3 | GSS and ICF. Ghana DHS 2022 (2024) | [DHS final report FR387](https://www.dhsprogram.com/publications/publication-fr387-dhs-final-reports.cfm) | Confirmed recommended authors, title, places, publisher and January 2024 publication. Added URL/access date. |
+| 4 | Agulu et al. (2025) | [Publisher](https://link.springer.com/article/10.1186/s41182-025-00792-8) | Confirmed listed authors, title, year, volume 53, article 118 and DOI. Uses 2022 GDHS and pregnancy-stratified prevalence/association analyses; supports the focused gap, not an absence of Ghana determinants research. |
+| 5 | Mare et al. (2023) | [PLOS](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294992) | Confirmed listed authors, title, 18(11):e0294992 and DOI. Multicountry ordinal multilevel severity analysis. |
+| 6 | Tirore et al. (2024) | [Frontiers](https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2023.1349174/full) | Confirmed all five authors, title and article 1349174. Published 24 January 2024 in volume 11 (labelled 2023); retain 2024 publication year despite DOI year. |
+| 7 | Correa-Agudelo et al. (2021) | [Scientific Reports](https://www.nature.com/articles/s41598-021-91198-z) | Confirmed listed authors, title, 11:11955 and DOI. Geographic analyses across SSA; not evidence that geographic work is absent. |
+| 8 | Kibret et al. (2019) | [BMJ primary paper](https://bmjopen.bmj.com/content/bmjopen/9/4/e027276.full.pdf) | Confirmed all four authors, title, 9:e027276 and DOI. April 2019 publication; within-Ethiopia spatial/multilevel study. |
+| 9 | Baye et al. (2025) | [Primary article in PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11736650/) | Confirmed all five authors, title, volume 28:e6 and DOI. Online 19 December 2024, collection year 2025; retain 2025 volume citation. Regional subnational mapping. |
+| 10 | Salifu et al. (2024) | [Frontiers](https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2023.1128214/full) | Confirmed authors, title, volume 11:1128214 and DOI. Published 5 January 2024 despite 2023 volume/DOI label. Temporal multivariate decomposition includes Ghana; distinguish it from within-survey wealth-index decomposition. |
+| 11 | Erreygers (2009) | [PubMed primary-paper record](https://pubmed.ncbi.nlm.nih.gov/18367273/) | Confirmed author, title, 28(2):504–515 and DOI. Added issue number. This is the original article, not Wagstaff's comment or Erreygers' reply. Supports bounded-outcome correction. |
+| 12 | Wagstaff, van Doorslaer and Watanabe (2003) | [Publisher-deposited Crossref record](https://api.crossref.org/works/10.1016%2FS0304-4076%2802%2900161-6); [authors' World Bank working paper](https://documents1.worldbank.org/curated/en/290931468176347154/pdf/multi0page.pdf) | Crossref confirmed authors, exact title, January 2003, 112(1):207–223 and DOI. Added issue number. Publisher full-text endpoint returned 403; additive method checked in the authors' 2001 precursor, which is not substituted for the 2003 journal citation. |
+| 13 | Merlo et al. (2006) | [PubMed primary-paper record](https://pubmed.ncbi.nlm.nih.gov/16537344/); [authors' university record](https://portal.research.lu.se/en/publications/a-brief-conceptual-tutorial-of-multilevel-analysis-in-social-epid/) | Confirmed listed authors, exact tutorial title, 60(4):290–297 and DOI. Added issue number. Supports logistic clustering summaries; not the variational-Bayes algorithm. |
+| 14 | WHO haemoglobin guideline (2024) | [WHO guideline](https://www.who.int/publications/i/item/9789240088542) | Confirmed title, 5 March 2024 date and ISBN 978-92-4-008854-2. Added ISBN, URL/access date. Contextual guidance only: no retrospective recoding of the locked 2022 outcome. |
+| 15 | Gosdin et al. (2021) | [CDC primary-paper record and manuscript](https://stacks.cdc.gov/view/cdc/106846) | Confirmed listed authors, title, 151(6):1646–1655 and DOI. A Ghana adolescent school programme cohort, not a nationally representative intervention effect for adult women. |
+
+## Citation and scope checks
+
+- All 15 bibliography entries are cited; first appearances remain 1 through 15, with no missing or unused entries.
+- The numbering map's reference strings were synchronised with the final bibliography. Its original/current identifiers were retained.
+- The gap is an inference from the scope of the cited studies, not a systematic-review finding or a “first study” claim.
+- WHO's February fact sheet retains older rounded burden estimates, while the August 2025 edition provides estimates through 2023. No trend comparison between editions was introduced.
+- Metadata verification does not establish the validity of every claim or result in a cited paper, nor constitute an exhaustive retraction-status audit.
+- The exact assistant passages in the referenced prior chat could not be recovered: the chat reader returned content-reference placeholders and the browser remained at a loading shell. Equations and gap wording were independently reconstructed from the frozen repository and primary methods sources; they are not represented as verbatim recovered text.
+
+The earlier audit follows as a historical record.
+
+---
+
 # Reference Verification
 
 Verified on **2026-10-08** against publisher, PubMed, WHO, DHS Program, or journal records.

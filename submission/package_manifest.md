@@ -20,8 +20,9 @@
 |---|---|---|
 | Table I | `results/table1_weighted_characteristics.md` | Export locally to editable CSV/Word table |
 | Table II | `results/table2_full_adjusted_model.md` | Export locally to editable CSV/Word table |
-| Figure 1 | `figures/figure1_concentration_curve.svg` | Export locally to high-resolution PNG/TIFF |
-| Figure 2 | `figures/figure2_regional_prevalence.svg` | Export locally to high-resolution PNG/TIFF |
+| Table III (panels A and B) | `results/table3_inequality_and_heterogeneity.md` | Export both panels to editable CSV/Word tables under one numbered display |
+| Table IV | `results/table4_overall_wald_tests.md` | Editable Word table in the main paper |
+| Figures 1–4 | All four original SVG assets | Embedded in main paper; paired high-resolution PNG/TIFF exports |
 
 Use:
 
@@ -31,13 +32,9 @@ python src/05_prepare_submission_assets.py
 
 Generated upload files appear under `submission/generated/`, which is intentionally ignored by Git.
 
-## Supplementary displays
+## Display placement and reading layout
 
-- wealth-gradient figure;
-- validated decomposition figure;
-- decomposition table;
-- community-level heterogeneity table;
-- interpretation and reproducibility notes.
+At the author's explicit request, all four tables and all four figures appear in the main manuscript. The text uses two columns, with full-width sections for wide editable tables and figures. This author-review layout supersedes the earlier four-display journal selection; it will need adaptation if a target journal enforces that limit. The supplement contains supporting methods and diagnostics only. No estimates or original SVG assets were changed.
 
 ## Final lock
 

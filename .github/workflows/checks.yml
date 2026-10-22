@@ -11,5 +11,6 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements.txt
       - run: python -m unittest discover -s tests -v
+      - run: python src/05_prepare_submission_assets.py --require-reproduced
       - run: python src/06_project_diagnostics.py
       - run: python tests/smoke_pipeline.py
