@@ -18,7 +18,9 @@ def format_main(final, root):
     def index(label): return next(i for i,b in enumerate(blocks) if text(b)==label)
     def clean(seq):
         return [deepcopy(b) for b in seq if not (b.tag==qn('w:p') and not text(b).strip() and b.xpath('.//w:br[@w:type="page"]'))]
-    intro,results,discussion,refs=[index(x) for x in ('Introduction','Results','Discussion','References')]
+    intro=index('Introduction')
+    results=next(i for i,b in enumerate(blocks) if i>intro and text(b)=='Results')
+    discussion=index('Discussion'); refs=index('References')
     t1,t2,t3,legend=[index(x) for x in ('Table I','Table II','Table III','Figure legend')]
     front=clean(blocks[:intro]); methods=clean(blocks[intro:results])
     tail=clean(blocks[discussion:refs]); references=clean(blocks[refs:t1])
@@ -53,6 +55,8 @@ def format_main(final, root):
     def add(seq):
         for el in seq: doc.element.body.insert(-1,el)
     def display(seq):
+        for el in seq[:2]:
+            if el.tag==qn('w:p'): Paragraph(el,doc._body).paragraph_format.keep_with_next=True
         change(1); add(seq); change(2)
     def figure(n,stem,title,caption):
         change(1)
@@ -116,5 +120,9 @@ def format_main(final, root):
     for old,new in names.items():
         for suffix in ('.png','.tiff'): (final/'figures'/(old+suffix)).rename(final/'figures'/(new+suffix))
     assert len(Document(path).tables)==5
+    paragraphs=[p.text for p in Document(path).paragraphs]
+    assert paragraphs.index('Introduction') < paragraphs.index('Methods',paragraphs.index('Introduction')) < paragraphs.index('Results',paragraphs.index('Introduction'))
+    from zipfile import ZipFile
+    assert ZipFile(path).read('word/document.xml').count(b'<m:oMathPara>')==8
     assert sum(1 for s in Document(path).sections if s._sectPr.find(qn('w:cols')).get(qn('w:num'))=='2')>=1
 
